@@ -137,10 +137,16 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2">
-        <span className="text-white/70 text-xl sm:text-2xl animate-bounce">
+        <span className="text-white/70 text-xl sm:text-2xl animate-[arrow-bounce_1.2s_ease-in-out_infinite] block">
             <KeyboardArrowDownIcon fontSize="inherit" />
         </span>
       </div>
+      <style jsx global>{`
+        @keyframes arrow-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(18px); }
+        }
+      `}</style>
     </section>
   );
 }
