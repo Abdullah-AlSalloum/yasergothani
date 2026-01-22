@@ -1,0 +1,11 @@
+/* Tajawal font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+/* The Year of the Camel font (OTF) */
+@font-face {
+  font-family: 'TheYearOfTheCamel';
+  src: url('/fonts/the-year-of-the-camel-extrabold.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,8 +1,16 @@
+
+@import "./fonts.css";
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f1f5fb; /* 60% */
+  --foreground: #113c56; /* 30% */
+  --accent: #fcd410;     /* 10% */
+  --secondary-orange: #d05828;
+  --secondary-blue: #4c6d83;
+  --secondary-gold: #ca7c29;
+  --secondary-green: #1a604f;
 }
 
 @theme inline {
@@ -12,15 +20,23 @@
   --font-mono: var(--font-geist-mono);
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #113c56;
+    --foreground: #f1f5fb;
+    --accent: #fcd410;
+    --secondary-orange: #d05828;
+    --secondary-blue: #4c6d83;
+    --secondary-gold: #ca7c29;
+    --secondary-green: #1a604f;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'TheYearOfTheCamel', 'Tajawal', Arial, Helvetica, sans-serif;
+  direction: rtl;
+  text-align: right;
 }
