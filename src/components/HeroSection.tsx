@@ -43,8 +43,7 @@ export default function HeroSection() {
             ))}
           </div>
           <p className="text-base sm:text-lg font-medium text-white/90 text-center md:text-right">
-            نحن نمكّن الشركات الصغيرة والمتوسطة على تحقيق نمو مستدام من خلال
-            استراتيجيات تسويق رقمي مبنية على البيانات وتحسين مسارات التحويل
+            حلول تسويق رقمي متكاملة تبدأ بالتشخيص، تمر بالتنفيذ الاحترافي، وتنتهي بأرقام واضحة تساعدك على النمو بثقة.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
             <a
@@ -67,17 +66,17 @@ export default function HeroSection() {
           <div className="flex flex-row gap-4 sm:gap-12 mt-4 sm:mt-6 w-full justify-center md:justify-start">
             <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
               <span className="text-xl sm:text-2xl font-bold">2.5x</span>
-              <span className="text-xs text-white/80 mt-1">
+              <span className="text-s text-white/80 mt-1">
                 متوسط نمو الإيرادات
               </span>
             </div>
             <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
               <span className="text-xl sm:text-2xl font-bold">95%</span>
-              <span className="text-xs text-white/80 mt-1">معدل نجاح</span>
+              <span className="text-s text-white/80 mt-1">معدل نجاح</span>
             </div>
             <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
               <span className="text-xl sm:text-2xl font-bold">+300</span>
-              <span className="text-xs text-white/80 mt-1">عميل ناجح</span>
+              <span className="text-s text-white/80 mt-1">عميل ناجح</span>
             </div>
           </div>
         </div>
