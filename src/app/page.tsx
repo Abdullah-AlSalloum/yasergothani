@@ -1,6 +1,7 @@
 'use client'
 import ProblemSection from "@/components/ProblemSection";
 import MethodologySection from "@/components/MethodologySection";
+import TargetAudienceSection from "@/components/TargetAudienceSection";
 import HeroSection from "../components/HeroSection";
 import Snowfall from 'react-snowfall'
 
@@ -11,6 +12,7 @@ export default function Home() {
    <HeroSection />
   <ProblemSection/>
   <MethodologySection/>
+  <TargetAudienceSection/>
   </>
  ;
 }
