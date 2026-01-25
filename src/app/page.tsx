@@ -4,6 +4,8 @@ import MethodologySection from "@/components/MethodologySection";
 import TargetAudienceSection from "@/components/TargetAudienceSection";
 import HeroSection from "../components/HeroSection";
 import Snowfall from 'react-snowfall'
+import SolutionsSection from "@/components/SolutionsSection";
+
 
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
   <ProblemSection/>
   <MethodologySection/>
   <TargetAudienceSection/>
+  <SolutionsSection />
   </>
  ;
 }
