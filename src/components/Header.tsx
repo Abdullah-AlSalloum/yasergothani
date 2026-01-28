@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from "react";
 
@@ -26,7 +25,7 @@ export default function Header() {
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
           <ul className="hidden md:flex flex-row-reverse gap-2 text-white text-lg">
             <li>
-              <a href="#services" className="block px-4 py-2 rounded transition hover:bg-white/20">الخدمات</a>
+              <a href="#methodology" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</a>
             </li>
             <li>
               <a href="#contact" className="block px-4 py-2 rounded transition hover:bg-white/20">اتصل بنا</a>
@@ -72,7 +71,7 @@ export default function Header() {
           >
             <ul className="flex flex-col gap-2 text-white text-lg">
               <li>
-                <a href="#services" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</a>
+                <a href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</a>
               </li>
               <li>
                 <a href="#contact" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</a>

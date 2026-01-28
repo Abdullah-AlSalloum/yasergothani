@@ -11,6 +11,7 @@ import ProofSection from "@/components/ProofSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import IPProtectionSection from "@/components/IPProtectionSection";
 import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 
 
@@ -27,5 +28,6 @@ export default function Home() {
     <HowWeWorkSection />
     < IPProtectionSection />
     <CTASection />
+    <Footer />
   </>;
 }

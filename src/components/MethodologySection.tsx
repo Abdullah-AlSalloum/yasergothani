@@ -46,7 +46,7 @@ const steps = [
 
 export default function MethodologySection() {
   return (
-    <section className="w-full py-12 px-4" style={{ background: 'var(--background)' }}>
+    <section id="methodology" className="w-full py-12 px-4" style={{ background: 'var(--background)' }}>
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: "TheYearOfTheCamel, Tajawal, Arial" }}>
           منهجيتنا

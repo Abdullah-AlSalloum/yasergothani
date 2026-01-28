@@ -8,7 +8,7 @@ const features = [
 ];
 
 const CTASection = () => (
-  <section className="py-16 px-4 md:px-12 bg-gradient-to-br from-blue-500 to-blue-300 text-white relative overflow-hidden animate-fade-in">
+  <section className="py-16 px-4 md:px-12 bg-[#113c56] text-white relative overflow-hidden animate-fade-in">
     <div className="max-w-4xl mx-auto text-center">
       <div className="mb-4">
         <span className="inline-block bg-blue-700 text-white text-sm font-bold rounded-full px-4 py-1 mb-2 animate-bounce">عرض خاص</span>

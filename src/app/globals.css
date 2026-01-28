@@ -1,4 +1,3 @@
-
 @import "./fonts.css";
 @import "tailwindcss";
 
@@ -12,6 +11,7 @@
   --secondary-gold: #ca7c29;
   --secondary-green: #1a604f;
 }
+
 
 
 
@@ -33,4 +33,8 @@ body {
   font-family: 'TheYearOfTheCamel', 'Tajawal', Arial, Helvetica, sans-serif;
   direction: rtl;
   text-align: right;
+}
+
+html {
+  scroll-behavior: smooth;
 }
