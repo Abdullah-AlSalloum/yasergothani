@@ -3,8 +3,8 @@ import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Link from "next/link";
 
 const Footer = () => (
-  <footer className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0">
-    <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8">
+  <footer className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0 sm:items-center">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8 text-center md:text-right">
     {/* Logo & About */}
       <div className="flex flex-col items-center md:items-start">
         <img src="/logo.svg" alt="yaser01 logo" className="h-12 mb-2" />
@@ -17,7 +17,7 @@ const Footer = () => (
         </div>
       </div>
       {/* Quick Links */}
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
         <ul className="space-y-2 text-sm">
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
@@ -29,7 +29,7 @@ const Footer = () => (
       </div>
       
       {/* Services */}
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">خدماتنا</h3>
         <ul className="space-y-2 text-sm">
           <li><Link href="#" className="hover:underline">إدارة الحملات</Link></li>
@@ -39,7 +39,7 @@ const Footer = () => (
         </ul>
       </div>
       {/* Contact */}
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">تواصل معنا</h3>
         <ul className="space-y-2 text-sm">
           <li className="flex items-center gap-2"><EnvelopeIcon className="h-5 w-5 text-blue-300" /> info@yaser01.com</li>
@@ -48,9 +48,9 @@ const Footer = () => (
         </ul>
       </div>
     </div>
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2">
-       <div>جميع الحقوق محفوظة &copy; yaser01 2026</div>
-      <div className="flex gap-4">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2 text-center">
+      <div className="w-full md:w-auto">جميع الحقوق محفوظة &copy; yaser01 2026</div>
+      <div className="flex gap-4 w-full md:w-auto justify-center md:justify-end">
         <Link href="#" className="hover:underline">سياسة الخصوصية</Link>
         <Link href="#" className="hover:underline">شروط الخدمة</Link>
       </div>

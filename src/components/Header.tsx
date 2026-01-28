@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 export default function Header() {
@@ -54,42 +55,53 @@ export default function Header() {
         </button>
       </nav>
       {/* Mobile nav menu with animation and delayed unmount */}
-      {showMenu && (
-        <>
-          {/* Overlay closes pointer-events immediately on close */}
-          {menuOpen && (
-            <div
-              className="md:hidden fixed inset-0 z-50 bg-black/30 opacity-100 transition-opacity duration-300 pointer-events-auto"
-              onClick={() => setMenuOpen(false)}
-              aria-label="إغلاق القائمة عند النقر بالخارج"
-            />
-          )}
-          {/* Menu animates out visually, but overlay is gone */}
-          <div
-            className={`md:hidden fixed top-15 right-0 left-0 z-50 bg-[#11425C] px-4 pt-6 pb-6 shadow-lg transition-all duration-300
-              ${menuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-8 opacity-0 pointer-events-none'}`}
-            style={{ transitionProperty: 'opacity, transform' }}
-          >
-            <ul className="flex flex-col gap-2 text-white text-lg">
-              <li>
-                <Link href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</Link>
-              </li>
-              <li>
-                <Link href="#calltoaction" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</Link>
-              </li>
-              <li>
-                <Link href="#about" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>من نحن</Link>
-              </li>
-              <li>
-                <Link href="#tools" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>أدوات متطورة</Link>
-              </li>
-              <li>
-                <Link href="#resources" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>مصادر مجانية</Link>
-              </li>
-            </ul>
-          </div>
-        </>
-      )}
+      <AnimatePresence>
+        {showMenu && (
+          <>
+            {/* Overlay closes pointer-events immediately on close */}
+            {menuOpen && (
+              <motion.div
+                key="overlay"
+                className="md:hidden fixed inset-0 z-50 bg-black/30 pointer-events-auto"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={() => setMenuOpen(false)}
+                aria-label="إغلاق القائمة عند النقر بالخارج"
+              />
+            )}
+            {/* Animated mobile menu */}
+            <motion.div
+              key="menu"
+              className="md:hidden fixed top-15 right-0 left-0 z-50 bg-[#11425C] px-4 pt-6 pb-6 shadow-lg"
+              initial={{ y: -40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 32, duration: 0.35 }}
+              style={{ transitionProperty: 'opacity, transform' }}
+            >
+              <ul className="flex flex-col gap-2 text-white text-lg">
+                <li>
+                  <Link href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</Link>
+                </li>
+                <li>
+                  <Link href="#calltoaction" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</Link>
+                </li>
+                <li>
+                  <Link href="#about" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>من نحن</Link>
+                </li>
+                <li>
+                  <Link href="#tools" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>أدوات متطورة</Link>
+                </li>
+                <li>
+                  <Link href="#resources" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>مصادر مجانية</Link>
+                </li>
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
