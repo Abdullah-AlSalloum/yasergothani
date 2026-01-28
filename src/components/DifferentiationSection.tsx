@@ -22,7 +22,7 @@ const DifferentiationSection = () => {
         </h2>
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-center text-green-700">نحن</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">نحن</h3>
             <div className="flex flex-col gap-6">
               {usCards.map((card, idx) => (
                 <div
@@ -36,7 +36,7 @@ const DifferentiationSection = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-center text-orange-700">السوق</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">السوق</h3>
             <div className="flex flex-col gap-6">
               {marketCards.map((card, idx) => (
                 <div

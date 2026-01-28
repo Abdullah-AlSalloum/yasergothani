@@ -20,15 +20,18 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-blue px-2 sm:px-2 py-8 sm:py-10">
-      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
-        {/* Hero Content */}
-        <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
-          <span className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-2 font-bold shadow-sm backdrop-blur-lg">
-            {/* Star Icon (Heroicons outline) */}
-                <AutoAwesomeIcon className="w-5 h-5 text-yellow-400" />            
-            مهندس الإيرادات الرقمية
-          </span>
+    <>
+      <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-blue px-2 sm:px-2 py-8 sm:py-10">
+        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
+          {/* Hero Content */}
+          <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
+            <span
+              className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-2 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
+            >
+              {/* Star Icon (Heroicons outline) */}
+              <AutoAwesomeIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
+              مهندس الإيرادات الرقمية
+            </span>
           <div className="relative min-h-[3.5em] w-full md:mb-15">
             {HERO_TITLES.map((title, idx) => (
               <h1
@@ -139,12 +142,31 @@ export default function HeroSection() {
             <KeyboardArrowDownIcon fontSize="inherit" />
         </span>
       </div>
-      <style jsx global>{`
+      <style jsx>{`
+        @keyframes hero-bounce {
+          0%, 100% { transform: translateY(0); }
+          20% { transform: translateY(-6px) scale(1.04); }
+          40% { transform: translateY(0); }
+        }
+        .animate-hero-bounce {
+          animation: hero-bounce 2.2s infinite;
+        }
+        @keyframes spin-sparkle {
+          0% { transform: rotate(-10deg) scale(1); }
+          10% { transform: rotate(0deg) scale(1.15); }
+          20% { transform: rotate(10deg) scale(1.1); }
+          30% { transform: rotate(0deg) scale(1); }
+          100% { transform: rotate(-10deg) scale(1); }
+        }
+        .animate-spin-sparkle {
+          animation: spin-sparkle 2.2s infinite;
+        }
         @keyframes arrow-bounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(18px); }
         }
       `}</style>
     </section>
+    </>
   );
 }
