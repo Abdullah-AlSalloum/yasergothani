@@ -8,10 +8,10 @@ const features = [
 ];
 
 const CTASection = () => (
-  <section className="py-16 px-4 md:px-12 bg-[#113c56] text-white relative overflow-hidden animate-fade-in">
+  <section id="calltoaction" className="py-16 px-4 md:px-12 bg-[#113c56] text-white relative overflow-hidden animate-fade-in">
     <div className="max-w-4xl mx-auto text-center">
       <div className="mb-4">
-        <span className="inline-block bg-blue-700 text-white text-sm font-bold rounded-full px-4 py-1 mb-2 animate-bounce">عرض خاص</span>
+        <span className="inline-block bg-[#fcd410] text-white text-sm font-bold rounded-full px-4 py-1 mb-2 animate-bounce">عرض خاص</span>
         <h2 className="text-3xl md:text-4xl font-extrabold mb-3 animate-fade-in-up" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
           ابدأ رحلتك التسويقية معنا اليوم
         </h2>

@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-// Tailwind Heroicons (outline)
-// https://heroicons.com/
+import Link from "next/link";
 
 const HERO_TITLES = [
   "نحوّل تواجدك الرقمي إلى آلة مبيعات",
@@ -46,7 +45,7 @@ export default function HeroSection() {
             حلول تسويق رقمي متكاملة تبدأ بالتشخيص، تمر بالتنفيذ الاحترافي، وتنتهي بأرقام واضحة تساعدك على النمو بثقة.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-            <a
+            <Link
               href="#book"
               className="flex-1 group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
@@ -55,13 +54,13 @@ export default function HeroSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
               </svg>
               احصل على جلسة استراتيجية مجانية
-            </a>
-            <a
+            </Link>
+            <Link
               href="#results"
               className="flex-1 border border-white/60 text-white font-bold py-3 rounded-lg text-center hover:bg-white/10 transition"
             >
               اطّلع على نتائجنا
-            </a>
+            </Link>
           </div>
           <div className="flex flex-row gap-4 sm:gap-12 mt-4 sm:mt-6 w-full justify-center md:justify-start">
             <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">

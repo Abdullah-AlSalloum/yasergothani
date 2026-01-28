@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import DarkVariantExample from "./ServiceCarousel";
 import CloseIcon from '@mui/icons-material/Close';
-
+import Link from "next/link";
 const services = [
 		{
 			title: "استشارات تسويقية متخصصة",
@@ -47,7 +47,7 @@ const SolutionsSection: React.FC = () => {
 	const [closingCarousel, setClosingCarousel] = useState(false);
 
 	return (
-		<section className="w-full py-16 px-4" style={{ background: '#113c56' }}>
+		<section id="solutions" className="w-full py-16 px-4" style={{ background: '#113c56' }}>
 			<div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
 				<h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial' }}>
 					حلول تسويق رقمية شاملة

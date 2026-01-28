@@ -9,7 +9,7 @@ const points = [
 ];
 
 const IPProtectionSection = () => (
-  <section className="py-16 px-4 md:px-12 bg-[var(--background)] text-[#113c56]">
+  <section id="ip-protection" className="py-16 px-4 md:px-12 bg-[var(--background)] text-[#113c56]">
     <div className="w-[90vw] mx-auto">
       <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200 relative overflow-hidden">
         <Snowfall color="#113c56" speed={[0.2, 0.5]} style={{ position: 'absolute', inset: 0, zIndex: 0 }} />

@@ -14,7 +14,7 @@ const reassurance = [
 ];
 
 const HowWeWorkSection = () => (
-  <section className="py-16 px-4 md:px-12 bg-[#113c56] text-white">
+  <section id="howwework" className="py-16 px-4 md:px-12 bg-[#113c56] text-white">
     <div className="max-w-4xl mx-auto">
       <div className="relative">
         <div className="absolute inset-0 pointer-events-none z-0 animate-pulse-sparkle">

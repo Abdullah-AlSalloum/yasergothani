@@ -36,7 +36,7 @@ export default function ProblemSection() {
   }, [visible, questions.length]);
 
   return (
-    <section className="w-full bg-primary-light py-12 px-0">
+    <section id="problem" className="w-full bg-primary-light py-12 px-0">
       <div className="w-full flex flex-col items-center text-center gap-8">
         {/* العنوان */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: "TheYearOfTheCamel, Tajawal, Arial" }}>

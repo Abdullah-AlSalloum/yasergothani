@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 export default function Header() {
@@ -25,19 +26,19 @@ export default function Header() {
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
           <ul className="hidden md:flex flex-row-reverse gap-2 text-white text-lg">
             <li>
-              <a href="#methodology" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</a>
+              <Link href="#methodology" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</Link>
             </li>
             <li>
-              <a href="#contact" className="block px-4 py-2 rounded transition hover:bg-white/20">اتصل بنا</a>
+              <Link href="#calltoaction" className="block px-4 py-2 rounded transition hover:bg-white/20">اتصل بنا</Link>
             </li>
             <li>
-              <a href="#about" className="block px-4 py-2 rounded transition hover:bg-white/20">من نحن</a>
+              <Link href="#about" className="block px-4 py-2 rounded transition hover:bg-white/20">من نحن</Link>
             </li>
             <li>
-              <a href="#tools" className="block px-4 py-2 rounded transition hover:bg-white/20">أدوات متطورة</a>
+              <Link href="#tools" className="block px-4 py-2 rounded transition hover:bg-white/20">أدوات متطورة</Link>
             </li>
             <li>
-              <a href="#resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</a>
+              <Link href="#resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</Link>
             </li>
           </ul>
         </div>
@@ -71,19 +72,19 @@ export default function Header() {
           >
             <ul className="flex flex-col gap-2 text-white text-lg">
               <li>
-                <a href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</a>
+                <Link href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</Link>
               </li>
               <li>
-                <a href="#contact" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</a>
+                <Link href="#calltoaction" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</Link>
               </li>
               <li>
-                <a href="#about" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>من نحن</a>
+                <Link href="#about" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>من نحن</Link>
               </li>
               <li>
-                <a href="#tools" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>أدوات متطورة</a>
+                <Link href="#tools" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>أدوات متطورة</Link>
               </li>
               <li>
-                <a href="#resources" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>مصادر مجانية</a>
+                <Link href="#resources" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>مصادر مجانية</Link>
               </li>
             </ul>
           </div>
