@@ -10,6 +10,7 @@ import DifferentiationSection from "@/components/DifferentiationSection";
 import ProofSection from "@/components/ProofSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import IPProtectionSection from "@/components/IPProtectionSection";
+import CTASection from "@/components/CTASection";
 
 
 
@@ -25,5 +26,6 @@ export default function Home() {
     <ProofSection />
     <HowWeWorkSection />
     < IPProtectionSection />
+    <CTASection />
   </>;
 }
