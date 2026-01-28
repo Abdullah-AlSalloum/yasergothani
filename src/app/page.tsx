@@ -9,6 +9,7 @@ import SolutionsSection from "@/components/SolutionsSection";
 import DifferentiationSection from "@/components/DifferentiationSection";
 import ProofSection from "@/components/ProofSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
+import IPProtectionSection from "@/components/IPProtectionSection";
 
 
 
@@ -23,5 +24,6 @@ export default function Home() {
     <DifferentiationSection />
     <ProofSection />
     <HowWeWorkSection />
+    < IPProtectionSection />
   </>;
 }
