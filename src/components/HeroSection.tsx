@@ -5,10 +5,23 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Link from "next/link";
 
 const HERO_TITLES = [
-  "نحوّل تواجدك الرقمي إلى آلة مبيعات",
-  "نحوّل تواجدك الرقمي إلى محرك إيرادات",
   "نحوّل تواجدك الرقمي إلى مصدر نمو مستدام",
+  "نراقب القراصنة ونحمي حقوق النشر",
+  "ندير حملاتك الإعلانية بعقلية بناء النتائج المستدامة",
+  "نبني مواقع إلكترونية تخدم أهدافك التجارية",
+  "نصنع محتوى ذكي لحساباتك على وسائل التواصل",
+  "نُخصّص نظام CRM متكامل يضع المبيعات تحت السيطرة",
+  "ندير متجرك الإلكتروني لتحقيق نتائج متنامية",
 ];
+const HERO_SUBTITLES = [
+  "حلول تسويق رقمي متكاملة تبدأ بالتشخيص، تمر بالتنفيذ الاحترافي، وتنتهي بأرقام واضحة تساعدك على النمو بثقة.",
+  "نرصد انتهاكات المحتوى، نتابع مصادر القرصنة، ونعمل على حماية حقوقك بأعلى مستوى ممكن عبر المراقبة والتوثيق والإجراءات المتاحة.",
+  "نخطّط ونُدير الحملات الإعلانية على مختلف وسائل التواصل بناءً على أهدافك، مع متابعة الأداء وتحسينه بشكل مستمر.",
+  "نُصمّم ونبني مواقع وصفحات هبوط تركز على الوضوح، سهولة الاستخدام، زيادة المبيعات، ودعم أهدافك التجارية.",
+  "محتوى يخاطب جمهورك بالضبط ويحقق معدلات التفاعل والتحويل أفضل باستخدام استراتيجيات دقيقة تضمن وصول رسالتك التسويقية.",
+  "نُصمّم نظام إدارة علاقات العملاء بشكل يتناسب مع عملك، لتنظيم البيانات، تحسين المتابعة، ودعم قرارات المبيعات.",
+  "نُقدّم إدارة عملية للمتجر عبر ضبط العمليات اليومية وتحسين تجربة الشراء لدعم نمو تدريجي للمبيعات."
+]
 
 export default function HeroSection() {
   const [titleIndex, setTitleIndex] = useState(0);
@@ -44,42 +57,29 @@ export default function HeroSection() {
               </h1>
             ))}
           </div>
-          <p className="text-base sm:text-lg font-medium text-white/90 text-center md:text-right">
-            حلول تسويق رقمي متكاملة تبدأ بالتشخيص، تمر بالتنفيذ الاحترافي، وتنتهي بأرقام واضحة تساعدك على النمو بثقة.
-          </p>
+          
+          <div className="relative min-h-[3.5em] w-full">
+            {HERO_SUBTITLES.map((subtitle, idx) => (
+              <p
+                key={idx}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out text-base sm:text-lg font-medium text-white/90 text-center md:text-right ${idx === titleIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+                aria-hidden={idx !== titleIndex}
+              >
+                {subtitle}
+              </p>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
             <Link
               href="#book"
-              className="flex-1 group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+              className="flex-1 group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
               </svg>
-              احصل على جلسة استراتيجية مجانية
+              ابدأ من هنا
             </Link>
-            <Link
-              href="#results"
-              className="flex-1 border border-white/60 text-white font-bold py-3 rounded-lg text-center hover:bg-white/10 transition"
-            >
-              اطّلع على نتائجنا
-            </Link>
-          </div>
-          <div className="flex flex-row gap-4 sm:gap-12 mt-4 sm:mt-6 w-full justify-center md:justify-start">
-            <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
-              <span className="text-xl sm:text-2xl font-bold">2.5x</span>
-              <span className="text-s text-white/80 mt-1">
-                متوسط نمو الإيرادات
-              </span>
-            </div>
-            <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
-              <span className="text-xl sm:text-2xl font-bold">95%</span>
-              <span className="text-s text-white/80 mt-1">معدل نجاح</span>
-            </div>
-            <div className="flex flex-col items-center min-w-[120px] sm:min-w-[140px]">
-              <span className="text-xl sm:text-2xl font-bold">+300</span>
-              <span className="text-s text-white/80 mt-1">عميل ناجح</span>
-            </div>
           </div>
         </div>
         {/* Illustration or Video */}
