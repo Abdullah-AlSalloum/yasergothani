@@ -68,6 +68,18 @@ const ProofSection = () => (
           ))}
         </div>
       </div>
+       <div className="flex justify-center mt-10">
+        <a
+          href="#book"
+          className="group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-6 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+          style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
+          </svg>
+          ابدأ من هنا
+        </a>
+      </div>
     </div>
   </section>
 );
