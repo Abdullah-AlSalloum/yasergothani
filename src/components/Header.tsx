@@ -2,11 +2,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (menuOpen) {
@@ -40,6 +41,16 @@ export default function Header() {
             </li>
             <li>
               <Link href="#resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</Link>
+            </li>
+            <li>
+              <Link
+                href="/ip-protection"
+                className={`block px-4 py-2 rounded transition hover:bg-white/20${
+                  pathname === "/ip-protection" ? " bg-yellow-400 text-primary font-bold" : ""
+                }`}
+              >
+                {"حماية الملكية الفكرية"}
+              </Link>
             </li>
           </ul>
         </div>

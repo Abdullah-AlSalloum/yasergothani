@@ -47,7 +47,7 @@ export default function ProblemSection() {
           {questions.map((q, i) => (
             <li
               key={i}
-              className={`checklist-item flex items-center gap-3 bg-gray-50 border border-primary rounded-lg shadow px-4 py-3 w-full font-bold text-lg text-gray-900 transition-all duration-400 ${visible > i ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+              className={`checklist-item flex items-center gap-3 bg-gray-50 border border-primary rounded-lg shadow px-4 py-3 w-full font-bold text-lg text-gray-900 transition-all duration-200 ${visible > i ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <input type="checkbox" className="form-checkbox h-5 w-5 accent-[var(--secondary-blue)]" disabled />

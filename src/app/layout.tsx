@@ -1,7 +1,7 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "../components/ClientLayout";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Yasir Gothan",
@@ -17,6 +17,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className="antialiased">
         <ClientLayout>{children}</ClientLayout>
+        <Footer />
       </body>
     </html>
   );

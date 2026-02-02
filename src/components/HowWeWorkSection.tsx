@@ -1,11 +1,11 @@
 import React from "react";
 
 const steps = [
-  { label: "جلسة تشخيص", desc: "فهم مشكلتك وتحديد أولوياتك" },
-  { label: "استراتيجية مخصصة", desc: "وضع خطة تناسب احتياجك" },
-  { label: "تنفيذ", desc: "بدء العمل وتحقيق النتائج" },
-  { label: "تقارير", desc: "متابعة الأداء وقياس النتائج" },
-  { label: "تحسين مستمر", desc: "تطوير وتحسين دائم لتحقيق أفضل عائد" },
+  { label: "التشخيص والتحليل", desc: "نحلل حساباتك، جمهورك، سوقك، وأداءك الحالي بدقة لنفهم أين أنت فعلًا." },
+  { label: "بناء الاستراتيجية", desc: "نضع خطة واضحة بناء على أهدافك تشمل المحتوى، الإعلانات، التحويل، وحتى المبيعات." },
+  { label: "التنفيذ الاحترافي", desc: "فريق متخصص يتولى التنفيذ الكامل وفق المعايير والاستراتيجية المعتمدة." },
+  { label: "القياس والتقارير", desc: "نقيس الأداء بالأرقام، ونقدم تقارير تفصيلية تساعدك على اتخاذ قرارات صحيحة." },
+  { label: "التحسين والنمو", desc: "نطوّر الأداء باستمرار لتحقيق نتائج مستدامة لا مؤقتة." },
 ];
 
 const reassurance = [
@@ -42,18 +42,17 @@ const HowWeWorkSection = () => (
               </div>
               <div className="mt-8">
                 <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow">
-                  احجز استشارة أو منهجية مجانية
+                  ابدأ من هنا 
                 </button>
               </div>
-            </div>
-            <div className="md:w-1/2 flex flex-col gap-4">
-              <div className="bg-white/10 rounded-xl p-6 text-white text-lg font-semibold shadow">
-                <span className="block mb-2 text-blue-200 font-bold">طمأنة</span>
-                <ul className="list-disc list-inside">
-                  {reassurance.map((item, idx) => (
-                    <li key={idx} className="mb-2">{item}</li>
-                  ))}
-                </ul>
+              <div className="mt-4">
+                <div className="bg-white/10 rounded-xl p-6 text-white text-lg font-semibold shadow">
+                  <ul className="list-disc list-inside">
+                    {reassurance.map((item, idx) => (
+                      <li key={idx} className="mb-2">{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

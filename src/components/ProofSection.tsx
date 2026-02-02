@@ -1,11 +1,12 @@
 import React from "react";
 import { StarIcon, ChartBarIcon, UsersIcon, RocketLaunchIcon } from '@heroicons/react/24/solid';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 
 const stats = [
-  { icon: <StarIcon className="h-8 w-8 text-pink-500" />, value: "5/5", label: "تقييم العملاء" },
+  { icon: <StarIcon className="h-8 w-8 text-pink-500" />, value: "10/8.5", label: "تقييم العملاء" },
   { icon: <ChartBarIcon className="h-8 w-8 text-red-500" />, value: "300%", label: "مؤشر نمو المبيعات" },
   { icon: <RocketLaunchIcon className="h-8 w-8 text-green-500" />, value: "200+", label: "حملة ناجحة" },
-  { icon: <UsersIcon className="h-8 w-8 text-blue-500" />, value: "100+", label: "عميل إيجابي" },
+  { icon: <WorkspacePremiumIcon className="!h-8 !w-8 text-blue-500" />, value: "10+", label: "سنوات خبرة" },
 ];
 
 const testimonials = [
@@ -48,7 +49,7 @@ const ProofSection = () => (
           </div>
         ))}
       </div>
-      <div className="bg-[var(--secondary-blue)] rounded-2xl p-8 md:p-12">
+      {/* <div className="bg-[var(--secondary-blue)] rounded-2xl p-8 md:p-12">
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
           ماذا يقول عملاؤنا؟
         </h3>
@@ -67,7 +68,7 @@ const ProofSection = () => (
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
        <div className="flex justify-center mt-10">
         <a
           href="#book"

@@ -1,6 +1,8 @@
 import React from "react";
 import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Link from "next/link";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => (
   <footer className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0 sm:items-center">
@@ -53,11 +55,26 @@ const Footer = () => (
       {/* Contact */}
       <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">تواصل معنا</h3>
-        <ul className="space-y-2 text-sm">
-          <li className="flex items-center gap-2"><EnvelopeIcon className="h-5 w-5 text-blue-300" /> info@yaser01.com</li>
-          <li className="flex items-center gap-2"><PhoneIcon className="h-5 w-5 text-blue-300" /> +966 50 000 0000</li>
-          <li className="flex items-center gap-2"><ClockIcon className="h-5 w-5 text-blue-300" /> الأحد - الخميس، 9 صباحاً - 6 مساءً</li>
-        </ul>
+        <div className="flex flex-col items-center gap-3 mt-2">
+          <a
+            href="https://wa.me/963958956397"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 text-white font-extrabold py-2 px-20 rounded-xl text-center shadow-xl hover:from-green-500 hover:to-green-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
+            style={{ boxShadow: '0 4px 24px 0 rgba(52, 211, 153, 0.18)' }}
+          >
+            <i className="fab fa-whatsapp text-2xl"></i>
+            واتساب
+          </a>
+          <div className="flex gap-8 justify-center">
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-200">
+              <FacebookIcon fontSize="large" />
+            </a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-200">
+              <InstagramIcon fontSize="large" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2 text-center">

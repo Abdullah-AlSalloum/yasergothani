@@ -11,7 +11,6 @@ import ProofSection from "@/components/ProofSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import IPProtectionSection from "@/components/IPProtectionSection";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 
 
 
@@ -20,14 +19,13 @@ export default function Home() {
     <Snowfall color="#82C3D9" speed={[0.2, 0.5]} />
     <HeroSection />
     <ProblemSection />
-    <MethodologySection />
+    {/* <MethodologySection /> */}
+     <HowWeWorkSection />
     <TargetAudienceSection />
     <SolutionsSection />
-    <DifferentiationSection />
+    {/* <DifferentiationSection /> */}
     <ProofSection />
-    <HowWeWorkSection />
-    < IPProtectionSection />
+    {/* < IPProtectionSection /> */}
     <CTASection />
-    <Footer />
   </>;
 }

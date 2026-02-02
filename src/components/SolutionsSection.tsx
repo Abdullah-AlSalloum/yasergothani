@@ -1,283 +1,162 @@
 "use client";
-import React, { useState } from "react";
-import DarkVariantExample from "./ServiceCarousel";
-import CloseIcon from '@mui/icons-material/Close';
 import Link from "next/link";
-const services = [
-		{
-			title: "استشارات تسويقية متخصصة",
-			info: "تقديم استشارات تسويقية مخصصة لحل مشكلاتك وتحقيق أهدافك.",
-			features: ["تحليل الوضع الحالي", "توصيات عملية", "متابعة التنفيذ"],
-			price: "خصيصًا",
-			button: "اكتشف التفاصيل",
-			link: "#",
-		},
-	{
-		title: "إعداد الخطط لوسائل التواصل الاجتماعي",
-		info: "شرح منهجي للخطط الاستراتيجية والتكتيكية مع أمثلة عملية.",
-		features: [
-			"خطة استراتيجية",
-			"خطة تكتيكية",
-			"أمثلة عملية",
-		],
-		price: "خصيصًا",
-		button: "اكتشف التفاصيل",
-		link: "#",
-	},
-	{
-		title: "كتابة المحتوى",
-		info: "عرض لأنواع المحتوى المُقدم وأهميته في بناء العلامة التجارية.",
-		features: [
-			"أنواع محتوى متعددة",
-			"تعزيز العلامة التجارية",
-			"كتابة احترافية",
-		],
-		price: "خصيصًا",
-		button: "اكتشف التفاصيل",
-		link: "#",
-	},
-	// ... add the rest of your services here in the same format ...
-];
+import React from "react";
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import GavelIcon from '@mui/icons-material/Gavel';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import WebIcon from '@mui/icons-material/Web';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
+const services = [
+	{
+		title: "نظام النمو الرقمي المستدام",
+		info: "تحويل التواجد الرقمي إلى منظومة نمو واضحة يمكن متابعتها وقياسها واتخاذ قرارات دقيقة بناءً على نتائجها.",
+		features: ["تشخيص دقيق","استراتيجية واضحة", "تنفيذ منظم", "قياس بالأرقام","تحسين مستمر"],
+		icon: <TrendingUpIcon fontSize="large" style={{ color: 'white' }} />,
+		link: "#",
+	},
+	{
+		title: "حماية الحقوق النشر ومكافحة القرصنة",
+		info: "تقليل خسائر القرصنة والحفاظ على قيمة المحتوى عبر مراقبة مستمرة وتدخّل منظّم يحدّ من انتهاكات حقوق النشر.",
+		features: ["رصد الانتهاكات", "تتبّع المصادر", "توثيق الحالات","تقليل الإنتشار","متابعة مستمرة"],
+		icon: <GavelIcon fontSize="large" style={{ color: 'white' }} />,
+		link: "#",
+	},
+	{
+		title: "إدارة الحملات الإعلانية",
+		info: "تحسين كفاءة الإنفاق الإعلاني وبناء نتائج قابلة للاستمرار من خلال إدارة دقيقة وتحسين متواصل للأداء.",
+		features: ["تحديد الأهداف", "إعداد الحملات", "إطلاق الاإعلانات","تحليل الأداد", "تحسين مستمر"],
+		icon: <CampaignIcon fontSize="large" style={{ color: 'white' }} />,
+		link: "#",
+	},
+	{
+		title: "بناء المواقع وصفحات الهبوط",
+		info: "إنشاء مواقع وصفحات هبوط واضحة وسهلة الاستخدام ترفع معدلات التحويل وتخدم أهداف المبيعات.",
+		features:["تحديد الأهداف","تخطيط الهيكل","تصميم الواجهة","البناء التقني","تحسين التحول"],
+		icon: <WebIcon fontSize="large" style={{ color: 'white' }} />,
+		link: "#",
+	},
+	{
+		title:"إنتاج المحتوى لوسائل التواصل",
+		info:"صناعة محتوى جذاب وذكي يخاطب الجمهور المستهدف بدقة ويُحسّن التفاعل على حساباتك في وسائل التواصل.",
+		features:["تحليل الجمهور","تخطيط المحتوى","إنتاج منظم","نشر مدروس","تطوير مستمر"],
+		icon: <ChatBubbleIcon fontSize="large" style={{ color: 'white' }} />,
+		link:"#",
+	},
+	{
+		title: "تخصيص نظام CRM",
+		info: "تنظيم بيانات العملاء وتحسين المتابعة ودعم قرار فريق المبيعات عبر نظام متكامل ومخصص يناسب نشاطك التجاري.",
+		features:["فهم دورة البيع","تحديد البيانات","إعداد النظام","ربط القنوات","تحسين المتابعة"],
+		icon: <SettingsApplicationsIcon fontSize="large" style={{ color: 'white' }} />,
+		link:"#",
+	},
+	{
+		title: "إدارة المتاجر الإلكترونية",
+		info: "رفع كفاءة المتجر وتحسين تجربة الشراء بما يدعم نموًا تدريجيًا ومستقرًا للمبيعات.",
+		features:["مراجعة الأداء","تنظيم العمليات","تحسين التجربة","متابعة المؤثرات","تطوير تدريجي"],
+		icon: <StorefrontIcon fontSize="large" style={{ color: 'white' }} />,
+		link:"#",
+	},
+];
+const whatsappNumber = "963958956397"; // رقم الواتساب بدون +
+const firstServiceTitle = services[0]?.title || "";
+const whatsappMessage = `السلام عليكم ورحمة الله وبركاته، أنا مهتم بـ (${firstServiceTitle})، كيف سنبدأ ؟`;
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 const SolutionsSection: React.FC = () => {
-	const [open, setOpen] = useState<number | null>(null);
-	const [showCarousel, setShowCarousel] = useState(false);
-	const [closing, setClosing] = useState(false);
-	const [closingCarousel, setClosingCarousel] = useState(false);
-
-	return (
-		<section id="solutions" className="w-full py-16 px-4" style={{ background: '#113c56' }}>
-			<div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
-				<h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial' }}>
-					حلول تسويق رقمية شاملة
-				</h2>
-				<div className="flex flex-wrap justify-center gap-8 mt-8">
-					{services.map((srv, i) => (
-						<div className="plan" key={i}>
-							<div className="inner">
-								<span className="pricing">
-									<span>
-										{srv.price} <small>/ مخصص</small>
-									</span>
-								</span>
-								<p className="title mt-6">{srv.title}</p>
-								<p className="info">{srv.info}</p>
-								<ul className="features">
-									{srv.features.map((feature, idx) => (
-										<li key={idx}>
-											<span className="icon">
-												<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-													<path d="M0 0h24v24H0z" fill="none"></path>
-													<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-												</svg>
-											</span>
-											<span>{feature}</span>
-										</li>
-									))}
-								</ul>
-							</div>
-							<div className="action mt-2 flex flex-col gap-2 sm:flex-row sm:gap-2">
-								<button className="button m-0" onClick={() => setOpen(i)}>إكتشف التفاصيل</button>
-								<button className="button m-0" onClick={() => setShowCarousel(true)}>طلب الخدمة</button>
-							</div>
-							{open === i && (
-								<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => {
-									setClosing(true);
-									setTimeout(() => { setOpen(null); setClosing(false); }, 300);
-								}}>
-									<div className={`popup-card ${closing ? 'animate-zoomin' : 'animate-zoomout'} relative`} onClick={e => e.stopPropagation()}>
-										<button className="absolute right-4 top-4 text-xl font-bold" onClick={() => {
-											setClosing(true);
-											setTimeout(() => { setOpen(null); setClosing(false); }, 300);
-										}}><CloseIcon /></button>
-										<div className="text-2xl font-bold mb-4 mt-4 text-white">{srv.title}</div>
-										<div className="text-base text-white/90 mb-4">{srv.info}</div>
-										<ul className="features mb-4">
-											{srv.features.map((feature, idx) => (
-												<li key={idx}>
-													<span className="icon">
-														<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-															<path d="M0 0h24v24H0z" fill="none"></path>
-															<path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
-														</svg>
-													</span>
-													<span>{feature}</span>
-												</li>
-											))}
-										</ul>
-									</div>
-								</div>
-							)}
-						</div>
-					))}
-				</div>
-
-				{/* Carousel Modal */}
-				{showCarousel && (
-					<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onClick={() => {
-						setClosingCarousel(true);
-						setTimeout(() => { setShowCarousel(false); setClosingCarousel(false); }, 300);
-					}}>
-						<div className={`popup-card ${closingCarousel ? 'animate-zoomin' : 'animate-zoomout'} relative w-full max-w-6xl min-h-[600px]`} onClick={e => e.stopPropagation()}>
-							<button className="absolute right-4 top-4 text-xl font-bold" onClick={() => {
-								setClosingCarousel(true);
-								setTimeout(() => { setShowCarousel(false); setClosingCarousel(false); }, 300);
-							}}><CloseIcon /></button>
-							<DarkVariantExample />
-						</div>
-					</div>
-				)}
-			</div>
-			<style jsx>{`
-				@keyframes zoomout {
-					0% { transform: scale(0.7); opacity: 0; }
-					100% { transform: scale(1); opacity: 1; }
-				}
-				@keyframes zoomin {
-					0% { transform: scale(1); opacity: 1; }
-					100% { transform: scale(1.2); opacity: 0; }
-				}
-				.animate-zoomout {
-					animation: zoomout 0.4s cubic-bezier(.4,2,.3,1) both;
-				}
-				.animate-zoomin {
-					animation: zoomin 0.3s cubic-bezier(.4,2,.3,1) both;
-				}
-				.popup-card {
-					background: linear-gradient(135deg, #113c56 80%, #1a2a3a 100%);
-					border-radius: 24px;
-					box-shadow: 0 8px 32px 0 rgba(44,62,80,0.18);
-					padding: 32px 16px 24px 16px;
-					max-width: 825px;
-					min-width: 320px;
-					min-height: 420px;
-					color: #fff;
-					position: relative;
-				}
-							 .plan {
-								 border-radius: 16px;
-								 box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-								 padding: 10px;
-								 background-color: #fff;
-								 color: #697e91;
-								 max-width: 400px;
-								 min-width: 340px;
-							 }
-							 .plan .inner {
-								 min-height: 440px;
-								 padding: 36px 28px 28px 28px;
-							 }
-				.plan strong {
-					font-weight: 600;
-					color: #425275;
-				}
-				.plan .inner {
-					align-items: center;
-					padding: 20px;
-					padding-top: 40px;
-					background-color: #ecf0ff;
-					border-radius: 12px;
-					position: relative;
-				}
-				.plan .pricing {
-					position: absolute;
-					top: 0;
-					right: 0;
-					background-color: #bed6fb;
-					border-radius: 99em 0 0 99em;
-					display: flex;
-					align-items: center;
-					padding: 0.625em 0.75em;
-					font-size: 1.25rem;
-					font-weight: 600;
-					color: #425475;
-				}
-				.plan .pricing small {
-					color: #707a91;
-					font-size: 0.75em;
-					margin-left: 0.25em;
-				}
-				.plan .title {
-					font-weight: 600;
-					font-size: 1.25rem;
-					color: #425675;
-				}
-				.plan .title + * {
-					margin-top: 0.75rem;
-				}
-				.plan .info + * {
-					margin-top: 1rem;
-				}
-				.plan .features {
-					display: flex;
-					flex-direction: column;
-				}
-				.plan .features li {
-					display: flex;
-					align-items: center;
-					gap: 0.5rem;
-				}
-				.plan .features li + * {
-					margin-top: 0.75rem;
-				}
-				.plan .features .icon {
-					background-color: #1FCAC5;
-					display: inline-flex;
-					align-items: center;
-					justify-content: center;
-					color: #fff;
-					border-radius: 50%;
-					width: 20px;
-					height: 20px;
-				}
-				.plan .features .icon svg {
-					width: 14px;
-					height: 14px;
-				}
-				.plan .features + * {
-					margin-top: 1.25rem;
-				}
-				.plan .action {
-					width: 100%;
-					display: flex;
-					align-items: center;
-					justify-content: end;
-				}
-				.plan .button {
-					background-color: #6558d3;
-					border-radius: 6px;
-					color: #fff;
-					font-weight: 500;
-					font-size: 1.125rem;
-					text-align: center;
-					border: 0;
-					outline: 0;
-					width: 100%;
-					padding: 0.625em 0.75em;
-					text-decoration: none;
-				}
-				.plan .button:hover {
-					background-color: #5346c8;
-				}
-				.plan .button:active {
-					background-color: #4133B7;
-				}
-			`}</style>
-			<div className="flex justify-center mt-10">
-				<a
-					href="#book"
-					className="group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-6 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-					style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
-					</svg>
-					ابدأ من هنا
-				</a>
-			</div>
-		</section>
-	);
+  return (
+    <section id="solutions" className="w-full py-16 px-4" style={{ background: '#113c56' }}>
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial' }}>
+          حلول متكاملة لنمو أعمالك
+        </h2>
+        <div
+          className="flex gap-6 overflow-x-auto pb-4 w-full custom-scrollbar"
+          style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'thin', scrollbarColor: '#facc15 #113c56' }}
+        >
+          {services.map((srv, i) => {
+            const whatsappMessage = `السلام عليكم ورحمة الله وبركاته، أنا مهتم بـ (${srv.title})، كيف سنبدأ ؟`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            return (
+              <div
+                key={i}
+                className="flex-shrink-0 w-[320px] sm:w-[320px] bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col items-end text-right relative"
+                style={{ minHeight: 440, paddingTop: 56, paddingBottom: 64, width: '90vw', maxWidth: 320 }}
+              >
+                <div className="absolute right-6 top-6 z-10">
+                  <div
+                    className="flex items-center justify-center w-14 h-14 mb-4"
+                    style={{ background: i % 2 === 0 ? '#22c55e' : '#2563eb', borderRadius: '20px' }}
+                  >
+                    {srv.icon}
+                  </div>
+                </div>
+                <div className="w-full flex flex-col items-end mt-10">
+                  <div
+                    className="font-bold text-xl text-gray-900 mb-2 w-full text-right"
+                    style={{ fontFamily: 'Tajawal, Arial' }}
+                  >
+                    {srv.title}
+                  </div>
+                  <div className="text-gray-500 text-base mb-4 min-h-[48px] w-full text-right">{srv.info}</div>
+                  <ul className="flex flex-col gap-2 items-end w-full mb-4">
+                    {srv.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-gray-700 text-right w-full justify-end"
+                      >
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100 text-green-600">
+                          <svg
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                          >
+                            <path d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="flex-1">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group absolute left-1/2 -translate-x-1/2 bottom-4 w-[90%] inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                    style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
+                    </svg>
+                    تواصل واتساب
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <style jsx>{`
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    background: #113c56;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #facc15;
+    border-radius: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #113c56;
+  }
+`}</style>
+      </div>
+      
+    </section>
+  );
 }
 
 export default SolutionsSection;
