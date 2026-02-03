@@ -25,39 +25,69 @@ const HERO_SUBTITLES = [
 
 export default function HeroSection() {
   const [titleIndex, setTitleIndex] = useState(0);
+  const [typedWords, setTypedWords] = useState(0);
+  const [charCount, setCharCount] = useState(0);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((i) => (i + 1) % HERO_TITLES.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    setTypedWords(0);
+    setCharCount(0);
+    const words = HERO_TITLES[titleIndex].split(' ');
+    let wordIdx = 0;
+    let charIdx = 0;
+    let finished = false;
+    const typeInterval = setInterval(() => {
+      if (wordIdx < words.length) {
+        if (charIdx < words[wordIdx].length) {
+          setCharCount(charIdx + 1);
+          charIdx++;
+        } else {
+          setTypedWords(wordIdx + 1);
+          charIdx = 0;
+          wordIdx++;
+          setCharCount(0);
+        }
+      } else if (!finished) {
+        finished = true;
+        setTimeout(() => {
+          setTitleIndex((i) => (i + 1) % HERO_TITLES.length);
+        }, 2000); // wait 2 seconds before next title
+        clearInterval(typeInterval);
+      }
+    }, 80); // word typing speed
+    return () => clearInterval(typeInterval);
+  }, [titleIndex]);
 
   return (
-    <>
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-blue px-2 sm:px-2 py-8 sm:py-10">
-        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
-          {/* Hero Content */}
-          <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
-            <span
-              className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-2 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
-            >
-              {/* Star Icon (Heroicons outline) */}
-              <AutoAwesomeIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
-              مهندس الإيرادات الرقمية
-            </span>
+    <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-blue px-2 sm:px-2 py-8 sm:py-10">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
+        {/* Hero Content */}
+        <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
+          <span
+            className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-2 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
+          >
+            <AutoAwesomeIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
+            مهندس الإيرادات الرقمية
+          </span>
           <div className="relative min-h-[3.5em] w-full md:mb-15">
-            {HERO_TITLES.map((title, idx) => (
-              <h1
-                key={idx}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug text-center md:text-right ${idx === titleIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
-                style={{ fontFamily: "TheYearOfTheCamel, Tajawal, Arial" }}
-                aria-hidden={idx !== titleIndex}
-              >
-                {title}
-              </h1>
-            ))}
+            {HERO_TITLES.map((title, idx) => {
+              if (idx !== titleIndex) return null;
+              const words = title.split(' ');
+              const visible = words.slice(0, typedWords).join(' ');
+              const currentWord = words[typedWords] || '';
+              return (
+                <h1
+                  key={idx}
+                  className="absolute inset-0 transition-opacity duration-800 ease-in-out text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug text-center md:text-right opacity-100 z-10"
+                  style={{ fontFamily: "TheYearOfTheCamel, Tajawal, Arial" }}
+                >
+                  {visible}
+                  {typedWords > 0 && ' '}
+                  {currentWord.slice(0, charCount)}
+                  <span className="animate-pulse">|</span>
+                </h1>
+              );
+            })}
           </div>
-          
           <div className="relative min-h-[3.5em] w-full">
             {HERO_SUBTITLES.map((subtitle, idx) => (
               <p
@@ -71,7 +101,7 @@ export default function HeroSection() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
             <Link
-              href="#book"
+              href="#solutions"
               className="flex-1 group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               style={{ boxShadow: '0 4px 24px 0 rgba(252, 212, 16, 0.18)' }}
             >
@@ -106,9 +136,8 @@ export default function HeroSection() {
             {/* Stats cards */}
             <div className="flex w-[96%] gap-4 sm:gap-8 mb-8 md:mt-30 sm:mt-0 flex-col sm:flex-row">
               {/* Card 1 */}
-              <div className="flex-1 bg-white/20  ite/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md mb-4 sm:mb-0">
+              <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md mb-4 sm:mb-0">
                 <span className="absolute top-3 right-4 text-green-400">
-                  {/* Dollar Icon (Heroicons outline) */}
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m0 0c-2.485 0-4.5-1.567-4.5-3.5S9.515 11 12 11s4.5 1.567 4.5 3.5S14.485 18 12 18z" />
                   </svg>
@@ -121,7 +150,6 @@ export default function HeroSection() {
               {/* Card 2 */}
               <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md">
                 <span className="absolute top-3 right-4 text-green-400">
-                  {/* Arrow Trending Up (Heroicons outline) */}
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.5 4.5L21.75 6" />
                   </svg>
@@ -167,6 +195,5 @@ export default function HeroSection() {
         }
       `}</style>
     </section>
-    </>
   );
 }

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import GavelIcon from '@mui/icons-material/Gavel';
+import SecurityIcon from '@mui/icons-material/Security';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import WebIcon from '@mui/icons-material/Web';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
@@ -21,7 +21,7 @@ const services = [
 		title: "حماية الحقوق النشر ومكافحة القرصنة",
 		info: "تقليل خسائر القرصنة والحفاظ على قيمة المحتوى عبر مراقبة مستمرة وتدخّل منظّم يحدّ من انتهاكات حقوق النشر.",
 		features: ["رصد الانتهاكات", "تتبّع المصادر", "توثيق الحالات","تقليل الإنتشار","متابعة مستمرة"],
-		icon: <GavelIcon fontSize="large" style={{ color: 'white' }} />,
+		icon: <SecurityIcon fontSize="large" style={{ color: 'white' }} />,
 		link: "#",
 	},
 	{
@@ -133,7 +133,7 @@ const SolutionsSection: React.FC = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3" />
                     </svg>
-                    تواصل واتساب
+                    ابدأ من هنا
                   </a>
                 </div>
               </div>

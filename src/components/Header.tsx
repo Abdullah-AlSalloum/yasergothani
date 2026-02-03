@@ -27,20 +27,23 @@ export default function Header() {
         {/* Nav links: right on desktop, left on mobile */}
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
           <ul className="hidden md:flex flex-row-reverse gap-2 text-white text-lg">
+             <li>
+              <Link href="/" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الرئيسية</Link>
+            </li>
             <li>
-              <Link href="#methodology" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</Link>
+              <Link href="#solutions" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</Link>
             </li>
             <li>
               <Link href="#calltoaction" className="block px-4 py-2 rounded transition hover:bg-white/20">اتصل بنا</Link>
             </li>
             <li>
-              <Link href="#about" className="block px-4 py-2 rounded transition hover:bg-white/20">من نحن</Link>
+              <Link href="/about" className="block px-4 py-2 rounded transition hover:bg-white/20">من نحن</Link>
             </li>
             <li>
               <Link href="#tools" className="block px-4 py-2 rounded transition hover:bg-white/20">أدوات متطورة</Link>
             </li>
             <li>
-              <Link href="#resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</Link>
+              <Link href="/resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</Link>
             </li>
             <li>
               <Link
