@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Link from "next/link";
@@ -36,9 +37,9 @@ const Footer = () => (
         <ul className="space-y-2 text-sm">
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
           <li><Link href="#calltoaction" className="hover:underline">اتصل بنا</Link></li>
-          <li><Link href="#about" className="hover:underline">من نحن</Link></li>
+          <li><Link href="/mystory" className="hover:underline">قصتي</Link></li>
           <li><Link href="#tools" className="hover:underline">أدوات متطورة</Link></li>
-          <li><Link href="#resources" className="hover:underline">مصادر مجانية</Link></li>
+          <li><Link href="/resources" className="hover:underline">مصادر مجانية</Link></li>
         </ul>
       </div>
       
