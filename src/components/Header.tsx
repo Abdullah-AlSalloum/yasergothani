@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -23,36 +23,66 @@ export default function Header() {
     <header className="bg-[#11425C] py-4 sticky top-0 z-50">
       <nav className="container mx-auto flex items-center justify-between max-w-6xl px-4 flex-row-reverse md:flex-row">
         {/* Logo: left on desktop, right on mobile */}
-        <div className="text-white text-2xl font-bold whitespace-nowrap order-1 md:order-3 md:ml-auto">اسم الموقع</div>
+        <div className="text-white text-2xl font-bold whitespace-nowrap order-1 md:order-3 md:ml-auto">
+          اسم الموقع
+        </div>
         {/* Nav links: right on desktop, left on mobile */}
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
           <ul className="hidden md:flex flex-row-reverse gap-2 text-white text-lg">
-             <li>
-              <Link href="/" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الرئيسية</Link>
+            <li>
+              <Link
+                href="/"
+                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
+              >
+                الرئيسية
+              </Link>
             </li>
             <li>
-              <Link href="#solutions" className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth">الخدمات</Link>
+              <Link
+                href="#solutions"
+                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
+              >
+                الخدمات
+              </Link>
             </li>
             <li>
-              <Link href="#calltoaction" className="block px-4 py-2 rounded transition hover:bg-white/20">اتصل بنا</Link>
+              <Link
+                href="#calltoaction"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                اتصل بنا
+              </Link>
             </li>
             <li>
-              <Link href="/about" className="block px-4 py-2 rounded transition hover:bg-white/20">من نحن</Link>
+              <Link
+                href="/about"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                من نحن
+              </Link>
             </li>
             <li>
-              <Link href="#tools" className="block px-4 py-2 rounded transition hover:bg-white/20">أدوات متطورة</Link>
+              <Link
+                href="#tools"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                أدوات متطورة
+              </Link>
             </li>
             <li>
-              <Link href="/resources" className="block px-4 py-2 rounded transition hover:bg-white/20">مصادر مجانية</Link>
+              <Link
+                href="/resources"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                مصادر مجانية
+              </Link>
             </li>
             <li>
               <Link
                 href="/ip-protection"
-                className={`block px-4 py-2 rounded transition hover:bg-white/20${
-                  pathname === "/ip-protection" ? " bg-yellow-400 text-primary font-bold" : ""
-                }`}
+                className="block px-4 py-2 rounded transition hover:bg-white/20"   
               >
-                {"حماية الملكية الفكرية"}
+                حماية الملكية الفكرية
               </Link>
             </li>
           </ul>
@@ -63,8 +93,19 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="فتح القائمة"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+            />
           </svg>
         </button>
       </nav>
@@ -92,24 +133,77 @@ export default function Header() {
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -40, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 400, damping: 32, duration: 0.35 }}
-              style={{ transitionProperty: 'opacity, transform' }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 32,
+                duration: 0.35,
+              }}
+              style={{ transitionProperty: "opacity, transform" }}
             >
               <ul className="flex flex-col gap-2 text-white text-lg">
                 <li>
-                  <Link href="#methodology" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>الخدمات</Link>
+                  <Link
+                    href="/"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    الرئيسية
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#calltoaction" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>اتصل بنا</Link>
+                  <Link
+                    href="#methodology"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    الخدمات
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#about" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>من نحن</Link>
+                  <Link
+                    href="#calltoaction"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    اتصل بنا
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#tools" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>أدوات متطورة</Link>
+                  <Link
+                    href="#about"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    من نحن
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#resources" className="block w-full px-4 py-2 rounded transition hover:bg-white/20" onClick={() => setMenuOpen(false)}>مصادر مجانية</Link>
+                  <Link
+                    href="#tools"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    أدوات متطورة
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#resources"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    مصادر مجانية
+                  </Link>
+                </li>
+                 <li>
+                  <Link
+                    href="/ip-protection"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    حماية الملكية الفكرية
+                  </Link>
                 </li>
               </ul>
             </motion.div>
