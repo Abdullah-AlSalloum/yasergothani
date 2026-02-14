@@ -4,9 +4,10 @@ import React from "react";
 const categories = [
   "الشركات والمؤسسات",
   "الناشرين والمؤلفين",
-  "الأفراد والمدربين",
+  "الشخصيات العلمية",
   "المتاجر الإلكترونية",
   "المشاريع الرقمية",
+  "صناع المحتوى الهادف",
 ];
 
 export default function TargetAudienceSection() {

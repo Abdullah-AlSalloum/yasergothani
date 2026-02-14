@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import EngineeringIcon from '@mui/icons-material/Engineering';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Link from "next/link";
 
@@ -62,12 +62,7 @@ export default function HeroSection() {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
         {/* Hero Content */}
         <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
-          <span
-            className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-2 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
-          >
-            <AutoAwesomeIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
-            مهندس الإيرادات الرقمية
-          </span>
+          
           <div className="relative min-h-[3.5em] w-full md:mb-15">
             {HERO_TITLES.map((title, idx) => {
               if (idx !== titleIndex) return null;
@@ -113,53 +108,62 @@ export default function HeroSection() {
           </div>
         </div>
         {/* Illustration or Video */}
+        
         <div className="flex-1 flex justify-center w-full mb-6 md:mb-0">
-          <div
-            className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[380px] md:min-h-[420px] p-0 flex flex-col items-center"
-            style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)" }}
-          >
-            {/* Upper card section */}
-            <div className="w-[96%] bg-white/10 rounded-xl mt-6 mb-4 flex flex-col items-center">
-              {/* Browser bar with circles */}
-              <div className="w-full h-4 flex items-center gap-2 pt-5 pb-5 pr-2">
-                <span className="inline-block w-3 h-3 rounded-full bg-[#f44336]" />
-                <span className="inline-block w-3 h-3 rounded-full bg-[#ffeb3b]" />
-                <span className="inline-block w-3 h-3 rounded-full bg-[#4caf50]" />
+          <div className="w-full flex flex-col items-center">
+            <span
+              className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-4 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
+            >
+              <EngineeringIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
+              مهندس الإيرادات الرقمية
+            </span>
+            <div
+              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[380px] md:min-h-[420px] p-0 flex flex-col items-center"
+              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)" }}
+            >
+              {/* Upper card section */}
+              <div className="w-[96%] bg-white/10 rounded-xl mt-6 mb-4 flex flex-col items-center">
+                {/* Browser bar with circles */}
+                <div className="w-full h-4 flex items-center gap-2 pt-5 pb-5 pr-2">
+                  <span className="inline-block w-3 h-3 rounded-full bg-[#f44336]" />
+                  <span className="inline-block w-3 h-3 rounded-full bg-[#ffeb3b]" />
+                  <span className="inline-block w-3 h-3 rounded-full bg-[#4caf50]" />
+                </div>
+                {/* Content lines */}
+                <div className="w-full flex flex-col gap-2 p-2 sm:p-4 pb-6">
+                  <div className="h-3 bg-white/20 rounded" />
+                  <div className="h-3 bg-white/20 rounded w-2/3 self-start" />
+                  <div className="h-3 bg-white/10 rounded w-1/2 self-start" />
+                </div>
               </div>
-              {/* Content lines */}
-              <div className="w-full flex flex-col gap-2 p-2 sm:p-4 pb-6">
-                <div className="h-3 bg-white/20 rounded" />
-                <div className="h-3 bg-white/20 rounded w-2/3 self-start" />
-                <div className="h-3 bg-white/10 rounded w-1/2 self-start" />
-              </div>
-            </div>
-            {/* Stats cards */}
-            <div className="flex w-[96%] gap-4 sm:gap-8 mb-8 md:mt-30 sm:mt-0 flex-col sm:flex-row">
-              {/* Card 1 */}
-              <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md mb-4 sm:mb-0">
-                <span className="absolute top-3 right-4 text-green-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m0 0c-2.485 0-4.5-1.567-4.5-3.5S9.515 11 12 11s4.5 1.567 4.5 3.5S14.485 18 12 18z" />
-                  </svg>
-                </span>
-                <span className="text-2xl font-bold text-white pt-4">3.2x</span>
-                <span className="text-sm text-white/90 mt-1">
-                  عائد الاستثمار
-                </span>
-              </div>
-              {/* Card 2 */}
-              <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md">
-                <span className="absolute top-3 right-4 text-green-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.5 4.5L21.75 6" />
-                  </svg>
-                </span>
-                <span className="text-2xl font-bold text-white pt-4">
-                  150%+
-                </span>
-                <span className="text-sm text-white/90 mt-1">
-                  نمو التحويلات
-                </span>
+              {/* Stats cards */}
+              <div className="flex w-[96%] gap-4 sm:gap-8 mb-8 md:mt-30 sm:mt-0 flex-col sm:flex-row">
+                {/* Card 1 */}
+                <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md mb-4 sm:mb-0">
+                  <span className="absolute top-3 right-4 text-green-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m0 0c-2.485 0-4.5-1.567-4.5-3.5S9.515 11 12 11s4.5 1.567 4.5 3.5S14.485 18 12 18z" />
+                    </svg>
+                  </span>
+                  <span className="text-2xl font-bold text-white pt-4">3.2x</span>
+                  <span className="text-sm text-white/90 mt-1">
+                    عائد الاستثمار
+                  </span>
+                </div>
+                {/* Card 2 */}
+                <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md">
+                  <span className="absolute top-3 right-4 text-green-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.5 4.5L21.75 6" />
+                    </svg>
+                  </span>
+                  <span className="text-2xl font-bold text-white pt-4">
+                    150%+
+                  </span>
+                  <span className="text-sm text-white/90 mt-1">
+                    نمو التحويلات
+                  </span>
+                </div>
               </div>
             </div>
           </div>

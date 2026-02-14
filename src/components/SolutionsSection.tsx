@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SecurityIcon from '@mui/icons-material/Security';
 import CampaignIcon from '@mui/icons-material/Campaign';
@@ -66,6 +66,35 @@ const whatsappMessage = `السلام عليكم ورحمة الله وبركا�
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 const SolutionsSection: React.FC = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  // Mouse drag scroll logic
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    isDown = true;
+    startX = e.pageX - (carouselRef.current?.offsetLeft || 0);
+    scrollLeft = carouselRef.current?.scrollLeft || 0;
+    document.body.style.cursor = 'grabbing';
+  };
+  const handleMouseLeave = () => {
+    isDown = false;
+    document.body.style.cursor = '';
+  };
+  const handleMouseUp = () => {
+    isDown = false;
+    document.body.style.cursor = '';
+  };
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - (carouselRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 1.5; // scroll speed
+    if (carouselRef.current) carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
   return (
     <section id="solutions" className="w-full py-16 px-4" style={{ background: '#113c56' }}>
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
@@ -73,8 +102,13 @@ const SolutionsSection: React.FC = () => {
           حلول متكاملة لنمو أعمالك
         </h2>
         <div
-          className="flex gap-6 overflow-x-auto pb-4 w-full custom-scrollbar"
+          ref={carouselRef}
+          className="flex gap-6 overflow-x-auto pb-4 w-full custom-scrollbar select-none"
           style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'thin', scrollbarColor: '#facc15 #113c56' }}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
         >
           {services.map((srv, i) => {
             const whatsappMessage = `السلام عليكم ورحمة الله وبركاته، أنا مهتم بـ (${srv.title})، كيف سنبدأ ؟`;

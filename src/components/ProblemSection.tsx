@@ -1,39 +1,43 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import EmojiTargetsIcon from '@mui/icons-material/TrackChanges';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import LockIcon from '@mui/icons-material/Lock';
 
 export default function ProblemSection() {
-  const questions = [
+  const challenges = [
     {
       text: "تنشر محتوى باستمرار دون تحسّن في المبيعات",
-      color: "var(--secondary-blue)",
+      icon: <TrendingDownIcon fontSize="large" className="text-blue-500" />,
     },
     {
       text: "تمتلك منتجًا جيدًا لكن لا يصل للجمهور المناسب",
-      color: "var(--secondary-blue)",
+      icon: <EmojiTargetsIcon fontSize="large" className="text-green-500" />,
     },
     {
       text: "تصرف ميزانيات إعلانية ولا تحصل على نتائج واضحة",
-      color: "var(--secondary-blue)",
+      icon: <AttachMoneyIcon fontSize="large" className="text-yellow-500" />,
     },
     {
       text: "تعمل دون نظام واضح أو مؤشرات أداء حقيقية",
-      color: "var(--secondary-blue)",
+      icon: <BarChartIcon fontSize="large" className="text-pink-500" />,
     },
     {
       text: "تتعرض منتجاتك للقرصنة ولا تملك وسيلة للحد من ذلك",
-      color: "var(--secondary-blue)",
+      icon: <LockIcon fontSize="large" className="text-red-500" />,
     },
   ];
 
-  // Animation: fade-in questions one by one
+  // Animation: fade-in cards one by one
   const [visible, setVisible] = useState(0);
   useEffect(() => {
-    if (visible < questions.length) {
-      const timeout = setTimeout(() => setVisible(visible + 1), 200);
+    if (visible < challenges.length) {
+      const timeout = setTimeout(() => setVisible(visible + 1), 250);
       return () => clearTimeout(timeout);
     }
-  }, [visible, questions.length]);
+  }, [visible, challenges.length]);
 
   return (
     <section id="problem" className="w-full bg-primary-light py-12 px-0">
@@ -42,19 +46,21 @@ export default function ProblemSection() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: "TheYearOfTheCamel, Tajawal, Arial" }}>
          هل تعاني من أحد هذه التحديات؟
         </h2>
-        {/* قائمة تحقق بالتحديات */}
-        <ul className="checklist flex flex-col gap-4 items-start w-full max-w-xl mx-auto px-4 sm:px-8 lg:px-16">
-          {questions.map((q, i) => (
-            <li
-              key={i}
-              className={`checklist-item flex items-center gap-3 bg-gray-50 border border-primary rounded-lg shadow px-4 py-3 w-full font-bold text-lg text-gray-900 transition-all duration-200 ${visible > i ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <input type="checkbox" className="form-checkbox h-5 w-5 accent-[var(--secondary-blue)]" disabled />
-              <span>{q.text}</span>
-            </li>
+        {/* تحديات المشاريع: بطاقات مع أيقونات */}
+        
+        {/* Vertical Timeline with Icons */}
+        <div className="relative max-w-xl mx-auto mt-8">
+          {challenges.map((c, i) => (
+            <div key={i} className="flex items-center gap-4 mb-6 bg-white rounded-xl shadow-md px-6 py-4 border border-blue-100 transition-all duration-300 hover:scale-105">
+              <span className="flex items-center justify-center w-10 h-10 text-2xl">
+                {c.icon}
+              </span>
+              <span className="text-lg font-semibold text-blue-900 text-right">
+                {c.text}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
         <style jsx>{`
           .checklist-item:hover {
             background: #fef3c7;
