@@ -49,9 +49,9 @@ export default function ProblemSection() {
         {/* تحديات المشاريع: بطاقات مع أيقونات */}
         
         {/* Vertical Timeline with Icons */}
-        <div className="relative max-w-xl mx-auto mt-8">
+        <div className="relative max-w-xl mx-2 mt-2">
           {challenges.map((c, i) => (
-            <div key={i} className="flex items-center gap-4 mb-6 bg-white rounded-xl shadow-md px-6 py-4 border border-blue-100 transition-all duration-300 hover:scale-105">
+            <div key={i} className="flex items-center gap-4 mb-6 bg-white rounded-xl shadow-md px-4 py-4 border border-blue-100 transition-all duration-300 hover:scale-105 max-w-md w-full mx-auto">
               <span className="flex items-center justify-center w-10 h-10 text-2xl">
                 {c.icon}
               </span>
@@ -72,7 +72,7 @@ export default function ProblemSection() {
           }
         `}</style>
         {/* الخلاصة */}
-        <div className="mt-6 text-xl sm:text-2xl font-bold text-primary-accent">
+        <div className="mt-1 text-xl sm:text-2xl font-bold text-primary-accent">
          المشكلة ليست في التسويق… بل في غياب المنهجية  الصحيحة
         </div>
       </div>

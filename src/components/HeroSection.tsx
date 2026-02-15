@@ -118,11 +118,11 @@ export default function HeroSection() {
               مهندس الإيرادات الرقمية
             </span>
             <div
-              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[380px] md:min-h-[420px] p-0 flex flex-col items-center"
-              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)" }}
+              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[420px] md:min-h-[420px] p-0 flex flex-col items-center sticky top-8 z-20"
+              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)", minHeight: '420px' }}
             >
               {/* Upper card section */}
-              <div className="w-[96%] bg-white/10 rounded-xl mt-6 mb-4 flex flex-col items-center">
+              <div className="w-[96%] bg-white/10 rounded-xl mt-4 mb-4 flex flex-col items-center">
                 {/* Browser bar with circles */}
                 <div className="w-full h-4 flex items-center gap-2 pt-5 pb-5 pr-2">
                   <span className="inline-block w-3 h-3 rounded-full bg-[#f44336]" />
@@ -136,34 +136,35 @@ export default function HeroSection() {
                   <div className="h-3 bg-white/10 rounded w-1/2 self-start" />
                 </div>
               </div>
-              {/* Stats cards */}
-              <div className="flex w-[96%] gap-4 sm:gap-8 mb-8 md:mt-30 sm:mt-0 flex-col sm:flex-row">
-                {/* Card 1 */}
-                <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md mb-4 sm:mb-0">
-                  <span className="absolute top-3 right-4 text-green-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m0 0c-2.485 0-4.5-1.567-4.5-3.5S9.515 11 12 11s4.5 1.567 4.5 3.5S14.485 18 12 18z" />
-                    </svg>
-                  </span>
-                  <span className="text-2xl font-bold text-white pt-4">3.2x</span>
-                  <span className="text-sm text-white/90 mt-1">
-                    عائد الاستثمار
-                  </span>
-                </div>
-                {/* Card 2 */}
-                <div className="flex-1 bg-white/20 border border-white/30 rounded-lg py-6 px-4 sm:py-7 sm:px-6 flex flex-col items-start justify-between relative min-h-[90px] sm:min-h-[110px] text-right backdrop-blur-md">
-                  <span className="absolute top-3 right-4 text-green-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.5 4.5L21.75 6" />
-                    </svg>
-                  </span>
-                  <span className="text-2xl font-bold text-white pt-4">
-                    150%+
-                  </span>
-                  <span className="text-sm text-white/90 mt-1">
-                    نمو التحويلات
-                  </span>
-                </div>
+              {/* Dynamic Icon for each title */}
+              <div className="relative w-full flex flex-col items-center min-h-[140px]">
+                {([
+                  'growth.png',
+                  'copyright-protection.png',
+                  'campaigns.png',
+                  'web-design.png',
+                  'content-production.png',
+                  'crm.png',
+                  'ecommerce.png',
+                ]).map((icon, idx) => {
+                  // Mirror these icons
+                  const mirrored = [
+                    'content-production.png',
+                    'copyright-protection.png',
+                    'crm.png',
+                    'ecommerce.png',
+                    'web-design.png',
+                  ].includes(icon);
+                  return (
+                    <img
+                      key={icon}
+                      src={`/icons/${icon}`}
+                      alt="Hero Icon"
+                      className={`w-100 h-90 object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 transition-all duration-700 ease-in-out ${titleIndex === idx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`}
+                      style={{ filter: 'drop-shadow(0 2px 12px #113c56aa)', transform: mirrored ? 'scaleX(-1)' : undefined }}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>

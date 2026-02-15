@@ -28,7 +28,7 @@ export default function Header() {
         </div>
         {/* Nav links: right on desktop, left on mobile */}
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
-          <ul className="hidden md:flex flex-row-reverse gap-2 text-white text-lg">
+          <ul className="hidden min-[924px]:flex flex-row-reverse gap-2 text-white text-lg">
             <li>
               <Link
                 href="/"
@@ -91,7 +91,7 @@ export default function Header() {
         </div>
         {/* Burger menu last (mobile and desktop) */}
         <button
-          className="md:hidden text-white ml-4 order-3 md:order-3"
+          className="block min-[924px]:hidden text-white ml-4 order-3 md:order-3"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="فتح القائمة"
         >
@@ -119,7 +119,7 @@ export default function Header() {
             {menuOpen && (
               <motion.div
                 key="overlay"
-                className="md:hidden fixed inset-0 z-50 bg-black/30 pointer-events-auto"
+                className="block min-[924px]:hidden fixed inset-0 z-50 bg-black/30 pointer-events-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -128,10 +128,10 @@ export default function Header() {
                 aria-label="إغلاق القائمة عند النقر بالخارج"
               />
             )}
-            {/* Animated mobile menu */}
+            {/* Animated mobile/tablet menu */}
             <motion.div
               key="menu"
-              className="md:hidden fixed top-15 right-0 left-0 z-50 bg-[#11425C] px-4 pt-6 pb-6 shadow-lg"
+              className="block min-[924px]:hidden fixed top-15 right-0 left-0 z-50 bg-[#11425C] px-4 pt-6 pb-6 shadow-lg"
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -40, opacity: 0 }}
@@ -207,9 +207,6 @@ export default function Header() {
                     قصتي
                   </Link>
                 </li>
-                
-                
-                
               </ul>
             </motion.div>
           </>
