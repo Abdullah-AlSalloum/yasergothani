@@ -3,11 +3,7 @@ import React from "react";
 import IPProtectionSection from "@/components/IPProtectionSection";
 
 const Page: React.FC = () => {
-  return (
-    <section className="w-full py-16 px-4">
-      <IPProtectionSection />
-    </section>
-  );
+  return <IPProtectionSection />;
 };
 
 export default Page;
