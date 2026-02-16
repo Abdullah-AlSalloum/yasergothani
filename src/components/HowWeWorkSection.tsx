@@ -14,15 +14,18 @@ const reassurance = [
 ];
 
 const HowWeWorkSection = () => {
-  const [activePing, setActivePing] = useState(-1);
+  const [activePings, setActivePings] = useState<number[]>([]);
 
   useEffect(() => {
     let idx = 0;
-    setActivePing(0);
+    setActivePings([0]);
     const interval = setInterval(() => {
       idx = (idx + 1) % steps.length;
-      setActivePing(idx);
-    }, 700);
+      setActivePings((prev) => [...prev, idx]);
+      setTimeout(() => {
+        setActivePings((prev) => prev.filter((i) => i !== idx));
+      }, 700);
+    }, 400);
     return () => clearInterval(interval);
   }, []);
 
@@ -44,7 +47,7 @@ const HowWeWorkSection = () => {
                   {steps.map((step, idx) => (
                     <div key={idx} className="flex items-start gap-4">
                       <span className="relative flex h-12 w-12">
-                        {activePing === idx && (
+                        {activePings.includes(idx) && (
                           <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-60 ${idx === 0 ? 'bg-blue-500' : idx === 1 ? 'bg-green-500' : idx === 2 ? 'bg-pink-500' : idx === 3 ? 'bg-yellow-500' : 'bg-red-500'}`}></span>
                         )}
                         <span className={`relative inline-flex rounded-full h-12 w-12 items-center justify-center font-bold text-lg text-white ${idx === 0 ? 'bg-blue-500' : idx === 1 ? 'bg-green-500' : idx === 2 ? 'bg-pink-500' : idx === 3 ? 'bg-yellow-500' : 'bg-red-500'}`}>{idx + 1}</span>

@@ -115,7 +115,7 @@ export default function HeroSection() {
               مهندس الإيرادات الرقمية
             </span>
             <div
-              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[420px] md:min-h-[420px] p-0 flex flex-col items-center sticky top-8 z-20"
+              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[420px] md:min-h-[420px] p-0 flex flex-col items-center sticky top-8 z-20 custom-hero-card"
               style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)", minHeight: '420px' }}
             >
               {/* Upper card section */}
@@ -144,21 +144,13 @@ export default function HeroSection() {
                   'crm.png',
                   'ecommerce.png',
                 ]).map((icon, idx) => {
-                  // Mirror these icons
-                  const mirrored = [
-                    'content-production.png',
-                    'copyright-protection.png',
-                    'crm.png',
-                    'ecommerce.png',
-                    'web-design.png',
-                  ].includes(icon);
                   return (
                     <img
                       key={icon}
                       src={`/icons/${icon}`}
                       alt="Hero Icon"
-                      className={`w-100 h-90 object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 transition-all duration-700 ease-in-out ${titleIndex === idx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`}
-                      style={{ filter: 'drop-shadow(0 2px 12px #113c56aa)', transform: mirrored ? 'scaleX(-1)' : undefined }}
+                      className={`w-100 h-90 object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 transition-all duration-700 ease-in-out custom-hero-rotate-img ${titleIndex === idx ? 'opacity-100 scale-100 z-10 rotate-0' : 'opacity-0 scale-90 z-0'}`}
+                      style={{ filter: 'drop-shadow(0 2px 12px #113c56aa)' }}
                     />
                   );
                 })}
@@ -173,6 +165,19 @@ export default function HeroSection() {
         </span>
       </div>
       <style jsx>{`
+        @media (min-width: 1573px) {
+          .custom-hero-card {
+            max-width: 900px !important;
+            min-height: 600px !important;
+          }
+        }
+        .custom-hero-rotate-img {
+          transition-property: opacity, transform;
+        }
+        .custom-hero-rotate-img.rotate-0 {
+          transform: rotateY(0deg) !important;
+        }
+        /* Remove rotate-180 for hidden images, just hide with opacity and scale */
         @keyframes hero-bounce {
           0%, 100% { transform: translateY(0); }
           20% { transform: translateY(-6px) scale(1.04); }

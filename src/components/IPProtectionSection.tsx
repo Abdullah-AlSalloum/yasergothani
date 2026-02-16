@@ -1,5 +1,4 @@
 import React from "react";
-import { LooksOne, LooksTwo, Looks3 as LooksThree,Looks4 as LooksFour,Looks5 as LooksFive, Assignment, Category, TrackChanges, Delete, SupportAgent } from '@mui/icons-material';
 import { VerifiedUser, TrendingDown, EmojiObjects, WorkspacePremium, Campaign, Storefront, CheckCircle, Warning, TrendingUp } from '@mui/icons-material';
 import { Public, AttachMoney } from '@mui/icons-material';
 import { motion } from "framer-motion";
@@ -9,27 +8,17 @@ const IPProtectionRedesign: React.FC = () => {
   return (
     <main className="w-full flex flex-col gap-16">
       {/* Section 1 */}
-      <section className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200 max-w-4xl mx-auto mt-8">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-1/2 w-full flex justify-center">
-            <img
-              src="/images/lack-inside-book.jpeg"
-              alt="حماية الملكية الفكرية لكتب المؤلفين والناشرين"
-              className="rounded-xl shadow-md max-h-72 object-cover w-full md:w-auto"
-              style={{ maxWidth: "320px" }}
-            />
-          </div>
-          <div className="md:w-1/2 w-full text-center md:text-right">
-            <h1 className="text-2xl md:text-3xl font-extrabold mb-4 text-[#11425C]">
-              حماية الملكية الفكرية لكتب المؤلفين والناشرين
-            </h1>
-            <p className="text-lg text-gray-700 mb-6">
-              خدمات متكاملة لحماية كتبك من القرصنة
-            </p>
-            <button className="bg-[#11425C] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#17618a] transition">
-              ابدأ حماية كتابك الآن
-            </button>
-          </div>
+      <section className="w-full min-h-[50vh] flex items-start justify-center bg-[#f1f5fb] pt-24">
+        <div className="w-full flex flex-col items-start justify-start text-right max-w-5xl mx-auto px-8">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#11425C]">
+            حماية الملكية الفكرية لكتب المؤلفين والناشرين
+          </h1>
+          <p className="text-2xl text-[#11425C] mb-8">
+            خدمات متكاملة لحماية كتبك من القرصنة
+          </p>
+          <button className="bg-[#11425C] text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#17618a] transition w-fit">
+            ابدأ حماية كتابك الآن
+          </button>
         </div>
       </section>
       {/* Section 2*/}
@@ -54,12 +43,12 @@ const IPProtectionRedesign: React.FC = () => {
           />
           <div className="flex flex-col items-center md:items-end text-center md:text-right">
             <motion.h2
-              className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-4"
+              className="text-2xl md:text-2xl font-extrabold text-[#f1f5fb] mb-4"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت
+             "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت"
             </motion.h2>
             <motion.p
               className="text-xl text-[#f1f5fb] font-semibold"
@@ -67,18 +56,18 @@ const IPProtectionRedesign: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
             >
-              أصبحت حماية الكتب أمرًا ضروريًا
+              "أصبحت حماية الكتب أمرًا ضروريًا"
             </motion.p>
           </div>
         </div>
       </section>
       {/* Section 3*/}
-      <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-[#11425C] text-center">
+      <section className="p-8 max-w-4xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-[#f1f5fb] text-center">
           إحصائيات مهمة عن قرصنة الكتب
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
             <span className="text-[#17618a]">
               <Forward30Icon style={{ fontSize: 48 }}/>
             </span>
@@ -87,7 +76,7 @@ const IPProtectionRedesign: React.FC = () => {
               إطلاقها.
             </div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
             <span className="text-[#17618a]">
               <Public style={{ fontSize: 48 }} />
             </span>
@@ -96,7 +85,7 @@ const IPProtectionRedesign: React.FC = () => {
               الكتاب بالانقراض.
             </div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
             <span className="text-[#17618a]">
               <AttachMoney style={{ fontSize: 48 }} />
             </span>
@@ -109,16 +98,16 @@ const IPProtectionRedesign: React.FC = () => {
       </section>
       {/* Section 4 */}
       <section className=" rounded-2xl shadow p-8 max-w-3xl mx-auto text-center">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#f1f5fb]">
+        <h2 className="text-xl md:text-3xl font-bold mb-4 text-[#f1f5fb]">
           فوائد الحماية القانونية
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
-            <div className="text-2xl font-bold text-[#11425C]">80%</div>
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
+            <div className="text-3xl font-bold text-[#11425C]">80%</div>
             <div className="text-gray-700 text-center text-lg">من الأعمال المسجلة قانونيًا يتمتع أصحابها بحماية أكبر ضد الانتهاكات.</div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
-            <div className="text-2xl font-bold text-[#11425C]">90%</div>
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
+            <div className="text-3xl font-bold text-[#11425C]">90%</div>
             <div className="text-gray-700 text-center text-lg">من المؤلفين الذين سجلوا حقوقهم القانونية شهدوا انخفاضًا ملحوظًا في القرصنة بعد 6 أشهر من التسجيل.</div>
           </div>
         </div>
@@ -127,30 +116,28 @@ const IPProtectionRedesign: React.FC = () => {
           </button>
       </section>
       {/* Section 5 */}
-      <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto text-center flex flex-col md:flex-row gap-8 items-center justify-center">
-        <div className="flex-1">
-          <h3 className="font-bold text-[#11425C] mb-2">الكتاب المحمي</h3>
-          <p className="text-green-700">
-            يشهد زيادة في المبيعات وحماية ضد السرقات.
-          </p>
+      <section className="py-12 max-w-7xl mx-auto flex flex-col gap-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-center">
+          <div>
+            <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المحمي</h3>
+            <p className="text-green-700 text-xl">يشهد زيادة في المبيعات وحماية ضد السرقات.</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المقرصن</h3>
+            <p className="text-red-700 text-xl">يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.</p>
+          </div>
         </div>
-        <div className="flex-1">
-          <h3 className="font-bold text-[#11425C] mb-2">الكتاب المقرصن</h3>
-          <p className="text-red-700">
-            يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.
-          </p>
-        </div>
-        <div className="flex flex-col gap-2 mt-4 md:mt-0">
-          <button className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition">
-            إزالة النسخ غير القانونية الآن
-          </button>
-          <button className="bg-[#11425C] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#17618a] transition">
+        <div className="w-full flex flex-col items-center md:items-center gap-4">
+          <button className="bg-green-700 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-green-800 transition w-fit">
             احصل على دراسة حالة مجانية
+          </button>
+          <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit">
+            إزالة النسخ غير القانونية الآن
           </button>
         </div>
       </section>
       {/* Section 6 */}
-      <section className="bg-white rounded-2xl shadow p-8 max-w-4xl mx-auto">
+      <section className="bg-[#f1f5fb] rounded-2xl shadow p-8 max-w-4xl mx-auto">
         <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#11425C]">
           خدماتنا المتكاملة
         </h2>
@@ -168,7 +155,7 @@ const IPProtectionRedesign: React.FC = () => {
             <span className="font-bold text-[#11425C]">
               حذف الكتب المقرصنة:
             </span>{" "}
-            نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى مقرصن من الإنترنت بشكل
+            نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى مقرصنة من الإنترنت بشكل
             قانوني.
           </li>
         </ul>
@@ -176,7 +163,7 @@ const IPProtectionRedesign: React.FC = () => {
           لن نقلق من قرصنة كتابك بعد اليوم
         </button>
       </section>
-      {/* Section 7 - Vertical Stepper/Timeline */}
+      {/* Section 7 */}
       <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-extrabold mb-10 text-[#11425C] text-center">كيف نساعدك في حماية الحقوق الفكرية لكتابك</h2>
         <div className="flex flex-col md:flex-row gap-8">
@@ -185,17 +172,17 @@ const IPProtectionRedesign: React.FC = () => {
             <div className="relative border-r-4 border-[#3b6d6d]/30 pr-8 md:pr-12 flex flex-col gap-12">
               {/* Step 1 */}
               <div className="flex items-start gap-4 relative">
-                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md"><LooksOne /></span>
+                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">1</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C]"><Assignment style={{ color: '#17618a' }} /> دراسة الحالة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">دراسة الحالة</div>
                   <div className="text-gray-700 text-lg">نحدد حجم القرصنة التي تتعرض لها في الإنترنت.</div>
                 </div>
               </div>
               {/* Step 2 */}
               <div className="flex items-start gap-4 relative">
-                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md"><LooksTwo /></span>
+                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">2</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C]"><Category style={{ color: '#17618a' }} /> تصنيف الحالة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">تصنيف الحالة</div>
                   <div className="text-gray-700 text-lg">
                     <span className="font-bold text-red-600">حالة خطرة:</span> كتاب مقرصن بشكل كبير ويتطلب تدخل سريع واتخاذ إجراءات شاملة على كافة المنصات.<br />
                     <span className="font-bold text-orange-500">حالة متوسطة:</span> كتاب مقرصن ومنتشر بشكل متوسط يتطلب اتخاذ إجراءات على بعض المنصات.<br />
@@ -205,25 +192,25 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
               {/* Step 3 */}
               <div className="flex items-start gap-4 relative">
-                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md"><LooksThree /></span>
+                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">3</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C]"><TrackChanges style={{ color: '#17618a' }} /> التعقب والحماية</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">التعقب والحماية</div>
                   <div className="text-gray-700 text-lg">يتم في هذه المرحلة إدخال معلومات الكتاب في برمجية خاصة لرصد وتتبع المنصات التي تقوم بنشر النسخة المقرصنة. نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.</div>
                 </div>
               </div>
               {/* Step 4 */}
               <div className="flex items-start gap-4 relative">
-                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md"><LooksFour /></span>
+                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">4</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C]"><Delete style={{ color: '#17618a' }} /> حذف الكتب المقرصنة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">حذف الكتب المقرصنة</div>
                   <div className="text-gray-700 text-lg">نتخذ الإجراءات التقنية اللازمة لحذف النسخ المقرصنة من كتابك من الإنترنت. نساعدك في تجهيز الأدلة والوثائق اللازمة من أجل الإجراءات القانونية الرسمية.</div>
                 </div>
               </div>
               {/* Step 5 */}
               <div className="flex items-start gap-4 relative">
-                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md"><LooksFive /></span>
+                <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">5</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C]"><SupportAgent style={{ color: '#17618a' }} /> المتابعة والدعم</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">المتابعة والدعم</div>
                   <div className="text-gray-700 text-lg">نقدم لك الدعم الفني طوال الوقت مع تزويدك بتقارير دورية.</div>
                 </div>
               </div>
@@ -239,8 +226,8 @@ const IPProtectionRedesign: React.FC = () => {
         </div>
       </section>
       {/* Section 8 */}
-      <section className="bg-white rounded-2xl shadow p-8 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold mb-2 text-[#11425C]">
+      <section className="bg-[#f1f5fb] rounded-2xl shadow p-8 max-w-4xl mx-auto">
+        <h2 className="text-xl md:text-3xl font-bold mb-2 text-[#11425C]">
           دراسة حالة
         </h2>
         <h3 className="text-lg font-semibold text-[#17618a] mb-4">
@@ -264,7 +251,7 @@ const IPProtectionRedesign: React.FC = () => {
           </li>
           <li>
             خلال فترة 6 أشهر تم حذف الكتاب من 85% من المواقع والصفحات التي كانت
-            نشره PDF مقرصن.
+            نشره PDF مقرصنة.
           </li>
           <li>
             خلال الفترة قمنا بتقديم التقارير للمسؤول بشكل دوري وقدمنا له الدعم
@@ -293,7 +280,7 @@ const IPProtectionRedesign: React.FC = () => {
           </motion.h2>
           <div className="flex flex-col md:flex-row gap-8 items-stretch">
             <motion.div
-              className="flex-1 bg-white rounded-xl shadow-md p-8 flex flex-row items-center gap-6 border border-[#e0e7ef] hover:scale-[1.03] transition-transform duration-300"
+              className="flex-1 bg-[#f1f5fb] rounded-xl shadow-md p-8 flex flex-row items-center gap-6 border border-[#e0e7ef] hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -308,7 +295,7 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
             </motion.div>
             <motion.div
-              className="flex-1 bg-white rounded-xl shadow-md p-8 flex flex-row items-center gap-6 border border-[#e0e7ef] hover:scale-[1.03] transition-transform duration-300"
+              className="flex-1 bg-[#f1f5fb] rounded-xl shadow-md p-8 flex flex-row items-center gap-6 border border-[#e0e7ef] hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -355,7 +342,7 @@ const IPProtectionRedesign: React.FC = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <motion.div
-              className="bg-white rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
+              className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -370,7 +357,7 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
+              className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -385,7 +372,7 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
+              className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -400,7 +387,7 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
+              className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -415,7 +402,7 @@ const IPProtectionRedesign: React.FC = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300 md:col-span-2"
+              className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-row items-center gap-6 border border-[#fbbf24]/40 hover:scale-[1.03] transition-transform duration-300 md:col-span-2"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -449,12 +436,12 @@ const IPProtectionRedesign: React.FC = () => {
       <section className="bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto my-8">
         <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-[#11425C] text-center">فوائد الحماية القانونية</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
             <VerifiedUser style={{ fontSize: 48, color: '#17618a' }} />
             <div className="text-2xl font-bold text-[#11425C]">80%</div>
             <div className="text-gray-700 text-center text-lg">من الأعمال المسجلة قانونيًا يتمتع أصحابها بحماية أكبر ضد الانتهاكات.</div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
+          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
             <TrendingDown style={{ fontSize: 48, color: '#e53935' }} />
             <div className="text-2xl font-bold text-[#11425C]">90%</div>
             <div className="text-gray-700 text-center text-lg">من المؤلفين الذين سجلوا حقوقهم القانونية شهدوا انخفاضًا ملحوظًا في القرصنة بعد 6 أشهر من التسجيل.</div>

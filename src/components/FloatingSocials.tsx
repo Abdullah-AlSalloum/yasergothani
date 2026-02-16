@@ -8,7 +8,7 @@ export default function FloatingSocials() {
     <div className="floating-socials">
       <div className="card">
         <ul>
-          <li className="iso-pro mb-10">
+          <li className="iso-pro mb-1">
             <span></span>
             <span></span>
             <span></span>

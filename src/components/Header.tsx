@@ -31,44 +31,13 @@ export default function Header() {
           <ul className="hidden min-[924px]:flex flex-row-reverse gap-2 text-white text-lg">
             <li>
               <Link
-                href="/"
-                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
-              >
-                الرئيسية
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#solutions"
-                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
-              >
-                الخدمات
-              </Link>
-            </li>
-             <li>
-              <Link
-                href="/ip-protection"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"   
-              >
-                حماية الملكية الفكرية
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/resources"
+                href="/mystory"
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
-                مصادر مجانية
+                قصتي
               </Link>
             </li>
-             <li>
-              <Link
-                href="#tools"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"
-              >
-                أدوات متطورة
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="#calltoaction"
@@ -79,14 +48,44 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/mystory"
+                href="#tools"
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
-                قصتي
+                أدوات متطورة
               </Link>
             </li>
-           
-           
+            <li>
+              <Link
+                href="/resources"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                مصادر مجانية
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/ip-protection"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                حماية الملكية الفكرية
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#solutions"
+                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
+              >
+                الخدمات
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
+              >
+                الرئيسية
+              </Link>
+            </li>
           </ul>
         </div>
         {/* Burger menu last (mobile and desktop) */}
@@ -146,47 +145,11 @@ export default function Header() {
               <ul className="flex flex-col gap-2 text-white text-lg">
                 <li>
                   <Link
-                    href="/"
+                    href="/mystory"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
-                    الرئيسية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#methodology"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    الخدمات
-                  </Link>
-                </li>
-                 <li>
-                  <Link
-                    href="/ip-protection"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    حماية الملكية الفكرية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#resources"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    مصادر مجانية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#tools"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    أدوات متطورة
+                    قصتي
                   </Link>
                 </li>
                 <li>
@@ -200,11 +163,47 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/mystory"
+                    href="#tools"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
-                    قصتي
+                    أدوات متطورة
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#resources"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    مصادر مجانية
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ip-protection"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    حماية الملكية الفكرية
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#methodology"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    الخدمات
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    الرئيسية
                   </Link>
                 </li>
               </ul>
