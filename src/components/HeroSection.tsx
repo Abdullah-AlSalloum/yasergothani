@@ -116,7 +116,7 @@ export default function HeroSection() {
             </span>
             <div
               className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[420px] md:min-h-[420px] p-0 flex flex-col items-center sticky top-8 z-20 custom-hero-card"
-              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)", minHeight: '420px' }}
+              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)", minHeight: '420px', display: titleIndex === 0 ? undefined : 'none' }}
             >
               {/* Upper card section */}
               <div className="w-[96%] bg-white/10 rounded-xl mt-4 mb-4 flex flex-col items-center">
@@ -133,8 +133,8 @@ export default function HeroSection() {
                   <div className="h-3 bg-white/10 rounded w-1/2 self-start" />
                 </div>
               </div>
-              {/* Dynamic Icon for each title */}
-              <div className="relative w-full flex flex-col items-center min-h-[140px]">
+              {/* All hero images, only one visible at a time, with rotation transformation */}
+              <div className="relative w-full flex flex-col items-center min-h-[340px] top-20">
                 {([
                   'growth.png',
                   'copyright-protection.png',
@@ -144,18 +144,45 @@ export default function HeroSection() {
                   'crm.png',
                   'ecommerce.png',
                 ]).map((icon, idx) => {
+                  const isActive = titleIndex === idx;
                   return (
                     <img
                       key={icon}
                       src={`/icons/${icon}`}
                       alt="Hero Icon"
-                      className={`w-100 h-90 object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 transition-all duration-700 ease-in-out custom-hero-rotate-img ${titleIndex === idx ? 'opacity-100 scale-100 z-10 rotate-0' : 'opacity-0 scale-90 z-0'}`}
-                      style={{ filter: 'drop-shadow(0 2px 12px #113c56aa)' }}
+                      className={`w-[420px] h-[420px] object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 custom-hero-rotate-img flying-hero-img transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 scale-100 z-10 rotate-0' : 'opacity-0 scale-90 z-0 rotate-180 pointer-events-none'}`}
                     />
                   );
                 })}
               </div>
             </div>
+            {/* Show other images without the card */}
+            {titleIndex !== 0 && (
+              <div className="relative w-full flying-hero-img flex flex-col items-center min-h-[140px]">
+                <img
+                  key={[
+                    'growth.png',
+                    'copyright-protection.png',
+                    'campaigns.png',
+                    'web-design.png',
+                    'content-production.png',
+                    'crm.png',
+                    'ecommerce.png',
+                  ][titleIndex]}
+                  src={`/icons/${[
+                    'growth.png',
+                    'copyright-protection.png',
+                    'campaigns.png',
+                    'web-design.png',
+                    'content-production.png',
+                    'crm.png',
+                    'ecommerce.png',
+                  ][titleIndex]}`}
+                  alt="Hero Icon"
+                  className={`w-[420px] h-[420px] object-contain mb-4 drop-shadow-xl transition-all duration-700 ease-in-out custom-hero-rotate-img opacity-100 scale-100 z-10`}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -165,7 +192,7 @@ export default function HeroSection() {
         </span>
       </div>
       <style jsx>{`
-        @media (min-width: 1573px) {
+        @media (min-width: 1773px) {
           .custom-hero-card {
             max-width: 900px !important;
             min-height: 600px !important;
@@ -173,11 +200,18 @@ export default function HeroSection() {
         }
         .custom-hero-rotate-img {
           transition-property: opacity, transform;
+          width: 100% !important;
+          max-width: 720px !important;
+          height: 100% !important;
+          max-height: 720px !important;
         }
-        .custom-hero-rotate-img.rotate-0 {
-          transform: rotateY(0deg) !important;
+        .flying-hero-img {
+          animation: flying-hero-bounce 2.8s ease-in-out infinite;
         }
-        /* Remove rotate-180 for hidden images, just hide with opacity and scale */
+        @keyframes flying-hero-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-32px); }
+        }
         @keyframes hero-bounce {
           0%, 100% { transform: translateY(0); }
           20% { transform: translateY(-6px) scale(1.04); }
