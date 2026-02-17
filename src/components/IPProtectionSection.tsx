@@ -1,5 +1,8 @@
 import React from "react";
 import { VerifiedUser, TrendingDown, EmojiObjects, WorkspacePremium, Campaign, Storefront, CheckCircle, Warning, TrendingUp } from '@mui/icons-material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import GavelIcon from '@mui/icons-material/Gavel';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Public, AttachMoney } from '@mui/icons-material';
 import { motion } from "framer-motion";
 import Forward30Icon from "@mui/icons-material/Forward30";
@@ -8,15 +11,16 @@ const IPProtectionRedesign: React.FC = () => {
   return (
     <main className="w-full flex flex-col gap-16">
       {/* Section 1 */}
-      <section className="w-full min-h-[50vh] flex items-start justify-center bg-[#f1f5fb] pt-24">
-        <div className="w-full flex flex-col items-start justify-start text-right max-w-5xl mx-auto px-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#11425C]">
+      <section className="w-full min-h-[50vh] flex items-start justify-center pt-24 relative overflow-hidden" style={{ background: 'none' }}>
+        <img src="/images/lack-on-quran.jpeg" alt="background" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none z-0" />
+        <div className="w-full flex flex-col items-start justify-start text-right max-w-5xl mx-auto px-8 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#f1f5fb] z-10 ">
             حماية الملكية الفكرية لكتب المؤلفين والناشرين
           </h1>
-          <p className="text-2xl text-[#11425C] mb-8">
+          <p className="text-2xl text-[#f1f5fb] mb-8">
             خدمات متكاملة لحماية كتبك من القرصنة
           </p>
-          <button className="bg-[#11425C] text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#17618a] transition w-fit">
+          <button className="bg-[#f1f5fb] text-[#17618a] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#17618a] hover:text-[#f1f5fb] transition w-fit">
             ابدأ حماية كتابك الآن
           </button>
         </div>
@@ -32,18 +36,9 @@ const IPProtectionRedesign: React.FC = () => {
           <div className="w-full h-full bg-gradient-to-br from-[#17618a]/20 via-[#11425C]/30 to-[#17618a]/10 animate-gradientMove rounded-2xl" />
         </motion.div>
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto w-full">
-          <motion.img
-            src="/images/lack-on-paper.jpeg"
-            alt="كتاب محمي"
-            className="w-40 h-40 md:w-56 md:h-56 rounded-xl shadow-lg object-cover mb-6 md:mb-0"
-            initial={{ scale: 0.8, y: 40, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.2, type: "spring" }}
-            style={{ boxShadow: "0 8px 32px rgba(17,66,92,0.15)" }}
-          />
           <div className="flex flex-col items-center md:items-end text-center md:text-right">
             <motion.h2
-              className="text-2xl md:text-2xl font-extrabold text-[#f1f5fb] mb-4"
+              className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-4"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -51,7 +46,7 @@ const IPProtectionRedesign: React.FC = () => {
              "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت"
             </motion.h2>
             <motion.p
-              className="text-xl text-[#f1f5fb] font-semibold"
+              className="text-2xl text-[#f1f5fb] font-semibold"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
@@ -119,10 +114,12 @@ const IPProtectionRedesign: React.FC = () => {
       <section className="py-12 max-w-7xl mx-auto flex flex-col gap-8">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-center">
           <div>
+            <img src="/images/lack-inside-book.jpeg" alt="الكتاب المحمي" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
             <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المحمي</h3>
             <p className="text-green-700 text-xl">يشهد زيادة في المبيعات وحماية ضد السرقات.</p>
           </div>
           <div>
+            <img src="/images/lack-on-paper.jpeg" alt="الكتاب المقرصن" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
             <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المقرصن</h3>
             <p className="text-red-700 text-xl">يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.</p>
           </div>
@@ -137,31 +134,30 @@ const IPProtectionRedesign: React.FC = () => {
         </div>
       </section>
       {/* Section 6 */}
-      <section className="bg-[#f1f5fb] rounded-2xl shadow p-8 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#11425C]">
-          خدماتنا المتكاملة
-        </h2>
-        <ul className="list-disc pr-6 text-gray-700 text-lg mb-6 space-y-2">
-          <li>
-            <span className="font-bold text-[#11425C]">الرصد والتعقب:</span>{" "}
-            نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.
-          </li>
-          <li>
-            <span className="font-bold text-[#11425C]">التسجيل القانوني:</span>{" "}
-            نساعدك بتسجيل أعمالك الأدبية بشكل قانوني في قانون الملكية الفكرية
-            لضمان حقوقك.
-          </li>
-          <li>
-            <span className="font-bold text-[#11425C]">
-              حذف الكتب المقرصنة:
-            </span>{" "}
-            نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى مقرصنة من الإنترنت بشكل
-            قانوني.
-          </li>
-        </ul>
-        <button className="bg-[#11425C] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#17618a] transition">
-          لن نقلق من قرصنة كتابك بعد اليوم
-        </button>
+      <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
+        <div className="w-full bg-primary rounded-2xl py-16 px-4 flex flex-col items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#113c56] text-center">خدماتنا المتكاملة</h2>
+          <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+            <div className="flex flex-col items-center text-center">
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><VisibilityIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#113c56] mb-2">الرصد والتعقب</h3>
+              <p className="text-[#113c56]">نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><GavelIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#113c56] mb-2">التسجيل القانوني</h3>
+              <p className="text-[#113c56]">نساعدك بتسجيل أعمالك الأدبية بشكل قانوني في قانون الملكية الفكرية لضمان حقوقك.</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><DeleteForeverIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#113c56] mb-2">حذف الكتب المقرصنة</h3>
+              <p className="text-[#113c56]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
+            </div>
+          </div>
+          <button className="bg-[#113c56] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition shadow mt-4">
+            لن تقلق من قرصنة كتابك بعد اليوم
+          </button>
+        </div>
       </section>
       {/* Section 7 */}
       <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-5xl mx-auto">
