@@ -1,3 +1,4 @@
+     
 import React from "react";
 import { VerifiedUser, TrendingDown, EmojiObjects, WorkspacePremium, Campaign, Storefront, CheckCircle, Warning, TrendingUp } from '@mui/icons-material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -221,45 +222,137 @@ const IPProtectionRedesign: React.FC = () => {
         </div>
         </div>
       </section>
-      {/* Section 8 */}
-      <section className="bg-[#f1f5fb] rounded-2xl shadow p-8 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-3xl font-bold mb-2 text-[#11425C]">
-          دراسة حالة
-        </h2>
-        <h3 className="text-lg font-semibold text-[#17618a] mb-4">
-          كيف تمكّنّا من حماية كتاب أحد عملائنا من القرصنة بعد نشره في منصات غير
-          قانونية؟
-        </h3>
-        <ul className="list-disc pr-6 text-gray-700 text-lg mb-6 space-y-2">
-          <li>
-            بعد دراسة حالة الكتاب تبين أن هناك عدد كبير جدًا من المنصات التي
-            تقوم بنشر وتداول النسخة المقرصنة من الكتاب.
-          </li>
-          <li>
-            تم تصنيف الكتاب على أنه في حالة خطرة ، حيث تم رصد أكثر من 600 موضع
-            على الإنترنت يقوم بنشر الكتاب بصيغة PDF مما يؤثر سلبًا على مبيعات
-            الكتاب وينتهك حقوق المؤلف والناشر.
-          </li>
-          <li>
-            بشكل مباشر تمت إضافة الكتاب إلى البرمجية الخاصة بالرصد والتعقب على
-            الإنترنت ومنصات التواصل. وبدأنا باتخاذ الإجراءات الازمة لحماية
-            الكتاب.
-          </li>
-          <li>
-            خلال فترة 6 أشهر تم حذف الكتاب من 85% من المواقع والصفحات التي كانت
-            نشره PDF مقرصنة.
-          </li>
-          <li>
-            خلال الفترة قمنا بتقديم التقارير للمسؤول بشكل دوري وقدمنا له الدعم
-            الفني اللازم.
-          </li>
-          <li className="font-bold text-green-700">
-            الخلاصة: بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
-          </li>
-        </ul>
-        <button className="bg-[#11425C] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#17618a] transition">
-          ليكن كتابك في أمان ايضاً
-        </button>
+       {/* Section 8 */}
+      <section className="w-full flex flex-col items-center justify-center my-16 px-2">
+        <div className="w-full mx-auto flex flex-col gap-10 bg-[#f1f5fb] p-8 shadow-lg">
+          <h2 className="text-4xl font-bold text-[#11425C] text-center mb-2">دراسة حالة</h2>
+          <h3 className="text-2xl font-semibold text-[#11425C] text-center mb-10">كيف تمكّنّا من حماية كتاب أحد عملائنا من القرصنة بعد نشره في منصات غير قانونية؟</h3>
+          <div className="w-full max-w-2xl mx-auto text-right">
+            <div className="mb-8">
+              <motion.h2
+                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <VerifiedUser style={{ fontSize: 28, color: '#17618a' }} />
+                <span className="ml-2">دراسة الحالة</span>
+              </motion.h2>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" />{' '}
+                بعد دراسة حالة الكتاب تبين أن هناك عدد كبير جدًا من المنصات التي تقوم بنشر وتداول النسخة المقرصنة من الكتاب
+                .
+              </motion.p>
+            </div>
+            <div className="mb-8">
+              <motion.h2
+                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <Warning style={{ fontSize: 28, color: '#eab308', marginLeft: 8 }} />
+                <span className="ml-2">تصنيف الحالة</span>
+              </motion.h2>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}تم تصنيف الكتاب على أنه في حالة خطرة ، حيث تم رصد أكثر من 600 موضع على الإنترنت يقوم بنشر الكتاب بصيغة PDF مما يؤثر سلبًا على مبيعات الكتاب وينتهك حقوق المؤلف والناشر.
+              </motion.p>
+            </div>
+            <div className="mb-8">
+              <motion.h2
+                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <VisibilityIcon style={{ fontSize: 28, color: '#17618a', marginLeft: 8 }} />
+                <span className="ml-2">التعقب والحماية</span>
+              </motion.h2>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}بشكل مباشر تمت إضافة الكتاب إلى البرمجية الخاصة بالرصد والتعقب على الإنترنت ومنصات التواصل.
+              </motion.p>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}وبدأنا باتخاذ الإجراءات الازمة لحماية الكتاب.
+              </motion.p>
+
+            </div>
+            <div className="mb-8">
+              <motion.h2
+                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <DeleteForeverIcon style={{ fontSize: 28, color: '#e53935', marginLeft: 8 }} />
+                <span className="ml-2">حذف الكتب المقرصنة</span>
+              </motion.h2>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}خلال فترة 6 أشهر تم حذف الكتاب من 85% من المواقع والصفحات التي كانت نشره PDF مقرصن.
+              </motion.p>
+            </div>
+            <div className="mb-8">
+              <motion.h2
+                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <TrendingUp style={{ fontSize: 28, color: '#22c55e', marginLeft: 8 }} />
+                <span className="ml-2">المتابعة والدعم</span>
+              </motion.h2>
+              <motion.p
+                className="text-lg text-[#11425C]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                viewport={{ once: true }}
+              >
+                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}خلال الفترة قمنا بتقديم التقارير للمسؤول بشكل دوري وقدمنا له الدعم الفني اللازم.
+              </motion.p>
+            </div>
+          </div>
+          <div className="bg-[#11425C] rounded-lg shadow p-4 flex items-center gap-3 mb-6 text-white font-bold text-xl justify-center w-full max-w-2xl mx-auto">
+            بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
+          </div>
+          <button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition shadow w-full max-w-xs mx-auto">
+            ليكن كتابك في أمان ايضاً
+          </button>
+        </div>
       </section>
       {/* Section 9 - Visually distinct, horizontal cards, accent bar */}
       <section className="relative bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-12">
