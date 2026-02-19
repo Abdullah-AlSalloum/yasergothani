@@ -83,7 +83,7 @@ const ResourcesPage: React.FC = () => (
         {resources.map((res, idx) => {
           const Icon = resourceIcons[idx] || InsertDriveFileOutlinedIcon;
           return (
-            <div key={idx} className="bg-[#1a604f] border border-[#113c56] rounded-2xl shadow-md px-4 py-8 flex flex-col items-center text-center relative transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ">
+            <div key={idx} className="bg-[#113c56] border border-[#113c56] rounded-2xl shadow-md px-4 py-8 flex flex-col items-center text-center relative transition-all duration-300 hover:shadow-xl hover:-translate-y-2 ">
               <span className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#e6eef5] border border-[#113c56] rounded-full p-3 shadow" style={{ color: '#113c56' }}>
                 <Icon fontSize="large" style={{ color: '#113c56' }} />
               </span>

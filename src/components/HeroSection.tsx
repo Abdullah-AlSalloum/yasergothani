@@ -59,7 +59,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary to-secondary-blue px-2 sm:px-2 py-8 sm:py-10">
-      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-10 px-2 sm:px-0">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-4 md:gap-6 px-2 sm:px-0">
         {/* Hero Content */}
         <div className="flex-1 flex flex-col items-center md:items-start gap-4 sm:gap-6 text-white max-w-xl w-full md:pr-8">
           
@@ -114,27 +114,8 @@ export default function HeroSection() {
               <EngineeringIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
               مهندس الإيرادات الرقمية
             </span>
-            <div
-              className="rounded-2xl bg-white/10 shadow-xl w-full max-w-[420px] sm:max-w-[520px] md:max-w-[650px] min-h-[320px] sm:min-h-[420px] md:min-h-[420px] p-0 flex flex-col items-center sticky top-8 z-20 custom-hero-card"
-              style={{ boxShadow: "0 6px 24px 0 rgba(44, 62, 80, 0.18)", minHeight: '420px', display: titleIndex === 0 ? undefined : 'none' }}
-            >
-              {/* Upper card section */}
-              <div className="w-[96%] bg-white/10 rounded-xl mt-4 mb-4 flex flex-col items-center">
-                {/* Browser bar with circles */}
-                <div className="w-full h-4 flex items-center gap-2 pt-5 pb-5 pr-2">
-                  <span className="inline-block w-3 h-3 rounded-full bg-[#f44336]" />
-                  <span className="inline-block w-3 h-3 rounded-full bg-[#ffeb3b]" />
-                  <span className="inline-block w-3 h-3 rounded-full bg-[#4caf50]" />
-                </div>
-                {/* Content lines */}
-                <div className="w-full flex flex-col gap-2 p-2 sm:p-4 pb-6">
-                  <div className="h-3 bg-white/20 rounded" />
-                  <div className="h-3 bg-white/20 rounded w-2/3 self-start" />
-                  <div className="h-3 bg-white/10 rounded w-1/2 self-start" />
-                </div>
-              </div>
-              {/* All hero images, only one visible at a time, with rotation transformation */}
-              <div className="relative w-full flex flex-col items-center min-h-[340px] top-20">
+            <div className="relative w-full flex flex-col items-center min-h-[340px]">
+              <div className="w-full h-[420px] relative flying-hero-img">
                 {([
                   'growth.png',
                   'copyright-protection.png',
@@ -150,39 +131,13 @@ export default function HeroSection() {
                       key={icon}
                       src={`/icons/${icon}`}
                       alt="Hero Icon"
-                      className={`w-[420px] h-[420px] object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 -top-15 custom-hero-rotate-img flying-hero-img transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 scale-100 z-10 rotate-0' : 'opacity-0 scale-90 z-0 rotate-180 pointer-events-none'}`}
+                      className={`w-[520px] h-[520px] object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 top-0 transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0 pointer-events-none'}`}
+                      style={{ transform: isActive ? 'rotateY(0deg)' : 'rotateY(90deg)' }}
                     />
                   );
                 })}
               </div>
             </div>
-            {/* Show other images without the card */}
-            {titleIndex !== 0 && (
-              <div className="relative w-full flying-hero-img flex flex-col items-center min-h-[140px]">
-                <img
-                  key={[
-                    'growth.png',
-                    'copyright-protection.png',
-                    'campaigns.png',
-                    'web-design.png',
-                    'content-production.png',
-                    'crm.png',
-                    'ecommerce.png',
-                  ][titleIndex]}
-                  src={`/icons/${[
-                    'growth.png',
-                    'copyright-protection.png',
-                    'campaigns.png',
-                    'web-design.png',
-                    'content-production.png',
-                    'crm.png',
-                    'ecommerce.png',
-                  ][titleIndex]}`}
-                  alt="Hero Icon"
-                  className={`w-[420px] h-[420px] object-contain mb-4 drop-shadow-xl transition-all duration-700 ease-in-out custom-hero-rotate-img opacity-100 scale-100 z-10`}
-                />
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -192,21 +147,8 @@ export default function HeroSection() {
         </span>
       </div>
       <style jsx>{`
-        @media (min-width: 1773px) {
-          .custom-hero-card {
-            max-width: 900px !important;
-            min-height: 600px !important;
-          }
-        }
-        .custom-hero-rotate-img {
-          transition-property: opacity, transform;
-          width: 100% !important;
-          max-width: 720px !important;
-          height: 100% !important;
-          max-height: 720px !important;
-        }
         .flying-hero-img {
-          animation: flying-hero-bounce 2.8s ease-in-out infinite;
+          animation: flying-hero-bounce 3.5s ease-in-out infinite;
         }
         @keyframes flying-hero-bounce {
           0%, 100% { transform: translateY(0); }

@@ -8,33 +8,41 @@ import { Public, AttachMoney } from '@mui/icons-material';
 import { motion } from "framer-motion";
 import Forward30Icon from "@mui/icons-material/Forward30";
 
+
 const IPProtectionRedesign: React.FC = () => {
   return (
-    <main className="w-full flex flex-col gap-16">
+    <main className="w-full flex flex-col gap-16" style={{ background: '#1a604f' }}>
       {/* Section 1 */}
       <section className="w-full min-h-[50vh] flex items-start justify-center pt-24 relative overflow-hidden" style={{ background: 'none' }}>
         <img src="/images/lack-on-quran.jpeg" alt="background" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none z-0" />
         <div className="w-full flex flex-col items-start justify-start text-right max-w-5xl mx-auto px-8 relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#f1f5fb] z-10 ">
-            حماية الملكية الفكرية لكتب المؤلفين والناشرين
+            هل تتعرض كتبك للقرصنة وأنت لا تعلم ؟ 
           </h1>
           <p className="text-2xl text-[#f1f5fb] mb-8">
-            خدمات متكاملة لحماية كتبك من القرصنة
+            نرصد، نوثق، ونتابع انتهاكات حقوق النشر لكتبك على مدار العام. 
           </p>
-          <button className="bg-[#f1f5fb] text-[#17618a] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#17618a] hover:text-[#f1f5fb] transition w-fit">
-            ابدأ حماية كتابك الآن
-          </button>
+          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
+            <motion.button  className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] w-fit transition-all duration-200 "
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              ابدأ حماية كتابك الآن
+            </motion.button>
+          </a>
         </div>
       </section>
+
+      
       {/* Section 2*/}
-      <section className="relative flex justify-center items-center py-16 md:py-20 overflow-hidden">
+      <section className="relative flex justify-center items-center py-8 md:py-15 overflow-hidden">
         <motion.div
           className="absolute inset-0 z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
         >
-          <div className="w-full h-full bg-gradient-to-br from-[#17618a]/20 via-[#11425C]/30 to-[#17618a]/10 animate-gradientMove rounded-2xl" />
+          <div className="w-full h-full bg-[#437066] animate-gradientMove" />
         </motion.div>
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto w-full">
           <div className="flex flex-col items-center md:items-end text-center md:text-right">
@@ -46,14 +54,98 @@ const IPProtectionRedesign: React.FC = () => {
             >
              "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت"
             </motion.h2>
+            <motion.div
+              className="mt-6 pr-0 md:pr-6 w-full flex flex-col gap-4"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+            >
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-lg p-6 flex flex-col gap-4">
+                <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 text-[#f1f5fb] text-xl">
+                  <TrendingDown style={{ color: '#F44444', fontSize: 32 }} />
+                  <span>انخفاض المبيعات بسبب القرصنة.</span>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 text-[#f1f5fb] text-xl">
+                  <Public style={{ color: '#FFD600', fontSize: 32 }} />
+                  <span>روابط تحميل كتبك غير قانونية.</span>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 text-[#f1f5fb] text-xl">
+                  <GavelIcon style={{ color: '#00E676', fontSize: 32 }} />
+                  <span>ضياع حقوق المؤلفين والناشرين.</span>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3 text-[#f1f5fb] text-xl">
+                  <DeleteForeverIcon style={{ color: '#F44444', fontSize: 32 }} />
+                  <span>نسخ مصورة تباع بسعر زهيد.</span>
+                </motion.div>
+              </div>
+            </motion.div>
             <motion.p
-              className="text-2xl text-[#f1f5fb] font-semibold"
+              className="text-2xl text-[#f1f5fb] font-semibold pt-12"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
             >
               "أصبحت حماية الكتب أمرًا ضروريًا"
             </motion.p>
+          </div>
+        </div>
+      </section>
+      {/* Self-Learning Guide Section */}
+      <section className="w-full flex justify-center items-center py-8 md:py-2">
+        <div className="w-full max-w-xl mx-auto flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-8 border border-white/20">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-6 text-center">هل تفضل تعلم آلية الرصد بنفسك؟</h2>
+          <a href="/downloads/monitoring-guide.pdf" download target="_blank" rel="noopener noreferrer">
+            <motion.button
+              className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] transition-all duration-200 shadow-md"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              حمّل دليل الرصد المجاني
+            </motion.button>
+          </a>
+        </div>
+      </section>
+        {/* Manual Monitoring Limitation Section - Timeline Style */}
+
+      <section className="w-full flex justify-center items-center py-8 md:py-14">
+        <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center">
+          <motion.h2
+            className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-10 text-center drop-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            لماذا الرصد اليدوي لا يكفي؟
+          </motion.h2>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+            {/* Step 1 */}
+            <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
+              <div className="rounded-full bg-[#FFD600]/20 border-2 border-[#FFD600] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                <EmojiObjects style={{ color: '#FFD600', fontSize: 38 }} />
+              </div>
+              <span className="text-[#f1f5fb] text-lg md:text-xl text-center font-semibold">البحث التقليدي محدود ومرهق.</span>
+            </motion.div>
+            {/* Step 2 */}
+            <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
+              <div className="rounded-full bg-[#00E676]/20 border-2 border-[#00E676] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                <TrendingUp style={{ color: '#00E676', fontSize: 38 }} />
+              </div>
+              <span className="text-[#f1f5fb] text-lg md:text-xl text-center font-semibold">القراصنة يعيدون رفع الملفات.</span>
+            </motion.div>
+            {/* Step 3 */}
+            <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
+              <div className="rounded-full bg-[#29B6F6]/20 border-2 border-[#29B6F6] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                <WorkspacePremium style={{ color: '#29B6F6', fontSize: 38 }} />
+              </div>
+              <span className="text-[#f1f5fb] text-lg md:text-xl text-center font-semibold">المتابعة تحتاج نظام دقيق.</span>
+            </motion.div>
+            {/* Step 4 */}
+            <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
+              <div className="rounded-full bg-[#F44444]/20 border-2 border-[#F44444] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                <GavelIcon style={{ color: '#F44444', fontSize: 38 }} />
+              </div>
+              <span className="text-[#f1f5fb] text-lg md:text-xl text-center font-semibold">يصعب التوثيق القانوني.</span>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -64,7 +156,7 @@ const IPProtectionRedesign: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
-            <span className="text-[#17618a]">
+            <span className="text-[#1a604f]">
               <Forward30Icon style={{ fontSize: 48 }}/>
             </span>
             <div className="text-gray-700 text-center text-lg">
@@ -73,7 +165,7 @@ const IPProtectionRedesign: React.FC = () => {
             </div>
           </div>
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
-            <span className="text-[#17618a]">
+            <span className="text-[#1a604f]">
               <Public style={{ fontSize: 48 }} />
             </span>
             <div className="text-gray-700 text-center text-lg">
@@ -82,7 +174,7 @@ const IPProtectionRedesign: React.FC = () => {
             </div>
           </div>
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">
-            <span className="text-[#17618a]">
+            <span className="text-[#1a604f]">
               <AttachMoney style={{ fontSize: 48 }} />
             </span>
             <div className="text-gray-700 text-center text-lg">
@@ -94,25 +186,27 @@ const IPProtectionRedesign: React.FC = () => {
       </section>
       {/* Section 4 */}
       <section className=" rounded-2xl shadow p-8 max-w-3xl mx-auto text-center">
-        <h2 className="text-xl md:text-3xl font-bold mb-4 text-[#f1f5fb]">
+        <h2 className="text-xl md:text-5xl font-bold mb-4 text-[#f1f5fb]">
           فوائد الحماية القانونية
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
-            <div className="text-3xl font-bold text-[#11425C]">80%</div>
-            <div className="text-gray-700 text-center text-lg">من الأعمال المسجلة قانونيًا يتمتع أصحابها بحماية أكبر ضد الانتهاكات.</div>
+          <div className=" p-6 flex flex-col items-center gap-3">
+            <div className="text-4xl font-bold text-[#f1f5fb]">80%</div>
+            <div className="text-[#f1f5fb] text-center text-xl">من الأعمال المسجلة قانونيًا يتمتع أصحابها بحماية أكبر ضد الانتهاكات.</div>
           </div>
-          <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
-            <div className="text-3xl font-bold text-[#11425C]">90%</div>
-            <div className="text-gray-700 text-center text-lg">من المؤلفين الذين سجلوا حقوقهم القانونية شهدوا انخفاضًا ملحوظًا في القرصنة بعد 6 أشهر من التسجيل.</div>
+          <div className=" p-6 flex flex-col items-center gap-3">
+            <div className="text-4xl font-bold text-[#f1f5fb]">90%</div>
+            <div className="text-[#f1f5fb] text-center text-lg">من المؤلفين الذين سجلوا حقوقهم القانونية شهدوا انخفاضًا ملحوظًا في القرصنة بعد 6 أشهر من التسجيل.</div>
           </div>
         </div>
-          <button className="bg-[#f1f5fb] text-[#11425C] px-8 py-3 rounded-lg font-bold text-lg border-2 border-[#11425C] hover:bg-[#e3f0fa] hover:text-[#17618a] hover:border-[#17618a] transition">
+          <motion.button className="bg-[#f1f5fb] text-[#1a604f] px-8 py-3 rounded-lg font-bold text-lg border-2 hover:bg-[#e1f9f2] hover:text-[#1a604f] hover:border-[#437066] transition-all duration-200"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}>
             ابدأ بتأمين كتابك اليوم
-          </button>
+          </motion.button>
       </section>
       {/* Section 5 */}
-      <section className="py-12 max-w-7xl mx-auto flex flex-col gap-8">
+      <section className="py-8 max-w-7xl mx-auto flex flex-col gap-8">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-center">
           <div>
             <img src="/images/lack-inside-book.jpeg" alt="الكتاب المحمي" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
@@ -125,44 +219,53 @@ const IPProtectionRedesign: React.FC = () => {
             <p className="text-red-700 text-xl">يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.</p>
           </div>
         </div>
+        
         <div className="w-full flex flex-col items-center md:items-center gap-4">
-          <button className="bg-green-700 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-green-800 transition w-fit">
+          <a href="https://forms.gle/ja1vKBEK7ZLFrKFU6" target="_blank" rel="noopener noreferrer">
+          <motion.button className="bg-green-700 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-green-800 transition w-fit"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}>
             احصل على دراسة حالة مجانية
-          </button>
-          <button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit">
+          </motion.button>
+          </a>
+          <motion.button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit transition-all duration-200"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}>
             إزالة النسخ غير القانونية الآن
-          </button>
+          </motion.button>
         </div>
       </section>
       {/* Section 6 */}
       <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
-        <div className="w-full bg-primary rounded-2xl py-16 px-4 flex flex-col items-center justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#113c56] text-center">خدماتنا المتكاملة</h2>
+        <div className="w-full bg-primary rounded-2xl py-6 px-4 flex flex-col items-center justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#437066] text-center">خدماتنا المتكاملة</h2>
           <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
             <div className="flex flex-col items-center text-center">
-              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><VisibilityIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
-              <h3 className="text-xl font-bold text-[#113c56] mb-2">الرصد والتعقب</h3>
-              <p className="text-[#113c56]">نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.</p>
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><VisibilityIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#437066] mb-2">الرصد والتعقب</h3>
+              <p className="text-[#437066]">نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><GavelIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
-              <h3 className="text-xl font-bold text-[#113c56] mb-2">التسجيل القانوني</h3>
-              <p className="text-[#113c56]">نساعدك بتسجيل أعمالك الأدبية بشكل قانوني في قانون الملكية الفكرية لضمان حقوقك.</p>
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><GavelIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#437066] mb-2">التسجيل القانوني</h3>
+              <p className="text-[#437066]">نساعدك بتسجيل أعمالك الأدبية بشكل قانوني في قانون الملكية الفكرية لضمان حقوقك.</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><DeleteForeverIcon className="text-7xl text-[#113c56]" style={{ fontSize: 48 }} /></span></span>
-              <h3 className="text-xl font-bold text-[#113c56] mb-2">حذف الكتب المقرصنة</h3>
-              <p className="text-[#113c56]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><DeleteForeverIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
+              <h3 className="text-xl font-bold text-[#437066] mb-2">حذف الكتب المقرصنة</h3>
+              <p className="text-[#437066]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
             </div>
           </div>
-          <button className="bg-[#113c56] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition shadow mt-4">
+          <motion.button className="bg-[#437066] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition-all duration-200 shadow mt-4 "
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}>
             لن تقلق من قرصنة كتابك بعد اليوم
-          </button>
+          </motion.button>
         </div>
       </section>
       {/* Section 7 */}
       <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-10 text-[#11425C] text-center">كيف نساعدك في حماية الحقوق الفكرية لكتابك</h2>
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-10 text-[#1a604f] text-center">كيف نساعدك في حماية الحقوق الفكرية لكتابك</h2>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex flex-col items-center md:items-start w-full md:w-2/3">
             {/* Stepper timeline */}
@@ -171,7 +274,7 @@ const IPProtectionRedesign: React.FC = () => {
               <div className="flex items-start gap-4 relative">
                 <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">1</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">دراسة الحالة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#1a604f] text-lg">دراسة الحالة</div>
                   <div className="text-gray-700 text-lg">نحدد حجم القرصنة التي تتعرض لها في الإنترنت.</div>
                 </div>
               </div>
@@ -179,7 +282,7 @@ const IPProtectionRedesign: React.FC = () => {
               <div className="flex items-start gap-4 relative">
                 <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">2</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">تصنيف الحالة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#1a604f] text-lg">تصنيف الحالة</div>
                   <div className="text-gray-700 text-lg">
                     <span className="font-bold text-red-600">حالة خطرة:</span> كتاب مقرصن بشكل كبير ويتطلب تدخل سريع واتخاذ إجراءات شاملة على كافة المنصات.<br />
                     <span className="font-bold text-orange-500">حالة متوسطة:</span> كتاب مقرصن ومنتشر بشكل متوسط يتطلب اتخاذ إجراءات على بعض المنصات.<br />
@@ -191,7 +294,7 @@ const IPProtectionRedesign: React.FC = () => {
               <div className="flex items-start gap-4 relative">
                 <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">3</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">التعقب والحماية</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#1a604f] text-lg">التعقب والحماية</div>
                   <div className="text-gray-700 text-lg">يتم في هذه المرحلة إدخال معلومات الكتاب في برمجية خاصة لرصد وتتبع المنصات التي تقوم بنشر النسخة المقرصنة. نقوم بمراقبة الإنترنت بشكل مستمر للكشف عن أي نسخ غير قانونية لكتبك.</div>
                 </div>
               </div>
@@ -199,7 +302,7 @@ const IPProtectionRedesign: React.FC = () => {
               <div className="flex items-start gap-4 relative">
                 <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">4</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">حذف الكتب المقرصنة</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#1a604f] text-lg">حذف الكتب المقرصنة</div>
                   <div className="text-gray-700 text-lg">نتخذ الإجراءات التقنية اللازمة لحذف النسخ المقرصنة من كتابك من الإنترنت. نساعدك في تجهيز الأدلة والوثائق اللازمة من أجل الإجراءات القانونية الرسمية.</div>
                 </div>
               </div>
@@ -207,7 +310,7 @@ const IPProtectionRedesign: React.FC = () => {
               <div className="flex items-start gap-4 relative">
                 <span className="bg-[#3b6d6d] text-white rounded-lg w-10 h-10 flex items-center justify-center text-xl font-bold absolute -right-14 md:-right-16 top-0 shadow-md">5</span>
                 <div className="ml-2">
-                  <div className="flex items-center gap-2 mb-1 font-bold text-[#11425C] text-lg">المتابعة والدعم</div>
+                  <div className="flex items-center gap-2 mb-1 font-bold text-[#1a604f] text-lg">المتابعة والدعم</div>
                   <div className="text-gray-700 text-lg">نقدم لك الدعم الفني طوال الوقت مع تزويدك بتقارير دورية.</div>
                 </div>
               </div>
@@ -216,150 +319,245 @@ const IPProtectionRedesign: React.FC = () => {
         </div>
         <div>
         <div className="flex justify-center mt-10">
-          <button className="bg-[#11425C] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#17618a] transition shadow-lg">
+          <motion.button className="bg-[#1a604f] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#437066] shadow-lg transition-all duration-200"
+            whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+          >
             ابدأ حماية حقوقك الفكرية
-          </button>
+          </motion.button>
         </div>
         </div>
       </section>
        {/* Section 8 */}
-      <section className="w-full flex flex-col items-center justify-center my-16 px-2">
+      <section className="w-full flex flex-col items-center justify-center my-2 px-2">
         <div className="w-full mx-auto flex flex-col gap-10 bg-[#f1f5fb] p-8 shadow-lg">
-          <h2 className="text-4xl font-bold text-[#11425C] text-center mb-2">دراسة حالة</h2>
-          <h3 className="text-2xl font-semibold text-[#11425C] text-center mb-10">كيف تمكّنّا من حماية كتاب أحد عملائنا من القرصنة بعد نشره في منصات غير قانونية؟</h3>
-          <div className="w-full max-w-2xl mx-auto text-right">
-            <div className="mb-8">
+          <h2 className="text-4xl font-bold text-[#1a604f] text-center mb-2">دراسة حالة</h2>
+          <h3 className="text-2xl font-semibold text-[#1a604f] text-center mb-10">كيف تمكّنّا من حماية كتاب أحد عملائنا من القرصنة بعد نشره في منصات غير قانونية؟</h3>
+          <div className="w-full max-w-2xl mx-auto text-right relative">
+            {/* Animated vertical line linking the points */}
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: '90%' }}
+              transition={{ duration: 1.2, ease: 'easeInOut' }}
+              className="hidden md:block absolute -right-10 top-8 bg-gradient-to-b from-[#1a604f] via-[#eab308] to-[#22c55e] w-1 rounded-full z-10"
+              style={{ minHeight: '120px' }}
+            />
+            <div className="mb-8 relative">
+              {/* Overlap shadow for linking steps */}
+              <div className="absolute left-0 right-0 -bottom-4 h-6 flex justify-center pointer-events-none" aria-hidden="true">
+                <div className="w-2/3 h-4 rounded-full bg-[#1a604f]/10 blur-md mx-auto" />
+              </div>
               <motion.h2
-                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                className="text-2xl font-bold text-[#437066] mb-2 flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <VerifiedUser style={{ fontSize: 28, color: '#17618a' }} />
+                <motion.span
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 0 0 rgba(26,96,79,0.3)',
+                      '0 0 0 8px rgba(26,96,79,0)',
+                      '0 0 0 0 rgba(26,96,79,0.3)'
+                    ]
+                  }}
+                  transition={{ duration: 1.2, repeat: Infinity, delay: 0 }}
+                  className="inline-flex"
+                >
+                  <VerifiedUser style={{ fontSize: 28, color: '#1a604f' }} />
+                </motion.span>
                 <span className="ml-2">دراسة الحالة</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" />{' '}
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" />{' '}
                 بعد دراسة حالة الكتاب تبين أن هناك عدد كبير جدًا من المنصات التي تقوم بنشر وتداول النسخة المقرصنة من الكتاب
                 .
               </motion.p>
             </div>
-            <div className="mb-8">
+            <div className="mb-8 relative">
+              {/* Overlap shadow for linking steps */}
+              <div className="absolute left-0 right-0 -bottom-4 h-6 flex justify-center pointer-events-none" aria-hidden="true">
+                <div className="w-2/3 h-4 rounded-full bg-[#eab308]/10 blur-md mx-auto" />
+              </div>
               <motion.h2
-                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <Warning style={{ fontSize: 28, color: '#eab308', marginLeft: 8 }} />
+                <motion.span
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 0 0 rgba(234,179,8,0.3)',
+                      '0 0 0 8px rgba(234,179,8,0)',
+                      '0 0 0 0 rgba(234,179,8,0.3)'
+                    ]
+                  }}
+                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.3 }}
+                  className="inline-flex"
+                >
+                  <Warning style={{ fontSize: 28, color: '#eab308', marginLeft: 8 }} />
+                </motion.span>
                 <span className="ml-2">تصنيف الحالة</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}تم تصنيف الكتاب على أنه في حالة خطرة ، حيث تم رصد أكثر من 600 موضع على الإنترنت يقوم بنشر الكتاب بصيغة PDF مما يؤثر سلبًا على مبيعات الكتاب وينتهك حقوق المؤلف والناشر.
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" /> {' '}تم تصنيف الكتاب على أنه في حالة خطرة ، حيث تم رصد أكثر من 600 موضع على الإنترنت يقوم بنشر الكتاب بصيغة PDF مما يؤثر سلبًا على مبيعات الكتاب وينتهك حقوق المؤلف والناشر.
               </motion.p>
             </div>
-            <div className="mb-8">
+            <div className="mb-8 relative">
+              {/* Overlap shadow for linking steps */}
+              <div className="absolute left-0 right-0 -bottom-4 h-6 flex justify-center pointer-events-none" aria-hidden="true">
+                <div className="w-2/3 h-4 rounded-full bg-[#1a604f]/10 blur-md mx-auto" />
+              </div>
               <motion.h2
-                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <VisibilityIcon style={{ fontSize: 28, color: '#17618a', marginLeft: 8 }} />
+                <motion.span
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 0 0 rgba(26,96,79,0.3)',
+                      '0 0 0 8px rgba(26,96,79,0)',
+                      '0 0 0 0 rgba(26,96,79,0.3)'
+                    ]
+                  }}
+                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.6 }}
+                  className="inline-flex"
+                >
+                  <VisibilityIcon style={{ fontSize: 28, color: '#1a604f', marginLeft: 8 }} />
+                </motion.span>
                 <span className="ml-2">التعقب والحماية</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}بشكل مباشر تمت إضافة الكتاب إلى البرمجية الخاصة بالرصد والتعقب على الإنترنت ومنصات التواصل.
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" /> {' '}بشكل مباشر تمت إضافة الكتاب إلى البرمجية الخاصة بالرصد والتعقب على الإنترنت ومنصات التواصل.
               </motion.p>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}وبدأنا باتخاذ الإجراءات الازمة لحماية الكتاب.
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" /> {' '}وبدأنا باتخاذ الإجراءات الازمة لحماية الكتاب.
               </motion.p>
 
             </div>
-            <div className="mb-8">
+            <div className="mb-8 relative">
+              {/* Overlap shadow for linking steps */}
+              <div className="absolute left-0 right-0 -bottom-4 h-6 flex justify-center pointer-events-none" aria-hidden="true">
+                <div className="w-2/3 h-4 rounded-full bg-[#e53935]/10 blur-md mx-auto" />
+              </div>
               <motion.h2
-                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <DeleteForeverIcon style={{ fontSize: 28, color: '#e53935', marginLeft: 8 }} />
+                <motion.span
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 0 0 rgba(229,57,53,0.3)',
+                      '0 0 0 8px rgba(229,57,53,0)',
+                      '0 0 0 0 rgba(229,57,53,0.3)'
+                    ]
+                  }}
+                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.9 }}
+                  className="inline-flex"
+                >
+                  <DeleteForeverIcon style={{ fontSize: 28, color: '#e53935', marginLeft: 8 }} />
+                </motion.span>
                 <span className="ml-2">حذف الكتب المقرصنة</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}خلال فترة 6 أشهر تم حذف الكتاب من 85% من المواقع والصفحات التي كانت نشره PDF مقرصن.
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" /> {' '}خلال فترة 6 أشهر تم حذف الكتاب من 85% من المواقع والصفحات التي كانت نشره PDF مقرصن.
               </motion.p>
             </div>
             <div className="mb-8">
               <motion.h2
-                className="text-2xl font-bold text-[#11425C] mb-2 flex items-center"
+                className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <TrendingUp style={{ fontSize: 28, color: '#22c55e', marginLeft: 8 }} />
+                <motion.span
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    boxShadow: [
+                      '0 0 0 0 rgba(34,197,94,0.3)',
+                      '0 0 0 8px rgba(34,197,94,0)',
+                      '0 0 0 0 rgba(34,197,94,0.3)'
+                    ]
+                  }}
+                  transition={{ duration: 1.2, repeat: Infinity, delay: 1.2 }}
+                  className="inline-flex"
+                >
+                  <TrendingUp style={{ fontSize: 28, color: '#22c55e', marginLeft: 8 }} />
+                </motion.span>
                 <span className="ml-2">المتابعة والدعم</span>
               </motion.h2>
               <motion.p
-                className="text-lg text-[#11425C]"
+                className="text-lg text-[#1a604f]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block w-2 h-2 rounded-full bg-[#17618a]" /> {' '}خلال الفترة قمنا بتقديم التقارير للمسؤول بشكل دوري وقدمنا له الدعم الفني اللازم.
+                <span className="inline-block w-2 h-2 rounded-full bg-[#1a604f]" /> {' '}خلال الفترة قمنا بتقديم التقارير للمسؤول بشكل دوري وقدمنا له الدعم الفني اللازم.
               </motion.p>
             </div>
           </div>
-          <div className="bg-[#11425C] rounded-lg shadow p-4 flex items-center gap-3 mb-6 text-white font-bold text-xl justify-center w-full max-w-2xl mx-auto">
+          <div className="bg-[#1a604f] rounded-lg shadow p-4 flex items-center gap-3 mb-6 text-white font-bold text-xl justify-center w-full max-w-2xl mx-auto">
             بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
           </div>
-          <button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition shadow w-full max-w-xs mx-auto">
+          <motion.button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+          >
             ليكن كتابك في أمان ايضاً
-          </button>
+          </motion.button>
         </div>
       </section>
       {/* Section 9 - Visually distinct, horizontal cards, accent bar */}
-      <section className="relative bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-12">
-        <div className="absolute left-0 top-0 h-full w-2 bg-[#17618a] rounded-tr-2xl rounded-br-2xl" />
+      <section className="relative bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-2">
+        <div className="absolute left-0 top-0 h-full w-2 bg-[#1a604f] rounded-tr-2xl rounded-br-2xl" />
         <div className="relative z-10 py-12 px-6 md:px-16 flex flex-col gap-10">
           <motion.h2
-            className="text-2xl md:text-3xl font-extrabold mb-2 text-[#11425C] text-right"
+            className="text-2xl md:text-3xl font-extrabold mb-2 text-[#1a604f] text-right"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -379,7 +577,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <EmojiObjects style={{ fontSize: 48 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">تكنولوجيا متقدمة</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">تكنولوجيا متقدمة</div>
                 <div className="text-gray-700 text-base">نستخدم أدوات وتقنيات حديثة لرصد وتتبع الكتب المقرصنة بشكل فعّال.</div>
               </div>
             </motion.div>
@@ -394,7 +592,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <WorkspacePremium style={{ fontSize: 48 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">خبرة واسعة</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">خبرة واسعة</div>
                 <div className="text-gray-700 text-base">تخصصنا في حماية حقوق النشر على الإنترنت يضمن لك الراحة القانونية التامة.</div>
               </div>
             </motion.div>
@@ -407,7 +605,7 @@ const IPProtectionRedesign: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <motion.button
-              className="bg-[#17618a] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#11425C] transition-all duration-200 border-2 border-[#17618a] hover:border-[#11425C]"
+              className="bg-[#1a604f] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#1a604f] transition-all duration-200 border-2 border-[#1a604f] hover:border-[#1a604f]"
               whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -417,11 +615,11 @@ const IPProtectionRedesign: React.FC = () => {
         </div>
       </section>
       {/* Section 10 - More interesting, icon cards, animated */}
-      <section className="relative bg-gradient-to-br from-[#e0e7ef] via-[#f7fafc] to-[#e0e7ef] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-12">
+      <section className="relative bg-gradient-to-br from-[#e0e7ef] via-[#f7fafc] to-[#e0e7ef] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-1">
         <div className="absolute right-0 top-0 h-full w-2 bg-[#fbbf24] rounded-tl-2xl rounded-bl-2xl" />
         <div className="relative z-10 py-12 px-6 md:px-16 flex flex-col gap-10">
           <motion.h2
-            className="text-2xl md:text-3xl font-extrabold mb-10 text-[#11425C] text-center"
+            className="text-2xl md:text-3xl font-extrabold mb-10 text-[#1a604f] text-center"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -441,7 +639,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <Campaign style={{ fontSize: 40 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">حملة توعوية عن الملكية الفكرية</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">حملة توعوية عن الملكية الفكرية</div>
                 <div className="text-gray-700 text-base">نقوم بنشر بعض المقالات والمشاركات تعرف المجتمع بالملكية الفكرية وأهميتها لتكون مرحلة بناء وعي.</div>
               </div>
             </motion.div>
@@ -456,7 +654,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <Storefront style={{ fontSize: 40 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">توفير الكتاب في منصات ورقية وإلكترونية</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">توفير الكتاب في منصات ورقية وإلكترونية</div>
                 <div className="text-gray-700 text-base">التعاقد مع متاجر إلكترونية أو منصات رقمية لتوفير الكتاب للقراء لتمكنهم من الحصول عليه بسهولة.</div>
               </div>
             </motion.div>
@@ -471,7 +669,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <CheckCircle style={{ fontSize: 40 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">الإعلان عن النسخة الأصلية</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">الإعلان عن النسخة الأصلية</div>
                 <div className="text-gray-700 text-base">نخبر الجمهور أن الكتاب متوفر في المتاجر التي تعاقدنا معها.</div>
               </div>
             </motion.div>
@@ -486,7 +684,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <Warning style={{ fontSize: 40 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">الإعلان عن النسخة المقرصنة</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">الإعلان عن النسخة المقرصنة</div>
                 <div className="text-gray-700 text-base">نخبر الجمهور عن النسخة المقرصنة ونحذرهم من اقتناءها ونقدم لهم عرض خاص لمن يرغب بالحصول على النسخة الأصلية.</div>
               </div>
             </motion.div>
@@ -501,7 +699,7 @@ const IPProtectionRedesign: React.FC = () => {
                 <TrendingUp style={{ fontSize: 40 }} />
               </span>
               <div className="flex flex-col items-start text-right">
-                <div className="font-bold text-[#11425C] text-lg mb-1">نوسع مبيعات الكتاب</div>
+                <div className="font-bold text-[#1a604f] text-lg mb-1">نوسع مبيعات الكتاب</div>
                 <div className="text-gray-700 text-base">نقوم بتصميم حملة تسويقية متكاملة على منصات التواصل الاجتماعية وفي المتجر الإلكتروني لنزيد من مبيعات الكتاب ونحقق الفائدة المالية.</div>
               </div>
             </motion.div>
@@ -510,36 +708,42 @@ const IPProtectionRedesign: React.FC = () => {
       </section>
       {/* Section 11 */}
       <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto text-center">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#11425C]">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#1a604f]">
           هل أنت مستعد لحماية حقوقك الفكرية ؟
         </h2>
         <p className="text-lg text-gray-700 mb-6">
           لا تنتظر حتى تتعرض حقوقك للانتهاك. نحن هنا لنساعدك في كل خطوة من طريقك
           لتكون كُتبك بأمان من القراصنة الإلكترونية
         </p>
-        <button className="bg-[#11425C] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#17618a] transition">
+        <motion.button className="bg-[#1a604f] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#437066] transition-all duration-200 shadow"
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.97 }}
+        >
           احصل على تقييم مجاني الآن
-        </button>
+        </motion.button>
       </section>
       {/* Section 12 */}
-      <section className="bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto my-8">
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-[#11425C] text-center">فوائد الحماية القانونية</h2>
+      <section className="bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto mt-2 mb-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-[#1a604f] text-center">فوائد الحماية القانونية</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
-            <VerifiedUser style={{ fontSize: 48, color: '#17618a' }} />
-            <div className="text-2xl font-bold text-[#11425C]">80%</div>
+            <VerifiedUser style={{ fontSize: 48, color: '#1a604f' }} />
+            <div className="text-2xl font-bold text-[#1a604f]">80%</div>
             <div className="text-gray-700 text-center text-lg">من الأعمال المسجلة قانونيًا يتمتع أصحابها بحماية أكبر ضد الانتهاكات.</div>
           </div>
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center gap-3 border border-[#e0e7ef]">
             <TrendingDown style={{ fontSize: 48, color: '#e53935' }} />
-            <div className="text-2xl font-bold text-[#11425C]">90%</div>
+            <div className="text-2xl font-bold text-[#1a604f]">90%</div>
             <div className="text-gray-700 text-center text-lg">من المؤلفين الذين سجلوا حقوقهم القانونية شهدوا انخفاضًا ملحوظًا في القرصنة بعد 6 أشهر من التسجيل.</div>
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="bg-[#11425C] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#17618a] transition-all duration-200">
+          <motion.button className="bg-[#1a604f] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#437066] transition-all duration-200 transition-all duration-200 border-2 border-[#1a604f] hover:border-[#1a604f]"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+          >
             ابدأ بتأمين كتابك اليوم
-          </button>
+          </motion.button>
         </div>
       </section>
     </main>

@@ -15,7 +15,7 @@ const marketCards = [
 
 const DifferentiationSection = () => {
   return (
-    <section id="differentiation" className="py-16 px-4 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
+    <section id="differentiation" className="py-16 px-4 md:px-12 bg-[#f1f5fb] text-[var(--foreground)]">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif'}}>
           لماذا نحن؟

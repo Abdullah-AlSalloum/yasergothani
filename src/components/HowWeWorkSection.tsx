@@ -30,7 +30,7 @@ const HowWeWorkSection = () => {
   }, []);
 
   return (
-    <section id="howwework" className="py-16 px-4 md:px-12 bg-[#113c56] text-white">
+    <section id="howwework" className="py-2 px-4 md:px-6 bg-[#113c56] text-white">
       <div className="max-w-4xl mx-auto">
         <div className="relative">
           <div className="absolute inset-0 pointer-events-none z-0 animate-pulse-sparkle">
@@ -38,8 +38,8 @@ const HowWeWorkSection = () => {
           </div>
           <div className="bg-white/10 rounded-2xl shadow-xl p-8 md:p-12 relative z-10">
             <div className="md:flex md:items-center md:gap-12">
-              <div className="md:w-1/2 mb-10 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
+              <div className="md:w-1/2 mb-4 md:mb-0">
+                <h2 className="text-3xl md:text-4xl font-extrabold mb-4 " style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
                   منهجية مثبتة تحقق نتائج حقيقية
                 </h2>
                 <p className="mb-8 text-lg text-blue-100">نحن نؤمن بالشراكة ونرافقك في كل خطوة من تحليل الوضع لتجهيز الحل المناسب، إلى تنفيذ الحملات وقياس النتائج بدقة وشفافية.</p>
@@ -62,7 +62,7 @@ const HowWeWorkSection = () => {
               </div>
               
             </div>
-            <div className="mt-8 w-full flex justify-center">
+            <div className="mt-4 w-full flex justify-center">
               <a href="#solutions" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow block text-center">
                 ابدأ من هنا
               </a>

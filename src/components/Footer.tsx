@@ -1,12 +1,10 @@
 'use client'
-import React from "react";
-import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/solid';
 import Link from "next/link";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => (
-  <footer className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0 sm:items-center">
+  <footer id="Footer" className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0 sm:items-center">
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8 text-center md:text-right">
     {/* Logo & About */}
       <div className="flex flex-col items-center md:items-start">
@@ -33,7 +31,6 @@ const Footer = () => (
         <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
         <ul className="space-y-2 text-sm">
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
-          <li><Link href="#calltoaction" className="hover:underline">اتصل بنا</Link></li>
           <li><Link href="/mystory" className="hover:underline">قصتي</Link></li>
           <li><Link href="#tools" className="hover:underline">أدوات متطورة</Link></li>
           <li><Link href="/resources" className="hover:underline">مصادر مجانية</Link></li>
@@ -44,10 +41,9 @@ const Footer = () => (
       <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">خدماتنا</h3>
         <ul className="space-y-2 text-sm">
-          <li><Link href="#" className="hover:underline">إدارة الحملات</Link></li>
-          <li><Link href="#" className="hover:underline">تطوير المحتوى</Link></li>
-          <li><Link href="#" className="hover:underline">الاستشارات الاستراتيجية</Link></li>
-          <li><Link href="#" className="hover:underline">جميع الخدمات</Link></li>
+          <li><Link href="#" className="hover:underline">نظام النمو الرقمي المستدام </Link></li>
+          <li><Link href="#" className="hover:underline">وثيق لحماية حقوق النشر </Link></li>
+          <li><Link href="#" className="hover:underline">بناء المواقع الإلكترونية</Link></li>
         </ul>
       </div>
       {/* Contact */}

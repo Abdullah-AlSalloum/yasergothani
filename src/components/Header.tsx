@@ -40,7 +40,7 @@ export default function Header() {
 
             <li>
               <Link
-                href="#calltoaction"
+                href="#Footer"
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
                 اتصل بنا
@@ -145,47 +145,11 @@ export default function Header() {
               <ul className="flex flex-col gap-2 text-white text-lg">
                 <li>
                   <Link
-                    href="/mystory"
+                    href="/"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
-                    قصتي
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#calltoaction"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    اتصل بنا
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#tools"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    أدوات متطورة
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#resources"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    مصادر مجانية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/ip-protection"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    حماية الملكية الفكرية
+                    الرئيسية
                   </Link>
                 </li>
                 <li>
@@ -199,11 +163,47 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/ip-protection"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
-                    الرئيسية
+                    حماية الملكية الفكرية
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#resources"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    مصادر مجانية
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#tools"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    أدوات متطورة
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#Footer"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    اتصل بنا
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/mystory"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    قصتي
                   </Link>
                 </li>
               </ul>

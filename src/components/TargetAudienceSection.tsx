@@ -12,7 +12,7 @@ const categories = [
 
 export default function TargetAudienceSection() {
   return (
-    <section id="audience" className="w-full py-16 px-4" style={{ background: 'var(--background)' }}>
+    <section id="audience" className="w-full py-8 px-4" style={{ background: '#f1f5fb' }}>
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial' }}>
           لمن نقدم هذه الحلول ؟
@@ -28,7 +28,7 @@ export default function TargetAudienceSection() {
             </div>
           ))}
         </div>
-        <div className="mt-4 bg-red-500/90 text-white text-lg md:text-xl font-bold rounded-xl px-6 py-4 shadow-lg border-2 border-red-400 animate-pulse" style={{ fontFamily: 'Tajawal, Arial' }}>
+        <div className=" bg-red-500/90 text-white text-lg md:text-xl font-bold rounded-xl px-6 py-4 shadow-lg border-2 border-red-400 animate-pulse" style={{ fontFamily: 'Tajawal, Arial' }}>
          إن كنت تبحث عن نشر محتوى فقط، فنحن لسنا الخيار المناسب.
         </div>
       </div>
