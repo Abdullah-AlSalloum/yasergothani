@@ -172,7 +172,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="#resources"
+                    href="/resources"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
