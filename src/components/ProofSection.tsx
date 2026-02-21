@@ -28,7 +28,7 @@ const testimonials = [
 ];
 
 const ProofSection = () => (
-  <section id="proof" className="py-8 px-4 md:px-12 bg-[#f1f5fb] text-[var(--foreground)]">
+  <section id="proof" className="py-8 px-4 md:px-12 bg-[#113c56] text-[var(--foreground)]">
     <div className="max-w-5xl mx-auto">
       <div className="mb-8 text-center">
         <div className="w-16 h-3 mx-auto mb-4 rounded-full bg-[var(--secondary-green)]"></div>
