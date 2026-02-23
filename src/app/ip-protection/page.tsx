@@ -22,8 +22,8 @@ const Page: React.FC = () => {
     <main className="w-full flex flex-col gap-16" style={{ background: '#1a604f' }}>
       <HeroIntro />
       <RisksList />
-      <SelfMonitoringGuide />
       <ManualMonotoringProblems />
+      <SelfMonitoringGuide />
       <PiracyStats />
       <ProtectedVsPiratedBook />
       <ServicesOverview />

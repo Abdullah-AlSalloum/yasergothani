@@ -6,7 +6,7 @@ import GavelIcon from '@mui/icons-material/Gavel';
 
 const Section4: React.FC = () => (
 
-    <section className="w-full flex justify-center items-center py-8 md:py-14">
+    <section className="w-full flex justify-center items-center">
         <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center">
           <motion.h2
             className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-10 text-center drop-shadow-lg"
@@ -40,8 +40,8 @@ const Section4: React.FC = () => (
             </motion.div>
             {/* Step 4 */}
             <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
-              <div className="rounded-full bg-[#F44444]/20 border-2 border-[#F44444] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
-                <GavelIcon style={{ color: '#F44444', fontSize: 38 }} />
+              <div className="rounded-full bg-[#F44444]/20 border-2 border-[#ca7c29] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
+                <GavelIcon style={{ color: '#ca7c29', fontSize: 38 }} />
               </div>
               <span className="text-[#f1f5fb] text-lg md:text-xl text-center font-semibold">يصعب التوثيق القانوني.</span>
             </motion.div>

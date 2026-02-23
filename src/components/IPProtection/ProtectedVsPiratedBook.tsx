@@ -7,12 +7,12 @@ const Section6: React.FC = () => (
           <div>
             <img src="/images/lack-inside-book.jpeg" alt="الكتاب المحمي" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
             <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المحمي</h3>
-            <p className="text-green-700 text-xl">يشهد زيادة في المبيعات وحماية ضد السرقات.</p>
+            <p className="text-[#e1f9f2] text-xl">يشهد زيادة في المبيعات وحماية ضد السرقات.</p>
           </div>
           <div>
             <img src="/images/lack-on-paper.jpeg" alt="الكتاب المقرصن" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
             <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المقرصن</h3>
-            <p className="text-red-700 text-xl">يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.</p>
+            <p className="text-[#e1f9f2] text-xl">يعاني من تراجع في المبيعات ويتعرض لانتهاكات قانونية مستمرة.</p>
           </div>
         </div>
         

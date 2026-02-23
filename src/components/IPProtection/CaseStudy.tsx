@@ -16,7 +16,7 @@ const CaseStudy: React.FC = () => (
               initial={{ height: 0 }}
               whileInView={{ height: '90%' }}
               transition={{ duration: 1.2, ease: 'easeInOut' }}
-              className="hidden md:block absolute -right-10 top-8 bg-gradient-to-b from-[#1a604f] via-[#eab308] to-[#22c55e] w-1 rounded-full z-10"
+              className="block absolute -right-5 top-2 bg-gradient-to-b from-[#1a604f] via-[#eab308] to-[#22c55e] w-1 rounded-full z-10"
               style={{ minHeight: '120px' }}
             />
             <div className="mb-8 relative">
@@ -31,20 +31,9 @@ const CaseStudy: React.FC = () => (
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    boxShadow: [
-                      '0 0 0 0 rgba(26,96,79,0.3)',
-                      '0 0 0 8px rgba(26,96,79,0)',
-                      '0 0 0 0 rgba(26,96,79,0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 1.2, repeat: Infinity, delay: 0 }}
-                  className="inline-flex"
-                >
+                <span className="inline-flex">
                   <VerifiedUser style={{ fontSize: 28, color: '#1a604f' }} />
-                </motion.span>
+                </span>
                 <span className="ml-2">دراسة الحالة</span>
               </motion.h2>
               <motion.p
@@ -71,20 +60,9 @@ const CaseStudy: React.FC = () => (
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    boxShadow: [
-                      '0 0 0 0 rgba(234,179,8,0.3)',
-                      '0 0 0 8px rgba(234,179,8,0)',
-                      '0 0 0 0 rgba(234,179,8,0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.3 }}
-                  className="inline-flex"
-                >
+                <span className="inline-flex">
                   <Warning style={{ fontSize: 28, color: '#eab308', marginLeft: 8 }} />
-                </motion.span>
+                </span>
                 <span className="ml-2">تصنيف الحالة</span>
               </motion.h2>
               <motion.p
@@ -109,20 +87,9 @@ const CaseStudy: React.FC = () => (
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    boxShadow: [
-                      '0 0 0 0 rgba(26,96,79,0.3)',
-                      '0 0 0 8px rgba(26,96,79,0)',
-                      '0 0 0 0 rgba(26,96,79,0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.6 }}
-                  className="inline-flex"
-                >
+                <span className="inline-flex">
                   <VisibilityIcon style={{ fontSize: 28, color: '#1a604f', marginLeft: 8 }} />
-                </motion.span>
+                </span>
                 <span className="ml-2">التعقب والحماية</span>
               </motion.h2>
               <motion.p
@@ -157,20 +124,9 @@ const CaseStudy: React.FC = () => (
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    boxShadow: [
-                      '0 0 0 0 rgba(229,57,53,0.3)',
-                      '0 0 0 8px rgba(229,57,53,0)',
-                      '0 0 0 0 rgba(229,57,53,0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 1.2, repeat: Infinity, delay: 0.9 }}
-                  className="inline-flex"
-                >
+                <span className="inline-flex">
                   <DeleteForeverIcon style={{ fontSize: 28, color: '#e53935', marginLeft: 8 }} />
-                </motion.span>
+                </span>
                 <span className="ml-2">حذف الكتب المقرصنة</span>
               </motion.h2>
               <motion.p
@@ -191,20 +147,9 @@ const CaseStudy: React.FC = () => (
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
               >
-                <motion.span
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    boxShadow: [
-                      '0 0 0 0 rgba(34,197,94,0.3)',
-                      '0 0 0 8px rgba(34,197,94,0)',
-                      '0 0 0 0 rgba(34,197,94,0.3)'
-                    ]
-                  }}
-                  transition={{ duration: 1.2, repeat: Infinity, delay: 1.2 }}
-                  className="inline-flex"
-                >
+                <span className="inline-flex">
                   <TrendingUp style={{ fontSize: 28, color: '#22c55e', marginLeft: 8 }} />
-                </motion.span>
+                </span>
                 <span className="ml-2">المتابعة والدعم</span>
               </motion.h2>
               <motion.p
