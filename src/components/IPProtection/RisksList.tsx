@@ -25,7 +25,7 @@ const risks = [
 ];
 
 const RisksList: React.FC = () => (
-  <section className="relative flex flex-col items-center justify-center overflow-hidden">
+  <section className="relative flex flex-col items-center justify-center py-1 overflow-hidden">
     <motion.div
       className="absolute inset-0 z-0"
       initial={{ opacity: 0 }}
@@ -34,32 +34,41 @@ const RisksList: React.FC = () => (
     >
       <div className="w-full h-full  animate-gradientMove" />
     </motion.div>
-    <div className="relative z-10 flex flex-col items-center w-full max-w-2xl">
+    <div className="relative z-10 w-full max-w-6xl px-4 md:px-6">
       <motion.h2
-        className="text-2xl md:text-3xl font-extrabold text-[#f1f5fb] mb-8 text-center"
+        className="text-2xl md:text-4xl font-extrabold text-[#f1f5fb] mb-10 text-center leading-snug"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
       >
         "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت"
       </motion.h2>
-        <div className="flex flex-col items-center gap-6 w-full">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
         {risks.map((risk, idx) => (
           <motion.div
             key={idx}
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-4 bg-white/10 border border-white/20 rounded-xl px-6 py-4 shadow-lg w-full max-w-md justify-center"
+            whileHover={{ y: -6 }}
+            className="group relative bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6 shadow-lg transition-all duration-200 hover:bg-white/15 hover:border-white/35"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3}}
+            transition={{ duration: 0.35, delay: idx * 0.08 }}
           >
-            {risk.icon}
-            <span className="text-[#f1f5fb] text-lg font-semibold">{risk.text}</span>
+            <div className="absolute inset-y-5 left-0 w-1 rounded-r-full bg-white/30 group-hover:bg-white/60 transition-colors" />
+            <div className="flex items-center gap-4 pr-2">
+              <span className="w-12 h-12 rounded-full bg-[#0f3b33]/60 border border-white/25 flex items-center justify-center shrink-0">
+                {risk.icon}
+              </span>
+              <p className="text-[#f1f5fb] text-lg md:text-xl font-bold leading-relaxed text-right w-full">
+                {risk.text}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
+
       <motion.p
-        className="text-2xl text-[#f1f5fb] font-semibold pt-12 text-center"
+        className="text-2xl md:text-3xl text-[#f1f5fb] font-semibold pt-12 text-center"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 1.2 }}

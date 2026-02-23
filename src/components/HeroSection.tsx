@@ -106,7 +106,7 @@ export default function HeroSection() {
         </div>
         {/* Illustration or Video */}
         
-        <div className="flex-1 flex justify-center w-full mb-6 md:mb-0">
+        <div className="flex-1 flex justify-center w-full mb-1 md:mb-0">
           <div className="w-full flex flex-col items-center">
             <span
               className="inline-flex items-center gap-2 bg-white/20 text-secondary-blue px-4 py-1 rounded-full mb-4 font-bold shadow-sm backdrop-blur-lg animate-hero-bounce"
@@ -114,8 +114,8 @@ export default function HeroSection() {
               <EngineeringIcon className="w-5 h-5 text-yellow-400 animate-spin-sparkle" />
               مهندس الإيرادات الرقمية
             </span>
-            <div className="relative w-full flex flex-col items-center min-h-[340px]">
-              <div className="w-full h-[420px] relative flying-hero-img">
+            <div className="relative w-full flex flex-col items-center min-h-[240px] sm:min-h-[340px]">
+              <div className="w-full h-[260px] sm:h-[420px] relative flying-hero-img">
                 {([
                   'growth.png',
                   'copyright-protection.png',
@@ -131,7 +131,7 @@ export default function HeroSection() {
                       key={icon}
                       src={`/icons/${icon}`}
                       alt="Hero Icon"
-                      className={`w-[520px] h-[520px] object-contain mb-4 drop-shadow-xl absolute left-1/2 -translate-x-1/2 top-0 transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0 pointer-events-none'}`}
+                      className={`w-[300px] h-[300px] sm:w-[550px] sm:h-[550px] object-contain drop-shadow-xl absolute left-1/2 -translate-x-1/2 top-0 transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0 pointer-events-none'}`}
                       style={{ transform: isActive ? 'rotateY(0deg)' : 'rotateY(90deg)' }}
                     />
                   );

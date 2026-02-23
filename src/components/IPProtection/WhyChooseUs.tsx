@@ -48,7 +48,7 @@ const Section10: React.FC = () => (
             </motion.div>
           </div>
           <motion.div
-            className="flex justify-end mt-6"
+            className="flex justify-center md:justify-end mt-6"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

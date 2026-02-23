@@ -39,10 +39,10 @@ const HowWeWorkSection = () => {
           <div className="bg-white/10 rounded-2xl shadow-xl p-8 md:p-12 relative z-10">
             <div className="md:flex md:items-center md:gap-12">
               <div className="md:w-1/2 mb-4 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4 " style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
+                <h2 className="relative text-3xl md:text-4xl font-extrabold mb-4 text-center" style={{ fontFamily: 'TheYearOfTheCamel, Tajawal, Arial, Helvetica, sans-serif' }}>
                   منهجية مثبتة تحقق نتائج حقيقية
                 </h2>
-                <p className="mb-8 text-lg text-blue-100">نحن نؤمن بالشراكة ونرافقك في كل خطوة من تحليل الوضع لتجهيز الحل المناسب، إلى تنفيذ الحملات وقياس النتائج بدقة وشفافية.</p>
+                <p className="mb-8 text-lg text-blue-100 text-center">نحن نؤمن بالشراكة ونرافقك في كل خطوة من تحليل الوضع لتجهيز الحل المناسب، إلى تنفيذ الحملات وقياس النتائج بدقة وشفافية.</p>
                 <div className="space-y-6">
                   {steps.map((step, idx) => (
                     <div key={idx} className="flex items-start gap-4">

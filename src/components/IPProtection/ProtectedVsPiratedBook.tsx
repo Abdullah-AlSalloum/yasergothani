@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Section6: React.FC = () => (
   <section className="py-8 max-w-7xl mx-auto flex flex-col gap-8">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-center px-2">
           <div>
             <img src="/images/lack-inside-book.jpeg" alt="الكتاب المحمي" className="mx-auto mb-4 w-120 h-70 object-cover rounded-lg shadow" />
             <h3 className="text-3xl font-bold mb-4" style={{ color: '#f1f5fb' }}>الكتاب المحمي</h3>

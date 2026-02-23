@@ -163,7 +163,7 @@ const CaseStudy: React.FC = () => (
               </motion.p>
             </div>
           </div>
-          <div className="bg-[#1a604f] rounded-lg shadow p-4 flex items-center gap-3 mb-6 text-white font-bold text-xl justify-center w-full max-w-2xl mx-auto">
+          <div className="bg-[#1a604f] rounded-lg shadow p-4 flex items-center gap-3 mb-6 text-white font-bold text-xl justify-center w-full max-w-2xl mx-auto text-center md:text-right">
             بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
           </div>
           <motion.button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto"
