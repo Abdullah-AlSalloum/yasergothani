@@ -41,7 +41,7 @@ const RisksList: React.FC = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
       >
-        "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت"
+         "في عصر تزايُد انتهاكات الحقوق الفكرية على الإنترنت أصبحت حماية الكتب أمرًا ضروريًا"
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
@@ -66,15 +66,6 @@ const RisksList: React.FC = () => (
           </motion.div>
         ))}
       </div>
-
-      <motion.p
-        className="text-2xl md:text-3xl text-[#f1f5fb] font-semibold pt-12 text-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 1.2 }}
-      >
-        "أصبحت حماية الكتب أمرًا ضروريًا"
-      </motion.p>
     </div>
   </section>
 );

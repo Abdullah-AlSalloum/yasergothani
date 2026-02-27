@@ -8,6 +8,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
+  const isIpProtectionRoute = pathname?.startsWith("/ip-protection");
+  const headerBgClass = isIpProtectionRoute ? "bg-[#1a604f]" : "bg-[#11425C]";
 
   useEffect(() => {
     if (menuOpen) {
@@ -20,7 +22,7 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="bg-[#11425C] py-4 sticky top-0 z-50">
+    <header className={`${headerBgClass} py-4 sticky top-0 z-50`}>
       <nav className="container mx-auto flex items-center justify-between max-w-6xl px-4 flex-row-reverse md:flex-row">
         {/* Logo: left on desktop, right on mobile */}
         <div className="text-white text-2xl font-bold whitespace-nowrap order-1 md:order-3 md:ml-auto">
@@ -35,23 +37,6 @@ export default function Header() {
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
                 قصتي
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="#Footer"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"
-              >
-                اتصل بنا
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#tools"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"
-              >
-                أدوات متطورة
               </Link>
             </li>
             <li>
@@ -130,7 +115,7 @@ export default function Header() {
             {/* Animated mobile/tablet menu */}
             <motion.div
               key="menu"
-              className="block min-[924px]:hidden fixed top-15 right-0 left-0 z-50 bg-[#11425C] px-4 pt-6 pb-6 shadow-lg"
+              className={`block min-[924px]:hidden fixed top-15 right-0 left-0 z-50 ${headerBgClass} px-4 pt-6 pb-6 shadow-lg`}
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -40, opacity: 0 }}
@@ -177,24 +162,6 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                   >
                     مصادر مجانية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#tools"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    أدوات متطورة
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#Footer"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    اتصل بنا
                   </Link>
                 </li>
                 <li>

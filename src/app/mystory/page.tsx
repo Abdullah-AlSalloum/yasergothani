@@ -15,7 +15,7 @@ const mystoryContent = [
     ما تعلّمته أن التسويق الفعّال لا يبدأ بالحملات الإعلانية، بل بالفهم الدقيق للمشروع أولًا.`
   },
   {
-    title: "مع فريق متميز ومتخصص في المجال كيف نعمل ؟",
+    title: "مع فريق متميز ومتخصص في المجال",
     text: `نبدأ بتحليل تفصيلي للمشروع ودراسة دقيقة للسوق,
     ثم نبني الاستراتيجية المناسبة,
     ونضع آلية تنفيذ ومتابعة واضحة,
@@ -47,7 +47,7 @@ const MyStory: React.FC = () => (
           </div>
         ))}
         <div className="flex justify-center mt-4">
-          <a href="/#solutions" className=" relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-30 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+          <a className=" relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-30 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 cursor-pointer">
             ابدأ من هنا
           </a>
         </div>

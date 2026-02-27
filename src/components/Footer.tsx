@@ -2,9 +2,17 @@
 import Link from "next/link";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { usePathname } from "next/navigation";
 
-const Footer = () => (
-  <footer id="Footer" className="bg-gradient-to-tr from-[#113c56] to-[#4c6d83] text-white pt-12 pb-4 px-4 md:px-0 sm:items-center">
+const Footer = () => {
+  const pathname = usePathname();
+  const isIpProtectionRoute = pathname?.startsWith('/ip-protection');
+  const footerBgClass = isIpProtectionRoute
+    ? 'bg-gradient-to-tr from-[#0f3b33] via-[#1a604f] to-[#2b7a66]'
+    : 'bg-gradient-to-tr from-[#113c56] to-[#4c6d83]';
+
+  return (
+  <footer id="Footer" className={`${footerBgClass} text-white pt-12 pb-4 px-4 md:px-0 sm:items-center`}>
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8 text-center md:text-right">
     {/* Logo & About */}
       <div className="flex flex-col items-center md:items-start">
@@ -48,7 +56,7 @@ const Footer = () => (
       </div>
       {/* Contact */}
       <div className="flex flex-col items-center md:items-start">
-        <h3 className="font-bold text-lg mb-4">تواصل معنا</h3>
+        <h3 className="font-bold text-lg mb-4">للاستفسارات المهنية</h3>
         <div className="flex flex-col items-center gap-3 mt-2">
           <a
             href="https://wa.me/963958956397"
@@ -79,6 +87,7 @@ const Footer = () => (
       </div>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;
