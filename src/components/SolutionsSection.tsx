@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SecurityIcon from '@mui/icons-material/Security';
 import CampaignIcon from '@mui/icons-material/Campaign';
@@ -16,6 +16,7 @@ const services = [
 		features: ["تشخيص دقيق","استراتيجية واضحة", "تنفيذ منظم", "قياس بالأرقام","تحسين مستمر"],
 		icon: <TrendingUpIcon fontSize="large" style={{ color: 'white' }} />,
 		link: "#",
+    anchorId: "solution-growth",
 	},
 	{
 		title: "حماية الحقوق النشر ومكافحة القرصنة",
@@ -23,6 +24,7 @@ const services = [
 		features: ["رصد الانتهاكات", "تتبّع المصادر", "توثيق الحالات","تقليل الإنتشار","متابعة مستمرة"],
 		icon: <SecurityIcon fontSize="large" style={{ color: 'white' }} />,
 		link: "#",
+    anchorId: "solution-copyright",
 	},
 	{
 		title: "إدارة الحملات الإعلانية",
@@ -30,6 +32,7 @@ const services = [
 		features: ["تحديد الأهداف", "إعداد الحملات", "إطلاق الاإعلانات","تحليل الأداد", "تحسين مستمر"],
 		icon: <CampaignIcon fontSize="large" style={{ color: 'white' }} />,
 		link: "#",
+    anchorId: "solution-campaigns",
 	},
 	{
 		title: "بناء المواقع وصفحات الهبوط",
@@ -37,6 +40,7 @@ const services = [
 		features:["تحديد الأهداف","تخطيط الهيكل","تصميم الواجهة","البناء التقني","تحسين التحول"],
 		icon: <WebIcon fontSize="large" style={{ color: 'white' }} />,
 		link: "#",
+    anchorId: "solution-web",
 	},
 	{
 		title:"إنتاج المحتوى لوسائل التواصل",
@@ -44,6 +48,7 @@ const services = [
 		features:["تحليل الجمهور","تخطيط المحتوى","إنتاج منظم","نشر مدروس","تطوير مستمر"],
 		icon: <ChatBubbleIcon fontSize="large" style={{ color: 'white' }} />,
 		link:"#",
+    anchorId: "solution-content",
 	},
 	{
 		title: "تخصيص نظام CRM",
@@ -51,6 +56,7 @@ const services = [
 		features:["فهم دورة البيع","تحديد البيانات","إعداد النظام","ربط القنوات","تحسين المتابعة"],
 		icon: <SettingsApplicationsIcon fontSize="large" style={{ color: 'white' }} />,
 		link:"#",
+    anchorId: "solution-crm",
 	},
 	{
 		title: "إدارة المتاجر الإلكترونية",
@@ -58,6 +64,7 @@ const services = [
 		features:["مراجعة الأداء","تنظيم العمليات","تحسين التجربة","متابعة المؤثرات","تطوير تدريجي"],
 		icon: <StorefrontIcon fontSize="large" style={{ color: 'white' }} />,
 		link:"#",
+    anchorId: "solution-ecommerce",
 	},
 ];
 const whatsappNumber = "963958956397"; // رقم الواتساب بدون +
@@ -67,6 +74,30 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(w
 
 const SolutionsSection: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollToHashCard = () => {
+      const hash = window.location.hash;
+      if (!hash || !carouselRef.current) return;
+      const target = carouselRef.current.querySelector(hash) as HTMLElement | null;
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        target.classList.remove("card-flash-once");
+        void target.offsetWidth;
+        target.classList.add("card-flash-once");
+        window.setTimeout(() => {
+          target.classList.remove("card-flash-once");
+        }, 950);
+      }
+    };
+
+    const timeout = setTimeout(scrollToHashCard, 120);
+    window.addEventListener("hashchange", scrollToHashCard);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("hashchange", scrollToHashCard);
+    };
+  }, []);
 
   // Mouse drag scroll logic
   let isDown = false;
@@ -116,6 +147,7 @@ const SolutionsSection: React.FC = () => {
             return (
               <div
                 key={i}
+                id={srv.anchorId}
                 className="flex-shrink-0 w-[320px] sm:w-[320px] bg-white rounded-2xl shadow-lg border border-gray-200 p-6 flex flex-col items-end text-right relative"
                 style={{ minHeight: 440, paddingTop: 56, paddingBottom: 64, width: '90vw', maxWidth: 320 }}
               >
@@ -172,6 +204,24 @@ const SolutionsSection: React.FC = () => {
           })}
         </div>
         <style jsx>{`
+  @keyframes card-flash-inout {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 16px 0 rgba(17, 60, 86, 0.18);
+    }
+    45% {
+      transform: scale(1.035);
+      box-shadow: 0 10px 30px 0 rgba(250, 204, 21, 0.35);
+      border-color: rgba(250, 204, 21, 0.8);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 16px 0 rgba(17, 60, 86, 0.18);
+    }
+  }
+  .card-flash-once {
+    animation: card-flash-inout 0.9s ease-in-out 1;
+  }
   .custom-scrollbar::-webkit-scrollbar {
     height: 4px;
     background: #113c56;

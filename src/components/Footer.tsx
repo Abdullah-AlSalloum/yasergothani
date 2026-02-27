@@ -49,9 +49,9 @@ const Footer = () => {
       <div className="flex flex-col items-center md:items-start">
         <h3 className="font-bold text-lg mb-4">خدماتنا</h3>
         <ul className="space-y-2 text-sm">
-          <li><Link href="#" className="hover:underline">نظام النمو الرقمي المستدام </Link></li>
-          <li><Link href="#" className="hover:underline">وثيق لحماية حقوق النشر </Link></li>
-          <li><Link href="#" className="hover:underline">بناء المواقع الإلكترونية</Link></li>
+          <li><Link href="/#solutions" className="hover:underline">نظام النمو الرقمي المستدام </Link></li>
+          <li><Link href="/ip-protection" className="hover:underline">وثيق لحماية حقوق النشر </Link></li>
+          <li><Link href="/#solution-web" className="hover:underline">بناء المواقع الإلكترونية</Link></li>
         </ul>
       </div>
       {/* Contact */}
