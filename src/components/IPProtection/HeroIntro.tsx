@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Section1: React.FC = () => (
+const HeroIntro: React.FC = () => (
  <section className="w-full min-h-[50vh] flex items-start justify-center pt-24 relative overflow-hidden" style={{ background: 'none' }}>
          <img src="/images/lack-on-quran.jpeg" alt="background" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none z-0" />
          <div className="w-full flex flex-col items-start justify-start text-right max-w-5xl mx-auto px-8 relative z-10">
@@ -23,4 +23,4 @@ const Section1: React.FC = () => (
        </section>
 );
 
-export default Section1;
+export default HeroIntro;

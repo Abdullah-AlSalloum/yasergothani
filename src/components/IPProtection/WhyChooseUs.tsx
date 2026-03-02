@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { EmojiObjects, WorkspacePremium } from '@mui/icons-material';
 
-const Section10: React.FC = () => (
+const WhyChooseUs: React.FC = () => (
   <section className="relative bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-0 max-w-5xl mx-auto overflow-hidden my-2">
         <div className="absolute left-0 top-0 h-full w-2 bg-[#1a604f] rounded-tr-2xl rounded-br-2xl" />
         <div className="relative z-10 py-12 px-6 md:px-16 flex flex-col gap-10">
@@ -54,6 +54,7 @@ const Section10: React.FC = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
+            <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
             <motion.button
               className="bg-[#1a604f] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#1a604f] transition-all duration-200 border-2 border-[#1a604f] hover:border-[#1a604f]"
               whileHover={{ scale: 1.07 }}
@@ -61,9 +62,10 @@ const Section10: React.FC = () => (
             >
               ابدأ حماية حقوقك الفكرية
             </motion.button>
+            </a>
           </motion.div>
         </div>
       </section>
 );
 
-export default Section10;
+export default WhyChooseUs;

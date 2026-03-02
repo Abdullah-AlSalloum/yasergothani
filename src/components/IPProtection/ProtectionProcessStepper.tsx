@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Section8: React.FC = () => (
+const ProtectionProcessStepper: React.FC = () => (
   <section className="bg-[#f7fafc] rounded-2xl shadow p-8 max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-extrabold mb-10 text-[#1a604f] text-center">كيف نساعدك في حماية الحقوق الفكرية لكتابك</h2>
         <div className="flex flex-col md:flex-row gap-8">
@@ -57,15 +57,17 @@ const Section8: React.FC = () => (
         </div>
         <div>
         <div className="flex justify-center mt-10">
+          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
           <motion.button className="bg-[#1a604f] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#437066] shadow-lg transition-all duration-200"
             whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.97 }}
           >
             ابدأ حماية حقوقك الفكرية
           </motion.button>
+          </a>
         </div>
         </div>
       </section>
 );
 
-export default Section8;
+export default ProtectionProcessStepper;

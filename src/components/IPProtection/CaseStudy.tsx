@@ -20,17 +20,16 @@ const CaseStudy: React.FC = () => {
               <div className="w-2/3 h-4 rounded-full bg-[#1a604f]/10 blur-md mx-auto" />
             </div>
             <motion.h2
-              className="text-2xl font-bold text-[#437066] mb-2 flex items-center"
+              className="relative md:left-15 text-2xl font-bold text-[#437066] mb-2 flex items-center gap-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] text-white text-lg font-extrabold mr-3 shadow-sm">1</span>
-              <span className="inline-flex">
-                <VerifiedUser style={{ fontSize: 28, color: '#1a604f' }} />
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] mr-3 shadow-sm">
+                <VerifiedUser style={{ fontSize: 24, color: '#ffffff' }} />
               </span>
-              <span className="ml-2">دراسة الحالة</span>
+              <span>دراسة الحالة</span>
             </motion.h2>
             <motion.p
               className="text-lg text-[#1a604f]"
@@ -50,17 +49,16 @@ const CaseStudy: React.FC = () => {
               <div className="w-2/3 h-4 rounded-full bg-[#eab308]/10 blur-md mx-auto" />
             </div>
             <motion.h2
-              className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
+              className="relative md:left-15 text-2xl font-bold text-[#1a604f] mb-2 flex items-center gap-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] text-white text-lg font-extrabold mr-3 shadow-sm">2</span>
-              <span className="inline-flex">
-                <Warning style={{ fontSize: 28, color: '#eab308', marginLeft: 8 }} />
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] mr-3 shadow-sm">
+                <Warning style={{ fontSize: 24, color: '#ffffff' }} />
               </span>
-              <span className="ml-2">تصنيف الحالة</span>
+              <span>تصنيف الحالة</span>
             </motion.h2>
             <motion.p
               className="text-lg text-[#1a604f]"
@@ -78,17 +76,16 @@ const CaseStudy: React.FC = () => {
               <div className="w-2/3 h-4 rounded-full bg-[#1a604f]/10 blur-md mx-auto" />
             </div>
             <motion.h2
-              className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
+              className="relative md:left-15 text-2xl font-bold text-[#1a604f] mb-2 flex items-center gap-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] text-white text-lg font-extrabold mr-3 shadow-sm">3</span>
-              <span className="inline-flex">
-                <VisibilityIcon style={{ fontSize: 28, color: '#1a604f', marginLeft: 8 }} />
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] mr-3 shadow-sm">
+                <VisibilityIcon style={{ fontSize: 24, color: '#ffffff' }} />
               </span>
-              <span className="ml-2">التعقب والحماية</span>
+              <span>التعقب والحماية</span>
             </motion.h2>
             <motion.p
               className="text-lg text-[#1a604f]"
@@ -116,17 +113,16 @@ const CaseStudy: React.FC = () => {
               <div className="w-2/3 h-4 rounded-full bg-[#e53935]/10 blur-md mx-auto" />
             </div>
             <motion.h2
-              className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
+              className="relative md:left-15 text-2xl font-bold text-[#1a604f] mb-2 flex items-center gap-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] text-white text-lg font-extrabold mr-3 shadow-sm">4</span>
-              <span className="inline-flex">
-                <DeleteForeverIcon style={{ fontSize: 28, color: '#e53935', marginLeft: 8 }} />
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] mr-3 shadow-sm">
+                <DeleteForeverIcon style={{ fontSize: 24, color: '#ffffff'}} />
               </span>
-              <span className="ml-2">حذف الكتب المقرصنة</span>
+              <span>حذف الكتب المقرصنة</span>
             </motion.h2>
             <motion.p
               className="text-lg text-[#1a604f]"
@@ -140,17 +136,16 @@ const CaseStudy: React.FC = () => {
           </div>
           <div className="mb-8">
             <motion.h2
-              className="text-2xl font-bold text-[#1a604f] mb-2 flex items-center"
+              className="relative text-2xl font-bold text-[#1a604f] mb-2 flex items-center gap-3 md:left-15"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] text-white text-lg font-extrabold mr-3 shadow-sm">5</span>
-              <span className="inline-flex">
-                <TrendingUp style={{ fontSize: 28, color: '#22c55e', marginLeft: 8 }} />
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#3e7f83] mr-3 shadow-sm">
+                <TrendingUp style={{ fontSize: 24, color: '#ffffff' }} />
               </span>
-              <span className="ml-2">المتابعة والدعم</span>
+              <span>المتابعة والدعم</span>
             </motion.h2>
             <motion.p
               className="text-lg text-[#1a604f]"
@@ -166,12 +161,16 @@ const CaseStudy: React.FC = () => {
         <div className="bg-transparent rounded-lg  p-4 flex items-center gap-3 mb-6 text-[#113c56] font-bold text-2xl justify-center w-full max-w-2xl mx-auto text-center md:text-right border-b border-[#113c56]">
           بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
         </div>
-        <motion.button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto cursor-pointer"
-          whileHover={{ scale: 1.07 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          ليكن كتابك في أمان ايضاً
-        </motion.button>
+        <div className="w-full flex justify-center">
+          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
+            <motion.button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto cursor-pointer"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              ليكن كتابك في أمان ايضاً
+            </motion.button>
+          </a>
+        </div>
       </div>
     </section>
   );

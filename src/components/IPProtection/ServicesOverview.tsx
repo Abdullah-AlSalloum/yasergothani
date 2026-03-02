@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-const Section7: React.FC = () => (
+const ServicesOverview: React.FC = () => (
    <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
         <div className="w-full bg-primary rounded-2xl py-6 px-4 flex flex-col items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#437066] text-center">خدماتنا المتكاملة</h2>
@@ -25,13 +25,15 @@ const Section7: React.FC = () => (
               <p className="text-[#437066]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
             </div>
           </div>
+          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
           <motion.button className="bg-[#437066] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition-all duration-200 shadow mt-4 "
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}>
             لن تقلق من قرصنة كتابك بعد اليوم
           </motion.button>
+          </a>
         </div>
       </section>
 );
 
-export default Section7;
+export default ServicesOverview;

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SecurityIcon from '@mui/icons-material/Security';
@@ -68,9 +67,7 @@ const services = [
 	},
 ];
 const whatsappNumber = "963958956397"; // رقم الواتساب بدون +
-const firstServiceTitle = services[0]?.title || "";
-const whatsappMessage = `السلام عليكم ورحمة الله وبركاته، أنا مهتم بـ (${firstServiceTitle})، كيف سنبدأ ؟`;
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const growthFormUrl = "https://forms.gle/UYnRXa4Z1SQZCqTs6";
 
 const SolutionsSection: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -144,6 +141,7 @@ const SolutionsSection: React.FC = () => {
           {services.map((srv, i) => {
             const whatsappMessage = `السلام عليكم ورحمة الله وبركاته، أنا مهتم بـ (${srv.title})، كيف سنبدأ ؟`;
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            const serviceUrl = i === 0 ? growthFormUrl : whatsappUrl;
             return (
               <div
                 key={i}
@@ -190,7 +188,7 @@ const SolutionsSection: React.FC = () => {
                     ))}
                   </ul>
                   <a
-                    href={whatsappUrl}
+                    href={serviceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group absolute left-1/2 -translate-x-1/2 bottom-4 w-[90%] inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"

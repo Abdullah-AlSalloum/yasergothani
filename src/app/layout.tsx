@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "react-phone-input-2/lib/style.css";
 import ClientLayout from "../components/ClientLayout";
 import Footer from "../components/Footer";
 

@@ -117,7 +117,7 @@ export default function HeroSection() {
             <div className="relative w-full flex flex-col items-center min-h-[240px] sm:min-h-[340px]">
               <div className="w-full h-[260px] sm:h-[420px] relative flying-hero-img">
                 {([
-                  'growth.png',
+                  'funnel.png',
                   'copyright-protection.png',
                   'campaigns.png',
                   'web-design.png',

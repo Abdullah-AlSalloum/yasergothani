@@ -47,7 +47,11 @@ const MyStory: React.FC = () => (
           </div>
         ))}
         <div className="flex justify-center mt-4">
-          <a className=" relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-30 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 cursor-pointer">
+          <a
+          href="https://forms.gle/UYnRXa4Z1SQZCqTs6"
+          target="_blank"
+          rel="noopener noreferrer"
+         className=" relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-30 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 cursor-pointer">
             ابدأ من هنا
           </a>
         </div>
