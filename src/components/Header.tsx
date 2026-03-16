@@ -57,7 +57,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="#solutions"
+                href="/#solutions"
                 className="block px-4 py-2 rounded transition hover:bg-white/20 scroll-smooth"
               >
                 الخدمات
@@ -139,7 +139,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="#methodology"
+                    href="/#solutions"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
                   >
