@@ -1,4 +1,4 @@
-import { google } from "googleapis";
+import { google, sheets_v4 } from "googleapis";
 
 export const runtime = "nodejs";
 
@@ -42,6 +42,23 @@ const getEnv = (name: string) => {
 
 const normalizeValue = (value: string | undefined) => (typeof value === "string" ? value.trim() : "");
 
+const resolveTargetSheetTitle = (
+  sheets: sheets_v4.Schema$Sheet[] | null | undefined,
+  preferredGid: string | undefined,
+) => {
+  if (!sheets?.length) return undefined;
+
+  if (preferredGid) {
+    const numericGid = Number(preferredGid);
+    if (!Number.isNaN(numericGid)) {
+      const byGid = sheets.find((sheet) => sheet.properties?.sheetId === numericGid)?.properties?.title;
+      if (byGid) return byGid;
+    }
+  }
+
+  return sheets[0]?.properties?.title ?? undefined;
+};
+
 export async function POST(request: Request) {
   try {
     const payload = (await request.json()) as ConsultationPayload;
@@ -73,9 +90,10 @@ export async function POST(request: Request) {
     const sheets = google.sheets({ version: "v4", auth });
 
     const spreadsheet = await sheets.spreadsheets.get({ spreadsheetId });
-    const firstSheetTitle = spreadsheet.data.sheets?.[0]?.properties?.title;
+    const preferredSheetGid = process.env.GOOGLE_SHEET_GID;
+    const targetSheetTitle = resolveTargetSheetTitle(spreadsheet.data.sheets, preferredSheetGid);
 
-    if (!firstSheetTitle) {
+    if (!targetSheetTitle) {
       return Response.json({ error: "تعذر العثور على ورقة صالحة داخل الملف." }, { status: 500 });
     }
 
@@ -99,7 +117,7 @@ export async function POST(request: Request) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${firstSheetTitle}!A:Z`,
+      range: `${targetSheetTitle}!A:Z`,
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
       requestBody: {

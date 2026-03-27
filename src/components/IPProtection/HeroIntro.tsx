@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import OpenIpProtectionRequestButton from "./OpenIpProtectionRequestButton";
 
 const HeroIntro: React.FC = () => (
  <section className="w-full min-h-[50vh] flex items-start justify-center pt-24 relative overflow-hidden" style={{ background: 'none' }}>
@@ -11,14 +11,10 @@ const HeroIntro: React.FC = () => (
            <p className="text-2xl text-[#f1f5fb] mb-8">
              نرصد، نوثق، ونتابع انتهاكات حقوق النشر لكتبك على مدار العام. 
            </p>
-           <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
-             <motion.button  className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] w-fit transition-all duration-200 "
-               whileHover={{ scale: 1.07 }}
-               whileTap={{ scale: 0.97 }}
-             >
-               ابدأ حماية كتابك الآن
-             </motion.button>
-           </a>
+           <OpenIpProtectionRequestButton
+             label="ابدأ حماية كتابك الآن"
+             className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] w-fit transition-all duration-200"
+           />
          </div>
        </section>
 );

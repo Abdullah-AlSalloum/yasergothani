@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import OpenIpProtectionRequestButton from './OpenIpProtectionRequestButton';
 
 const ServicesOverview: React.FC = () => (
    <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
@@ -25,13 +25,10 @@ const ServicesOverview: React.FC = () => (
               <p className="text-[#437066]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
             </div>
           </div>
-          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
-          <motion.button className="bg-[#437066] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition-all duration-200 shadow mt-4 "
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}>
-            لن تقلق من قرصنة كتابك بعد اليوم
-          </motion.button>
-          </a>
+          <OpenIpProtectionRequestButton
+            label="لن تقلق من قرصنة كتابك بعد اليوم"
+            className="bg-[#437066] text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-primary-light hover:text-primary transition-all duration-200 shadow mt-4"
+          />
         </div>
       </section>
 );

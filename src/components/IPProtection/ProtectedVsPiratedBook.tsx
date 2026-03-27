@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import OpenIpProtectionRequestButton from './OpenIpProtectionRequestButton';
 
 const ProtectedVsPiratedBook: React.FC = () => (
   <section className="py-8 max-w-7xl mx-auto flex flex-col gap-8">
@@ -24,13 +25,10 @@ const ProtectedVsPiratedBook: React.FC = () => (
             احصل على دراسة حالة مجانية
           </motion.button>
           </a>
-          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
-          <motion.button className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit transition-all duration-200"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}>
-            إزالة النسخ غير القانونية الآن
-          </motion.button>
-          </a>
+          <OpenIpProtectionRequestButton
+            label="إزالة النسخ غير القانونية الآن"
+            className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit transition-all duration-200"
+          />
           
         </div>
       </section>

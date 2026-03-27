@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { VerifiedUser, TrendingDown } from '@mui/icons-material';
+import OpenIpProtectionRequestButton from "./OpenIpProtectionRequestButton";
 
 const LegalProtectionBenefits: React.FC = () => (
     <section className="bg-gradient-to-br from-[#f7fafc] via-[#e3f0fa] to-[#f7fafc] rounded-2xl shadow p-8 max-w-4xl mx-auto mt-2 mb-12">
@@ -18,14 +18,10 @@ const LegalProtectionBenefits: React.FC = () => (
           </div>
         </div>
         <div className="flex justify-center">
-          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
-          <motion.button className="bg-[#1a604f] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#437066] transition-all duration-200 border-2 border-[#1a604f] hover:border-[#1a604f]"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            ابدأ بتأمين كتابك اليوم
-          </motion.button>
-          </a>
+          <OpenIpProtectionRequestButton
+            label="ابدأ بتأمين كتابك اليوم"
+            className="bg-[#1a604f] text-white px-10 py-4 rounded-lg font-bold text-xl shadow-lg hover:bg-[#437066] transition-all duration-200 border-2 border-[#1a604f] hover:border-[#1a604f]"
+          />
         </div>
       </section>
 );

@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import { VerifiedUser, Warning, TrendingUp } from '@mui/icons-material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import OpenIpProtectionRequestButton from './OpenIpProtectionRequestButton';
 
 
 const CaseStudy: React.FC = () => {
@@ -162,14 +163,10 @@ const CaseStudy: React.FC = () => {
           بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
         </div>
         <div className="w-full flex justify-center">
-          <a href="https://forms.gle/84BFkNhgWd47duzi9" target="_blank" rel="noopener noreferrer">
-            <motion.button className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto cursor-pointer"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              ليكن كتابك في أمان ايضاً
-            </motion.button>
-          </a>
+          <OpenIpProtectionRequestButton
+            label="ليكن كتابك في أمان ايضاً"
+            className="bg-[#F44444] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-red-700 transition-all duration-200 shadow w-full max-w-xs mx-auto cursor-pointer"
+          />
         </div>
       </div>
     </section>

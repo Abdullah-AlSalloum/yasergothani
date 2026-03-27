@@ -106,6 +106,9 @@ const PhoneSearchIconPortal = ({ isOpen }: PhoneSearchIconPortalProps) => {
 const GuideAudienceSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     setFormData((prev) => ({ ...prev, country: getDetectedCountry() }));
@@ -116,10 +119,37 @@ const GuideAudienceSection: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsOpen(false);
-    window.open("/downloads/monitoring-guide.pdf", "_blank", "noopener,noreferrer");
+    setIsSubmitting(true);
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    try {
+      const response = await fetch("/api/self-monitoring-guide", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error || "تعذر إرسال البيانات الآن.");
+      }
+
+      setSuccessMessage("تم إرسال البيانات بنجاح. سيتم تنزيل الدليل الآن.");
+      window.open("/downloads/monitoring-guide.pdf", "_blank", "noopener,noreferrer");
+      setTimeout(() => {
+        setIsOpen(false);
+        setFormData((prev) => ({ ...INITIAL_FORM_DATA, country: prev.country || DEFAULT_COUNTRY }));
+        setSuccessMessage("");
+      }, 700);
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "حدث خطأ غير متوقع. حاول مرة أخرى.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handlePhoneChange = (value: string, countryData: PhoneCountryData | {}) => {
@@ -247,12 +277,16 @@ const GuideAudienceSection: React.FC = () => {
                   />
                 </div>
 
+                {errorMessage && <p className="text-[#b42318] text-sm font-semibold text-right">{errorMessage}</p>}
+                {successMessage && <p className="text-[#1a604f] text-sm font-semibold text-right">{successMessage}</p>}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#1a604f] text-white py-3.5 rounded-xl font-bold hover:bg-[#154d40] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-[0_10px_22px_rgba(26,96,79,0.3)] hover:-translate-y-0.5"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#1a604f] text-white py-3.5 rounded-xl font-bold hover:bg-[#154d40] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-[0_10px_22px_rgba(26,96,79,0.3)] hover:-translate-y-0.5"
                 >
                   <DownloadForOfflineIcon fontSize="small" />
-                  تحميل الدليل
+                  {isSubmitting ? "جاري الإرسال..." : "تحميل الدليل"}
                 </button>
               </form>
             </motion.div>

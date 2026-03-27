@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CheckCircleIcon, LightBulbIcon, PencilSquareIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -64,6 +64,8 @@ const upcomingGoalOptions = [
   "Other",
 ];
 
+const OPEN_CONSULTATION_FORM_EVENT = "open-consultation-form";
+
 const CTASection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -78,6 +80,14 @@ const CTASection = () => {
 
   const isOtherEffortSelected = formData.biggestEffortArea === "Other";
   const isOtherGoalSelected = formData.upcomingGoal === "Other";
+
+  useEffect(() => {
+    const openForm = () => setIsFormOpen(true);
+    window.addEventListener(OPEN_CONSULTATION_FORM_EVENT, openForm);
+    return () => {
+      window.removeEventListener(OPEN_CONSULTATION_FORM_EVENT, openForm);
+    };
+  }, []);
 
   const isSubmitDisabled = useMemo(() => {
     if (isSubmitting) return true;
