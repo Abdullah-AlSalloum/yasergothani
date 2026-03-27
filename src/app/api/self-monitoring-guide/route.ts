@@ -63,12 +63,13 @@ export async function POST(request: Request) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${firstSheetTitle}!B:F`,
+      range: `${firstSheetTitle}!A:F`,
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
       requestBody: {
         values: [
           [
+            "",
             normalizeValue(payload.fullName),
             normalizeValue(payload.role),
             normalizeValue(payload.email),
