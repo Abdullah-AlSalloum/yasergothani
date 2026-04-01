@@ -12,7 +12,7 @@ type FormState = {
   fullName: string;
   phone: string;
   projectName: string;
-  country: string;
+  city: string;
   businessSummary: string;
   biggestEffortArea: string;
   biggestEffortAreaOther: string;
@@ -27,7 +27,7 @@ const INITIAL_FORM_STATE: FormState = {
   fullName: "",
   phone: "",
   projectName: "",
-  country: "",
+  city: "",
   businessSummary: "",
   biggestEffortArea: "",
   biggestEffortAreaOther: "",
@@ -91,7 +91,7 @@ const CTASection = () => {
 
   const isSubmitDisabled = useMemo(() => {
     if (isSubmitting) return true;
-    if (!formData.fullName || !formData.phone || !formData.projectName || !formData.country) return true;
+    if (!formData.fullName || !formData.phone || !formData.projectName || !formData.city) return true;
     if (!formData.businessSummary || !formData.biggestEffortArea || !formData.numbersTracking) return true;
     if (!formData.upcomingGoal || !formData.previousAttempts || !formData.socialLinks) return true;
     if (isOtherEffortSelected && !formData.biggestEffortAreaOther.trim()) return true;
@@ -222,8 +222,8 @@ const CTASection = () => {
               </div>
 
               <div className={cardClassName}>
-                <label className="block text-[#113c56] font-bold text-xl mb-2">الدولة <span className="text-red-500">*</span></label>
-                <input name="country" value={formData.country} onChange={handleInputChange} required className={inputClassName} />
+                <label className="block text-[#113c56] font-bold text-xl mb-2">المدينة <span className="text-red-500">*</span></label>
+                <input name="country" value={formData.city} onChange={handleInputChange} required className={inputClassName} />
               </div>
 
               <div className={cardClassName}>

@@ -276,12 +276,11 @@ const IpProtectionRequestModal: React.FC = () => {
             </div>
 
             <div className={cardClassName}>
-              <label className="block text-[#113c56] font-bold text-xl mb-2">شهادة تسجيل الملكية الفكرية للكتاب <span className="text-red-500">*</span></label>
+              <label className="block text-[#113c56] font-bold text-xl mb-2">شهادة تسجيل الملكية الفكرية للكتاب </label>
               <textarea
                 name="copyrightCertificateInfo"
                 value={formData.copyrightCertificateInfo}
                 onChange={handleInputChange}
-                required
                 placeholder="أدخل رابط الملف أو وصفًا مختصرًا"
                 className={`${inputClassName} min-h-20`}
               />
