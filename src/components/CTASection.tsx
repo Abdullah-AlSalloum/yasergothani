@@ -223,7 +223,7 @@ const CTASection = () => {
 
               <div className={cardClassName}>
                 <label className="block text-[#113c56] font-bold text-xl mb-2">المدينة <span className="text-red-500">*</span></label>
-                <input name="country" value={formData.city} onChange={handleInputChange} required className={inputClassName} />
+                <input name="city" value={formData.city} onChange={handleInputChange} required className={inputClassName} />
               </div>
 
               <div className={cardClassName}>
