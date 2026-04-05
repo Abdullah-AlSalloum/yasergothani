@@ -6,7 +6,7 @@ type ConsultationPayload = {
   fullName: string;
   phone: string;
   projectName: string;
-  country: string;
+  city: string;
   businessSummary: string;
   biggestEffortArea: string;
   biggestEffortAreaOther?: string;
@@ -23,7 +23,7 @@ const requiredFields: Array<keyof ConsultationPayload> = [
   "fullName",
   "phone",
   "projectName",
-  "country",
+  "city",
   "businessSummary",
   "biggestEffortArea",
   "numbersTracking",
@@ -102,7 +102,7 @@ export async function POST(request: Request) {
       normalizeValue(payload.fullName),
       normalizeValue(payload.phone),
       normalizeValue(payload.projectName),
-      normalizeValue(payload.country),
+      normalizeValue(payload.city),
       normalizeValue(payload.businessSummary),
       payload.biggestEffortArea === "Other"
         ? `Other: ${normalizeValue(payload.biggestEffortAreaOther)}`
