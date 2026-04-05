@@ -1,6 +1,95 @@
 @import "./fonts.css";
 @import "tailwindcss";
 
+/* ── react-phone-input-2 dropdown redesign ────────────────────────── */
+
+/* Dropdown container */
+.react-tel-input .country-list {
+  background: #f5f7fb;
+  border: 1px solid #d7dfdc;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(17,60,86,0.12);
+  padding: 6px 0;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+/* Search wrapper */
+.react-tel-input .country-list .search {
+  direction: rtl;
+  text-align: right;
+  padding: 10px 10px 8px;
+  background: #f5f7fb;
+  border-bottom: 1px solid #e8ecf0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.react-tel-input .country-list .search .search-emoji {
+  display: none;
+}
+
+/* Search input */
+.react-tel-input .country-list .search-box {
+  width: 100%;
+  border: 1.5px solid #d7dfdc;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #113c56;
+  background: #ffffff;
+  direction: rtl;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  margin: 0;
+}
+.react-tel-input .country-list .search-box::placeholder {
+  color: #7b8c97;
+  text-align: right;
+}
+.react-tel-input .country-list .search-box:focus {
+  border-color: #1a604f;
+  box-shadow: 0 0 0 3px rgba(26,96,79,0.15);
+}
+
+/* Country rows */
+.react-tel-input .country-list .country {
+  direction: rtl;
+  text-align: right;
+  padding: 9px 14px;
+  color: #113c56;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+.react-tel-input .country-list .country:hover,
+.react-tel-input .country-list .country.highlight {
+  background: #e8f0ed;
+  border-radius: 8px;
+}
+.react-tel-input .country-list .country .country-name {
+  flex: 1;
+}
+.react-tel-input .country-list .country .dial-code {
+  color: #4c6d83;
+  font-size: 13px;
+  margin-right: auto;
+}
+.react-tel-input .country-list .flag {
+  margin: 0;
+}
+
+/* Divider */
+.react-tel-input .country-list .divider {
+  border-color: #e8ecf0;
+  margin: 4px 10px;
+}
+
 
 :root {
   --background: #f1f5fb; /* 60% */

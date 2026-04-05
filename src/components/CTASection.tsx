@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { CheckCircleIcon, LightBulbIcon, PencilSquareIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
 import CloseIcon from '@mui/icons-material/Close';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import ar from "react-phone-input-2/lang/ar.json";
 
 const features = [
   { icon: <CheckCircleIcon className="h-7 w-7 text-white mx-auto mb-2" />, title: "تحليل مبدأي للوضع الحالي", /*desc: "تحليل الوضع الحالي لك"*/ },
@@ -66,8 +69,28 @@ const upcomingGoalOptions = [
 
 const OPEN_CONSULTATION_FORM_EVENT = "open-consultation-form";
 
+const timezoneCountryMap: Record<string, string> = {
+  "Asia/Riyadh": "sa",
+  "Asia/Dubai": "ae",
+  "Africa/Cairo": "eg",
+  "Asia/Damascus": "sy",
+  "Asia/Kuwait": "kw",
+  "Asia/Qatar": "qa",
+  "America/New_York": "us",
+  "Europe/London": "gb",
+};
+
+const getDetectedCountry = () => {
+  if (typeof window === "undefined") return "sa";
+  const localeMatch = (navigator.language || "").match(/-([A-Za-z]{2})$/);
+  const localeCountry = localeMatch?.[1]?.toLowerCase();
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  return localeCountry || timezoneCountryMap[timezone] || "sa";
+};
+
 const CTASection = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [phoneCountry, setPhoneCountry] = useState("sa");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -213,7 +236,24 @@ const CTASection = () => {
 
               <div className={cardClassName}>
                 <label className="block text-[#113c56] font-bold text-xl mb-2">رقم الهاتف <span className="text-red-500">*</span></label>
-                <input name="phone" value={formData.phone} onChange={handleInputChange} required className={inputClassName} />
+                <div dir="ltr">
+                  <PhoneInput
+                    country={phoneCountry}
+                    value={formData.phone}
+                    onChange={(value, data: { countryCode?: string }) => {
+                      setPhoneCountry((data as { countryCode?: string }).countryCode || phoneCountry);
+                      setFormData((prev) => ({ ...prev, phone: value }));
+                    }}
+                    onMount={() => setPhoneCountry(getDetectedCountry())}
+                    inputClass="!w-full !h-[50px] !rounded-xl !border !border-[#d7dfdc] !text-[#113c56] !bg-white focus:!outline-none focus:!ring-2 focus:!ring-[#1a604f]/30 focus:!border-[#1a604f]"
+                    buttonClass="!border !border-[#d7dfdc] !rounded-l-xl !bg-white hover:!bg-[#f5f7fb]"
+                    dropdownClass="!text-[#113c56]"
+                    enableSearch
+                    searchPlaceholder="ابحث عن الدولة..."
+                    localization={ar}
+                    inputProps={{ name: "phone", required: true }}
+                  />
+                </div>
               </div>
 
               <div className={cardClassName}>

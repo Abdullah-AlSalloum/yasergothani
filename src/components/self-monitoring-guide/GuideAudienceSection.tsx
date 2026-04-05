@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import ClearIcon from "@mui/icons-material/Clear";
-import SearchIcon from "@mui/icons-material/Search";
 import PhoneInput from "react-phone-input-2";
+import ar from "react-phone-input-2/lang/ar.json";
 
 type FormData = {
   fullName: string;
@@ -20,14 +19,8 @@ type PhoneCountryData = {
   countryCode?: string;
 };
 
-type PhoneSearchIconPortalProps = {
-  isOpen: boolean;
-};
-
 const DEFAULT_COUNTRY = "sa";
-const PHONE_DROPDOWN_CLASS = "guide-phone-dropdown !text-left !text-[#0f3b33]";
-const SEARCH_CONTAINER_SELECTOR = ".guide-phone-dropdown .search";
-const SEARCH_ICON_HOST_CLASS = "guide-search-icon-host";
+const PHONE_DROPDOWN_CLASS = "guide-phone-dropdown !text-[#0f3b33]";
 const FORM_CONTROL_CLASS =
   "w-full border border-[#d9e4e1] rounded-xl px-4 py-3 text-[#0f3b33] bg-white/95 text-right placeholder:text-[#6e8b84] placeholder:text-right focus:outline-none focus:ring-2 focus:ring-[#1a604f]/25 focus:border-[#1a604f] transition-all duration-200";
 const PHONE_INPUT_CLASS =
@@ -61,46 +54,6 @@ const getDetectedCountry = () => {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return localeCountry || timezoneCountryMap[timezone] || DEFAULT_COUNTRY;
-};
-
-const PhoneSearchIconPortal = ({ isOpen }: PhoneSearchIconPortalProps) => {
-  const [searchIconHost, setSearchIconHost] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (!isOpen || typeof window === "undefined") {
-      setSearchIconHost(null);
-      return;
-    }
-
-    const attachSearchIconHost = () => {
-      const searchContainer = document.querySelector(SEARCH_CONTAINER_SELECTOR) as HTMLElement | null;
-      if (!searchContainer) return false;
-
-      let host = searchContainer.querySelector(`.${SEARCH_ICON_HOST_CLASS}`) as HTMLElement | null;
-      if (!host) {
-        host = document.createElement("span");
-        host.className = SEARCH_ICON_HOST_CLASS;
-        searchContainer.prepend(host);
-      }
-
-      setSearchIconHost(host);
-      return true;
-    };
-
-    if (attachSearchIconHost()) return;
-
-    const observer = new MutationObserver(() => {
-      if (attachSearchIconHost()) observer.disconnect();
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect();
-  }, [isOpen]);
-
-  if (!searchIconHost) return null;
-
-  return createPortal(<SearchIcon fontSize="small" />, searchIconHost);
 };
 
 const GuideAudienceSection: React.FC = () => {
@@ -269,6 +222,8 @@ const GuideAudienceSection: React.FC = () => {
                     }}
                     placeholder="رقم الجوال"
                     enableSearch
+                    searchPlaceholder="ابحث عن الدولة..."
+                    localization={ar}
                     countryCodeEditable={false}
                     containerClass="w-full"
                     inputClass={PHONE_INPUT_CLASS}
@@ -293,8 +248,6 @@ const GuideAudienceSection: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <PhoneSearchIconPortal isOpen={isOpen} />
 
       <style jsx global>{`
         .guide-audience-section,
