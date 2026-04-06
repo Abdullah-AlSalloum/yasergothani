@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import OpenIpProtectionRequestButton from './OpenIpProtectionRequestButton';
+import { OPEN_CASE_STUDY_FORM_EVENT } from './caseStudyFormEvent';
 
 const ProtectedVsPiratedBook: React.FC = () => (
   <section className="py-8 max-w-7xl mx-auto flex flex-col gap-8">
@@ -18,13 +19,14 @@ const ProtectedVsPiratedBook: React.FC = () => (
         </div>
         
         <div className="w-full flex flex-col items-center md:items-center gap-4">
-          <a href="https://forms.gle/ja1vKBEK7ZLFrKFU6" target="_blank" rel="noopener noreferrer">
-          <motion.button className="bg-green-700 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-green-800 transition w-fit"
+          <motion.button
+            className="bg-green-700 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-green-800 transition w-fit"
             whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}>
+            whileTap={{ scale: 0.97 }}
+            onClick={() => window.dispatchEvent(new Event(OPEN_CASE_STUDY_FORM_EVENT))}
+          >
             احصل على دراسة حالة مجانية
           </motion.button>
-          </a>
           <OpenIpProtectionRequestButton
             label="إزالة النسخ غير القانونية الآن"
             className="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition w-fit transition-all duration-200"

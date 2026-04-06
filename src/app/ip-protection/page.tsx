@@ -14,6 +14,7 @@ import AdditionalActions from "@/components/IPProtection/AdditionalActions";
 import FinalCallToAction from "@/components/IPProtection/FinalCallToAction";
 import LegalProtectionBenefits from "@/components/IPProtection/LegalProtectionBenefits";
 import IpProtectionRequestModal from "@/components/IPProtection/IpProtectionRequestModal";
+import CaseStudyModal from "@/components/IPProtection/CaseStudyModal";
 
 
 
@@ -35,6 +36,7 @@ const Page: React.FC = () => {
       <FinalCallToAction />
       <LegalProtectionBenefits />
       <IpProtectionRequestModal />
+      <CaseStudyModal />
     </main>
   );
 };

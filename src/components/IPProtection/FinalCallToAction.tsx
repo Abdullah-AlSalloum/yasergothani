@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { OPEN_CASE_STUDY_FORM_EVENT } from './caseStudyFormEvent';
 
 
 const Section12: React.FC = () => (
@@ -11,9 +12,11 @@ const Section12: React.FC = () => (
           لا تنتظر حتى تتعرض حقوقك للانتهاك. نحن هنا لنساعدك في كل خطوة من طريقك
           لتكون كُتبك بأمان من القراصنة الإلكترونية
         </p>
-        <motion.button className="bg-[#1a604f] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#437066] transition-all duration-200 shadow"
+        <motion.button
+          className="bg-[#1a604f] text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-[#437066] transition-all duration-200 shadow"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
+          onClick={() => window.dispatchEvent(new Event(OPEN_CASE_STUDY_FORM_EVENT))}
         >
           احصل على تقييم مجاني الآن
         </motion.button>
