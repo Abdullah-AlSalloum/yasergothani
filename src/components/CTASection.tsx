@@ -88,7 +88,7 @@ const getDetectedCountry = () => {
   return localeCountry || timezoneCountryMap[timezone] || "sa";
 };
 
-const CTASection = () => {
+const CTASection = ({ modalOnly = false }: { modalOnly?: boolean }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [phoneCountry, setPhoneCountry] = useState("sa");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -162,6 +162,8 @@ const CTASection = () => {
   };
 
   return (
+  <>
+    {!modalOnly && (
   <section id="calltoaction" className="py-8 px-4 md:px-12 bg-[#113c56] text-white relative overflow-hidden animate-fade-in">
     <div className="max-w-4xl mx-auto text-center">
       <div className="mb-4">
@@ -201,6 +203,24 @@ const CTASection = () => {
       <div className="text-white/80 text-lg mt-2 animate-fade-in-up" style={{ animationDelay: '1s' }}>* متوفر لعدد محدود من العملاء. لا توجد رسوم أو التزامات، وسيتم تقييم ملاءمتك مجانًا.</div>
     </div>
 
+    <style>{`
+      @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 1s ease-in;
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s cubic-bezier(.39,.575,.565,1) both;
+      }
+    `}</style>
+  </section>
+    )}
     {isFormOpen && (
       <div
         className="fixed inset-0 z-[120] bg-black/60 backdrop-blur-sm px-3 py-6 md:py-10 overflow-y-auto"
@@ -411,24 +431,8 @@ const CTASection = () => {
       </div>
     )}
 
-    <style>{`
-      @keyframes fade-in {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-      @keyframes fade-in-up {
-        0% { opacity: 0; transform: translateY(40px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in {
-        animation: fade-in 1s ease-in;
-      }
-      .animate-fade-in-up {
-        animation: fade-in-up 0.8s cubic-bezier(.39,.575,.565,1) both;
-      }
-    `}</style>
-  </section>
-);
+  </>
+  );
 };
 
 export default CTASection;
