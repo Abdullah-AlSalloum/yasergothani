@@ -396,7 +396,7 @@ const CTASection = () => {
               {errorMessage && <p className="text-red-600 font-bold text-lg text-right">{errorMessage}</p>}
               {successMessage && <p className="text-[#1a604f] font-bold text-lg text-right">{successMessage}</p>}
 
-              <div className="flex justify-start pt-2">
+              <div className="flex justify-center md:justify-start pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitDisabled}

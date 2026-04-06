@@ -13,7 +13,7 @@ const HeroIntro: React.FC = () => (
            </p>
            <OpenIpProtectionRequestButton
              label="ابدأ حماية كتابك الآن"
-             className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] w-fit transition-all duration-200"
+             className="bg-[#f1f5fb] text-[#1a604f] px-8 py-4 rounded-lg font-bold text-xl hover:bg-[#1a604f] hover:text-[#f1f5fb] w-fit transition-all duration-200 mb-8 md:mb-0"
            />
          </div>
        </section>
