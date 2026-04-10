@@ -25,8 +25,10 @@ export default function Header() {
     <header className={`${headerBgClass} py-4 sticky top-0 z-50`}>
       <nav className="container mx-auto flex items-center justify-between max-w-6xl px-4 flex-row-reverse md:flex-row">
         {/* Logo: left on desktop, right on mobile */}
-        <div className="text-white text-2xl font-bold whitespace-nowrap order-1 md:order-3 md:ml-auto">
-          اسم الموقع
+        <div className="order-1 md:order-3 md:ml-auto">
+          <Link href="/">
+            <img src="/logo-light.png" alt="logo" className="h-14 w-auto" />
+          </Link>
         </div>
         {/* Nav links: right on desktop, left on mobile */}
         <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">

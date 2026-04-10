@@ -16,7 +16,7 @@ const Footer = () => {
     <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8 text-center md:text-right">
     {/* Logo & About */}
       <div className="flex flex-col items-center md:items-start">
-        <img src="/logo.svg" alt="yaser01 logo" className="h-12 mb-2" />
+        <img src="/logo-light.png" alt="logo" className="h-19 mb-2" />
         <p className="text-sm mb-4 text-center md:text-right">نحوّل تواجدك الرقمي إلى آلية مبيعات فعّالة من خلال استراتيجيات تسويقية مبتكرة ومهيئة للنجاح.</p>
         <div className="flex gap-3 mt-2">
           <Link href="#" aria-label="Instagram" className="hover:text-yellow-400"><i className="fab fa-instagram text-xl"></i></Link>
