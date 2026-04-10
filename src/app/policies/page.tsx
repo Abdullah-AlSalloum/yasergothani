@@ -67,6 +67,155 @@ const generalPolicySections = [
   },
 ];
 
+const generalPolicySectionsEn = [
+  {
+    title: "Scope of Use",
+    content: [
+      "By using this website or any of its services, you fully agree to these policies.",
+      "These policies apply to all services provided through the website.",
+    ],
+  },
+  {
+    title: "Privacy and Data Collection",
+    content: [
+      "We may collect certain data such as: name, email address, and phone number.",
+      "This is done with the user's consent, and the purpose is to improve the quality of our services.",
+    ],
+  },
+  {
+    title: "Data Protection",
+    content: [
+      "We are committed to implementing appropriate security measures to protect your data.",
+      "However, complete security over the internet cannot be guaranteed 100%.",
+    ],
+  },
+  {
+    title: "Data Sharing",
+    content: [
+      "We do not sell or rent your data.",
+      "We may share data with technical partners to operate the service.",
+      "We may disclose data if required by law.",
+    ],
+  },
+  {
+    title: "Cookies",
+    content: [
+      "We use cookies to enhance user experience and analyze performance.",
+      "You can control cookie settings through your browser.",
+    ],
+  },
+  {
+    title: "User Rights",
+    content: [
+      "You have the right to request a copy of your data.",
+      "You have the right to update your data.",
+      "You have the right to request deletion of your data (unless legally required to retain it).",
+    ],
+  },
+  {
+    title: "External Links",
+    content: [
+      "The website may contain links to external websites. We are not responsible for their privacy policies.",
+    ],
+  },
+  {
+    title: "Policy Updates",
+    content: [
+      "These policies may be updated at any time. Updates will be published on this page.",
+    ],
+  },
+  {
+    title: "Contact",
+    content: [
+      "For inquiries, please reach us through the contact methods available on the website.",
+    ],
+  },
+];
+
+const servicePolicySectionsEn = [
+  {
+    title: "Scope of Services",
+    content: [
+      "Building sustainable digital growth systems.",
+      "Advertising campaign management.",
+      '"Wthiiq" copyright protection service.',
+      "Website and landing page development.",
+    ],
+  },
+  {
+    title: "Nature of Services",
+    content: [
+      "Services are delivered professionally according to best practices.",
+      "No specific results are guaranteed.",
+      "Results depend on external factors such as: product quality, market conditions, content quality, and client commitment.",
+    ],
+  },
+  {
+    title: "Payment Terms",
+    content: [
+      "Payment must be made in advance as agreed.",
+      "No refunds after work has started.",
+      "Advertising budget is paid separately via direct transfer or client's payment card.",
+    ],
+  },
+  {
+    title: "Client Responsibilities",
+    content: [
+      "Provide accurate information.",
+      "Provide required content.",
+      "Prepare the website or landing page.",
+      "Handle customer responses and all operational processes.",
+      "Any shortcomings or inaccurate information will directly affect results and remain the client's responsibility.",
+    ],
+  },
+  {
+    title: "Advertising Campaign Management",
+    content: [
+      "Our team determines the appropriate strategy for each client.",
+      "Budget is agreed upon with the client.",
+      "Performance is continuously optimized.",
+      "Disclaimer: We are not responsible for account suspensions, ad rejections, or platform decisions.",
+    ],
+  },
+  {
+    title: '"Wthiiq" Service',
+    content: [
+      "Violations are monitored and tracked using legally available tools.",
+      "We do not guarantee full removal of all violations.",
+      "Results depend on platforms and legal procedures.",
+    ],
+  },
+  {
+    title: "Website & Landing Page Development",
+    content: [
+      "Projects are executed according to agreed requirements.",
+      "The client is responsible for content and final usage.",
+    ],
+  },
+  {
+    title: "Digital Growth System",
+    content: [
+      "Strategies and systems are tailored to each client's project.",
+      "Success depends on the client's commitment to proper execution and data provision.",
+    ],
+  },
+  {
+    title: "Cancellation & Termination",
+    content: [
+      "By the client: 30 days prior notice with settlement of all dues.",
+      "By us: We reserve the right to terminate services if the client fails to meet responsibilities, provides misleading information, changes business activity without notice, or adds products/services that violate our standards.",
+      "No refunds will be issued in such cases.",
+    ],
+  },
+  {
+    title: "Service Provision for Clients in Syria",
+    content: [
+      "Services may be provided as a technical intermediary to access advertising platforms.",
+      "Any legal responsibility related to the business or content remains solely with the client.",
+    ],
+  },
+];
+
 const servicePolicySections = [
   {
     title: "نطاق الخدمات",
@@ -154,6 +303,7 @@ const servicePolicySections = [
 const PoliciesPage: React.FC = () => {
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<"general" | "services">("general");
+  const [lang, setLang] = useState<"ar" | "en">("ar");
 
   useEffect(() => {
     const tab = searchParams.get("tab");
@@ -161,21 +311,44 @@ const PoliciesPage: React.FC = () => {
     else setActiveTab("general");
   }, [searchParams]);
 
+  const isEn = lang === "en";
+
   const sections =
-    activeTab === "general" ? generalPolicySections : servicePolicySections;
+    activeTab === "general"
+      ? isEn ? generalPolicySectionsEn : generalPolicySections
+      : isEn ? servicePolicySectionsEn : servicePolicySections;
 
   return (
     <section
       className="w-full min-h-screen py-16 px-4 bg-gradient-to-b from-[#f8fafc] to-[#e2e8f0]"
-      dir="rtl"
+      dir={isEn ? "ltr" : "rtl"}
     >
       <div className="max-w-3xl mx-auto flex flex-col gap-8">
         {/* Header */}
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#113c56] mb-2">
-            السياسات
+            {isEn ? "Policies" : "السياسات"}
           </h1>
-          <p className="text-gray-500 text-sm">آخر تحديث: 01-05-2026</p>
+          <p className="text-gray-500 text-sm">
+            {isEn ? "Last Updated: 01-05-2026" : "آخر تحديث: 01-05-2026"}
+          </p>
+        </div>
+
+        {/* Language Toggle */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => setLang(lang === "ar" ? "en" : "ar")}
+            dir="ltr"
+            className="relative flex items-center gap-3 bg-white border border-gray-200 shadow rounded-full px-2 py-1.5 cursor-pointer select-none"
+            aria-label="Toggle language"
+          >
+            <span className={`text-sm font-bold px-3 py-1 rounded-full transition-all duration-200 ${lang === "ar" ? "bg-[#113c56] text-white" : "text-gray-400"}`}>
+              العربية
+            </span>
+            <span className={`text-sm font-bold px-3 py-1 rounded-full transition-all duration-200 ${lang === "en" ? "bg-[#113c56] text-white" : "text-gray-400"}`}>
+              English
+            </span>
+          </button>
         </div>
 
         {/* Tabs */}
@@ -188,7 +361,7 @@ const PoliciesPage: React.FC = () => {
                 : "text-[#113c56] hover:bg-gray-100"
             }`}
           >
-            السياسات العامة
+            {isEn ? "General Policies" : "السياسات العامة"}
           </button>
           <button
             onClick={() => setActiveTab("services")}
@@ -198,7 +371,7 @@ const PoliciesPage: React.FC = () => {
                 : "text-[#113c56] hover:bg-gray-100"
             }`}
           >
-            سياسات الخدمات
+            {isEn ? "Service Policies" : "سياسات الخدمات"}
           </button>
         </div>
 
