@@ -43,14 +43,6 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/policies"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"
-              >
-                السياسات و الخصوصية
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/mystory"
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
@@ -198,15 +190,6 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                   >
                     قصتي
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/policies"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    السياسات والخصوصية
                   </Link>
                 </li>
               </ul>
