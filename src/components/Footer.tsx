@@ -39,6 +39,7 @@ const Footer = () => {
         <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
         <ul className="space-y-2 text-sm">
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
+          <li><Link href="/ads" className="hover:underline">الإعلانات</Link></li>
           <li><Link href="/mystory" className="hover:underline">قصتي</Link></li>
           <li><Link href="#tools" className="hover:underline">أدوات متطورة</Link></li>
           <li><Link href="/resources" className="hover:underline">مصادر مجانية</Link></li>

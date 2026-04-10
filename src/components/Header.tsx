@@ -33,6 +33,14 @@ export default function Header() {
           <ul className="hidden min-[924px]:flex flex-row-reverse gap-2 text-white text-lg">
             <li>
               <Link
+                href="/ads"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                الإعلانات
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/policies"
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
@@ -170,6 +178,15 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                   >
                     مصادر مجانية
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ads"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    الإعلانات
                   </Link>
                 </li>
                 <li>
