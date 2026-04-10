@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const generalPolicySections = [
@@ -231,4 +231,10 @@ const PoliciesPage: React.FC = () => {
   );
 };
 
-export default PoliciesPage;
+const PoliciesPageWrapper: React.FC = () => (
+  <Suspense fallback={null}>
+    <PoliciesPage />
+  </Suspense>
+);
+
+export default PoliciesPageWrapper;
