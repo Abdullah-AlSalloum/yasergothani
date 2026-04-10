@@ -82,8 +82,8 @@ const Footer = () => {
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2 text-center">
       <div className="w-full md:w-auto">جميع الحقوق محفوظة &copy; yaser01 2026</div>
       <div className="flex gap-4 w-full md:w-auto justify-center md:justify-end">
-        <Link href="#" className="hover:underline">سياسة الخصوصية</Link>
-        <Link href="#" className="hover:underline">شروط الخدمة</Link>
+        <Link href="/policies?tab=general" className="hover:underline">سياسة الخصوصية</Link>
+        <Link href="/policies?tab=services" className="hover:underline">شروط الخدمة</Link>
       </div>
     </div>
   </footer>
