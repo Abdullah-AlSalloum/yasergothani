@@ -147,7 +147,7 @@ const AdsPage: React.FC = () => {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <main className="w-full min-h-screen bg-gradient-to-b from-[#f8fafc] to-[#e2e8f0]" dir="rtl">
+    <main className="w-full min-h-screen overflow-x-hidden bg-gradient-to-b from-[#f8fafc] to-[#e2e8f0]" dir="rtl">
 
       {/* Hero */}
       <section ref={heroRef} className="relative w-full bg-[#113c56] text-white py-24 px-4 overflow-hidden min-h-[70vh] flex items-center">
@@ -191,13 +191,44 @@ const AdsPage: React.FC = () => {
 
         {/* 2. لمن هذه الخدمة */}
         <Section>
-          <Card>
-            <SectionTitle>لمن هذه الخدمة؟</SectionTitle>
-            <motion.p variants={fadeUp} className="text-gray-500 mb-4 text-base">هذه الخدمة مناسبة لك إذا:</motion.p>
-            <ul className="flex flex-col gap-3">
-              {targetAudience.map((item, i) => <CheckItem key={i} text={item} i={i} />)}
-            </ul>
-          </Card>
+          <motion.div
+            variants={fadeUp}
+            className="relative"
+          >
+            <div className="relative z-10 grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+              <div>
+                <SectionTitle>لمن هذه الخدمة؟</SectionTitle>
+                <motion.p variants={fadeUp} className="mb-6 text-base text-[#4b5d6d] md:text-lg">
+                  هذه الخدمة مناسبة لك إذا:
+                </motion.p>
+
+                <ul className="flex flex-col gap-3">
+                  {targetAudience.map((item, i) => (
+                    <motion.li
+                      key={i}
+                      variants={fadeLeft}
+                      custom={i}
+                      whileHover={{ x: -4 }}
+                      className="flex items-start gap-3 rounded-2xl border border-[#113c56]/10 bg-white/90 px-4 py-3 text-base text-[#1f3343] md:text-lg"
+                    >
+                      <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#113c56] text-sm font-bold text-white">
+                        {i + 1}
+                      </span>
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              <motion.div
+                variants={scaleIn}
+                className="flex h-full min-h-56 flex-col items-center justify-center rounded-3xl border border-[#113c56]/15 bg-[#113c56] p-6 text-center text-white"
+              >
+                <h3 className="max-w-md text-2xl font-extrabold leading-snug">إذا هذه النقاط تشبه وضعك الحالي فأنت بالمكان الصحيح</h3>
+                <p className="mt-4 max-w-sm text-sm text-white/80">نبدأ بخطة دقيقة ثم نحول الميزانية إلى نتائج واضحة وقابلة للقياس.</p>
+              </motion.div>
+            </div>
+          </motion.div>
         </Section>
 
         {/* 3. أكبر مشكلة */}
@@ -222,47 +253,112 @@ const AdsPage: React.FC = () => {
 
         {/* 4. ما الذي ستحصل عليه */}
         <Section>
-          <Card>
-            <SectionTitle>ما الذي ستحصل عليه؟</SectionTitle>
-            <motion.p variants={fadeUp} className="text-gray-500 mb-4">نحن نتولى إدارة حملاتك بالكامل:</motion.p>
-            <ul className="flex flex-col gap-3 mb-5">
-              {whatYouGet.map((item, i) => <CheckItem key={i} text={item} i={i} />)}
-            </ul>
-            <motion.p variants={fadeUp} custom={6} className="text-[#113c56] font-bold text-base mt-3 border-t border-gray-100 pt-4">
-              حتى لو كنت داخل سوريا… نقوم بتشغيل الحملات لك بشكل احترافي
-            </motion.p>
-          </Card>
+          <motion.div variants={fadeUp} className="grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-stretch">
+            <motion.div
+              variants={scaleIn}
+              className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#113c56] to-[#1b5a7d] p-6 text-white md:p-8"
+            >
+              <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-yellow-300/20 blur-2xl" />
+              <h3 className="relative z-10 text-2xl font-extrabold leading-snug">ما الذي ستحصل عليه؟</h3>
+              <p className="relative z-10 mt-4 text-white/85">نحن نتولى إدارة حملاتك بالكامل:</p>
+              <p className="relative z-10 mt-8 border-t border-white/20 pt-5 text-sm font-bold text-yellow-300 md:text-base">
+                حتى لو كنت داخل سوريا… نقوم بتشغيل الحملات لك بشكل احترافي
+              </p>
+            </motion.div>
+
+            <motion.ul variants={fadeUp} className="flex flex-col gap-3">
+              {whatYouGet.map((item, i) => (
+                <motion.li
+                  key={i}
+                  variants={fadeLeft}
+                  custom={i}
+                  whileHover={{ x: -5 }}
+                  className="flex items-center gap-3 rounded-2xl border border-[#113c56]/15 bg-white px-4 py-4 shadow-sm"
+                >
+                  <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#113c56] text-sm font-extrabold text-white">
+                    {i + 1}
+                  </span>
+                  <span className="text-base font-semibold text-[#143548] md:text-lg">{item}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
         </Section>
 
         {/* 5. كيف نعمل */}
         <Section>
-          <Card>
-            <SectionTitle>كيف نعمل؟</SectionTitle>
-            <motion.p variants={fadeUp} className="text-gray-500 mb-5">بأسلوب بسيط وواضح:</motion.p>
-            <ol className="flex flex-col gap-5 relative">
-              <motion.div className="absolute right-[15px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-[#113c56] to-transparent"
-                initial={{ scaleY: 0, originY: 0 }}
-                variants={{ visible: { scaleY: 1, transition: { duration: 1, delay: 0.3 } }, hidden: { scaleY: 0 } }}
-              />
-              {howWeWork.map((step, i) => (
-                <motion.li key={i} variants={fadeLeft} custom={i} className="flex items-start gap-4">
-                  <motion.span whileHover={{ scale: 1.2, rotate: 6 }} className="flex items-center justify-center w-8 h-8 rounded-full bg-[#113c56] text-white font-bold text-sm shrink-0 relative z-10">{i + 1}</motion.span>
-                  <span className="text-gray-700 text-base md:text-lg leading-relaxed pt-1">{step}</span>
-                </motion.li>
-              ))}
-            </ol>
-          </Card>
+          <motion.div
+            variants={fadeUp}
+            className="relative w-full overflow-hidden bg-gradient-to-b from-[#f5f9fc] to-[#e2e8f0] py-10"
+          >
+            <div className="mx-auto max-w-4xl px-4">
+                <div className="flex flex-col items-center text-center mb-8">
+                  <SectionTitle>كيف نعمل؟</SectionTitle>
+                  <motion.p variants={fadeUp} className="text-[#113c56] font-semibold">بأسلوب بسيط وواضح:</motion.p>
+                </div>
+                <ol className="relative flex flex-col gap-7 md:gap-8 w-full">
+                <span className="hidden md:block absolute right-4 top-8 bottom-8 w-1 bg-gradient-to-b from-[#113c56] to-transparent rounded-full" />
+                {howWeWork.map((step, i) => (
+                  <motion.li
+                    key={i}
+                    variants={fadeLeft}
+                    custom={i}
+                    className="flex items-start gap-4 md:gap-6"
+                  >
+                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#113c56] text-white font-bold text-lg shrink-0 relative z-10 border-4 border-white shadow-md">
+                      {i + 1}
+                    </span>
+                    <span className="text-[#143548] text-base md:text-lg leading-relaxed pt-1 font-medium">
+                      {step}
+                    </span>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
+          </motion.div>
         </Section>
+      </div>
 
         {/* 6. النتائج */}
         <Section>
-          <Card>
-            <SectionTitle>النتائج التي ستحصل عليها</SectionTitle>
-            <ul className="flex flex-col gap-3">
-              {results.map((item, i) => <CheckItem key={i} text={item} i={i} />)}
-            </ul>
-          </Card>
+          <motion.div
+            variants={fadeUp}
+            className="relative w-full overflow-hidden bg-gradient-to-b from-[#f5f9fc] to-[#ecf3f8] py-10"
+          >
+            <div className="mx-auto max-w-6xl px-4">
+              <div className="pointer-events-none absolute left-8 top-24 hidden h-[2px] w-[80%] bg-gradient-to-r from-[#113c56]/10 via-[#113c56]/35 to-[#113c56]/10 md:block" />
+
+              <motion.div
+                variants={scaleIn}
+                className="mb-7 inline-flex items-center gap-3 rounded-2xl bg-[#113c56] px-5 py-3 text-white"
+              >
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 text-sm font-extrabold text-[#113c56]">
+                  +
+                </span>
+                <h3 className="text-xl font-extrabold md:text-2xl">النتائج التي ستحصل عليها</h3>
+              </motion.div>
+
+              <ul className="grid gap-3 md:grid-cols-2">
+                {results.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    variants={fadeUp}
+                    custom={i}
+                    whileHover={{ y: -4 }}
+                    className={`flex items-center gap-3 rounded-2xl border border-[#113c56]/15 bg-white px-4 py-4 shadow-sm ${i % 2 === 1 ? "md:translate-y-5" : ""}`}
+                  >
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#113c56] text-sm font-extrabold text-white">
+                      {i + 1}
+                    </span>
+                    <span className="text-base font-bold text-[#12384f] md:text-lg">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
         </Section>
+
+      <div className="max-w-4xl mx-auto px-4 flex flex-col gap-10 pb-14">
 
         {/* 7. إحصائيات */}
         <Section>

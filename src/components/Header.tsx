@@ -23,16 +23,31 @@ export default function Header() {
 
   return (
     <header className={`${headerBgClass} py-4 sticky top-0 z-50`}>
-      <nav className="container mx-auto flex items-center justify-between max-w-6xl px-4 flex-row-reverse md:flex-row">
-        {/* Logo: left on desktop, right on mobile */}
-        <div className="order-1 md:order-3 md:ml-auto">
-          <Link href="/">
-            <img src="/logo-light.png" alt="logo" className="h-14 w-auto" />
-          </Link>
-        </div>
-        {/* Nav links: right on desktop, left on mobile */}
-        <div className="flex-1 flex justify-end md:justify-start order-2 md:order-1">
-          <ul className="hidden min-[924px]:flex flex-row-reverse gap-2 text-white text-lg">
+      <nav className="container mx-auto flex items-center justify-between max-w-6xl px-4 [direction:ltr]">
+        {/* Burger menu: left on mobile only */}
+        <button
+          className="block min-[924px]:hidden text-white ml-0 mr-4"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="فتح القائمة"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+            />
+          </svg>
+        </button>
+        {/* Nav links: left on desktop */}
+        <div className="hidden min-[924px]:flex min-[924px]:order-1 flex-1 justify-start">
+          <ul className="flex flex-row gap-2 text-white text-lg">
             <li>
               <Link
                 href="/ads"
@@ -83,27 +98,12 @@ export default function Header() {
             </li>
           </ul>
         </div>
-        {/* Burger menu last (mobile and desktop) */}
-        <button
-          className="block min-[924px]:hidden text-white ml-4 order-3 md:order-3"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="فتح القائمة"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-8 h-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-            />
-          </svg>
-        </button>
+        {/* Logo: right on desktop and mobile */}
+        <div className="flex-shrink-0 pl-8 min-[924px]:order-2 min-[924px]:mr-26">
+          <Link href="/">
+            <img src="/logo-light.png" alt="logo" className="h-14 w-auto" />
+          </Link>
+        </div>
       </nav>
       {/* Mobile nav menu with animation and delayed unmount */}
       <AnimatePresence>
@@ -125,7 +125,7 @@ export default function Header() {
             {/* Animated mobile/tablet menu */}
             <motion.div
               key="menu"
-              className={`block min-[924px]:hidden fixed top-15 right-0 left-0 z-50 ${headerBgClass} px-4 pt-6 pb-6 shadow-lg`}
+              className={`block min-[924px]:hidden fixed top-22 right-0 left-0 z-50 ${headerBgClass} px-4 pt-6 pb-6 shadow-lg`}
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -40, opacity: 0 }}
