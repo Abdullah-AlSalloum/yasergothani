@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import { buildSelfMonitoringGuideEmail } from "@/lib/emailTemplates/selfMonitoringGuideEmail";
+import { sendSmtpEmail } from "@/lib/email/smtpSender";
 
 export const runtime = "nodejs";
 
@@ -24,37 +25,17 @@ const sendGuideEmail = async ({
   fullName: string;
   guideUrl: string;
 }) => {
-  const brevoApiKey = process.env.BREVO_API_KEY || process.env.SMTP_PASS;
-  if (!brevoApiKey) {
-    throw new Error("Missing required environment variable: BREVO_API_KEY (or SMTP_PASS)");
-  }
-  const senderEmail = process.env.BREVO_SENDER_EMAIL || process.env.SMTP_FROM;
-  if (!senderEmail) {
-    throw new Error("Missing required environment variable: BREVO_SENDER_EMAIL");
-  }
   const senderName = process.env.BREVO_SENDER_NAME || DEFAULT_SENDER_NAME;
 
   const { subject, htmlContent, textContent } = buildSelfMonitoringGuideEmail({ fullName, guideUrl });
 
-  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "api-key": brevoApiKey,
-    },
-    body: JSON.stringify({
-      sender: { email: senderEmail, name: senderName },
-      to: [{ email: toEmail, name: fullName || undefined }],
-      subject,
-      htmlContent,
-      textContent,
-    }),
+  await sendSmtpEmail({
+    to: toEmail,
+    subject,
+    html: htmlContent,
+    text: textContent,
+    senderName,
   });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Brevo send failed: ${errorText}`);
-  }
 };
 
 const normalizeValue = (value: string | undefined) => (typeof value === "string" ? value.trim() : "");
