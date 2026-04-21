@@ -23,7 +23,7 @@ const Section5: React.FC = () => (
             </span>
             <div className="text-gray-700 text-center text-lg">
               في الوطن العربي بشكل خاص تُعَدّ قرصنة الكتب مشكلة متفاقمة تهدد
-              الكتاب بالانقراض.
+              المبيعات بشكل مباشر.
             </div>
           </div>
           <div className="bg-[#f1f5fb] rounded-xl shadow-md p-6 flex flex-col items-center justify-center gap-3">

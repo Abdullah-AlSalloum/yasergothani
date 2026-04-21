@@ -41,7 +41,6 @@ const Footer = () => {
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
           <li><Link href="/ads" className="hover:underline">إدارة الحملات الإعلانية </Link></li>
           <li><Link href="/mystory" className="hover:underline">قصتي</Link></li>
-          <li><Link href="#tools" className="hover:underline">أدوات متطورة</Link></li>
           <li><Link href="/resources" className="hover:underline">مصادر مجانية</Link></li>
         </ul>
       </div>
@@ -60,7 +59,7 @@ const Footer = () => {
         <h3 className="font-bold text-lg mb-4">للاستفسارات المهنية</h3>
         <div className="flex flex-col items-center gap-3 mt-2">
           <a
-            href="https://wa.me/963958956397"
+            href="https://wa.me/905418101964"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 text-white font-extrabold py-2 px-20 rounded-xl text-center shadow-xl hover:from-green-500 hover:to-green-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"

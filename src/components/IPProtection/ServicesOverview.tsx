@@ -3,6 +3,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import OpenIpProtectionRequestButton from './OpenIpProtectionRequestButton';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const ServicesOverview: React.FC = () => (
    <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
@@ -20,9 +21,9 @@ const ServicesOverview: React.FC = () => (
               <p className="text-[#437066]">نساعدك بتسجيل أعمالك الأدبية بشكل قانوني في قانون الملكية الفكرية لضمان حقوقك.</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><DeleteForeverIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
+              <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><ClearIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
               <h3 className="text-xl font-bold text-[#437066] mb-2">حذف الكتب المقرصنة</h3>
-              <p className="text-[#437066]">نقوم باتخاذ إجراءات تساعد في إزالة أي المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
+              <p className="text-[#437066]">نقوم باتخاذ إجراءات تساعد في إزالة المحتوى المقرصن من الإنترنت بشكل قانوني.</p>
             </div>
           </div>
           <OpenIpProtectionRequestButton

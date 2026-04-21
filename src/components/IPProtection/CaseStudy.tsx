@@ -160,7 +160,7 @@ const CaseStudy: React.FC = () => {
           </div>
         </div>
         <div className="bg-transparent rounded-lg  p-4 flex items-center gap-3 mb-6 text-[#113c56] font-bold text-2xl justify-center w-full max-w-2xl mx-auto text-center md:text-right border-b border-[#113c56]">
-          بعد حذف النسخ المقرصنة من الكتاب تحسنت مبيعات بشكل ملحوظ.
+          بعد حذف النسخ المقرصنة من الكتاب تحسنت المبيعات بشكل ملحوظ.
         </div>
         <div className="w-full flex justify-center">
           <OpenIpProtectionRequestButton

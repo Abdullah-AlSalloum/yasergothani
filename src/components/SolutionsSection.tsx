@@ -66,7 +66,7 @@ const services = [
 	//  anchorId: "solution-ecommerce",
 	// },
 ];
-const whatsappNumber = "963958956397"; // رقم الواتساب بدون +
+const whatsappNumber = "905418101964"; // رقم الواتساب بدون +
 const OPEN_CONSULTATION_FORM_EVENT = "open-consultation-form";
 
 const SolutionsSection: React.FC = () => {
