@@ -60,6 +60,7 @@ const GuideAudienceSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isConfirmingEmail, setIsConfirmingEmail] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -91,13 +92,12 @@ const GuideAudienceSection: React.FC = () => {
         throw new Error(result?.error || "تعذر إرسال البيانات الآن.");
       }
 
-      setSuccessMessage("تم إرسال البيانات بنجاح. سيتم تنزيل الدليل الآن.");
-      window.open("/downloads/monitoring-guide.pdf", "_blank", "noopener,noreferrer");
+      setSuccessMessage("تم الإرسال بنجاح. تفقد بريدك الإلكتروني للحصول على الدليل.");
       setTimeout(() => {
         setIsOpen(false);
         setFormData((prev) => ({ ...INITIAL_FORM_DATA, country: prev.country || DEFAULT_COUNTRY }));
         setSuccessMessage("");
-      }, 700);
+      }, 1800);
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : "حدث خطأ غير متوقع. حاول مرة أخرى.");
     } finally {
@@ -116,6 +116,40 @@ const GuideAudienceSection: React.FC = () => {
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+
+  const handleConfirmEmail = async () => {
+    if (!formData.email.trim()) {
+      setErrorMessage("يرجى إدخال البريد الإلكتروني أولًا.");
+      return;
+    }
+
+    setIsConfirmingEmail(true);
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    try {
+      const response = await fetch("/api/self-monitoring-guide/confirm-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          fullName: formData.fullName,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error || "تعذر إرسال رسالة التأكيد الآن.");
+      }
+
+      setSuccessMessage("تم إرسال رسالة التأكيد. تحقق من بريدك الإلكتروني الآن.");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "حدث خطأ غير متوقع. حاول مرة أخرى.");
+    } finally {
+      setIsConfirmingEmail(false);
+    }
+  };
 
   return (
     <div className="guide-audience-section">
@@ -237,11 +271,20 @@ const GuideAudienceSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isConfirmingEmail}
                   className="w-full bg-[#1a604f] text-white py-3.5 rounded-xl font-bold hover:bg-[#154d40] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-[0_10px_22px_rgba(26,96,79,0.3)] hover:-translate-y-0.5"
                 >
                   <DownloadForOfflineIcon fontSize="small" />
                   {isSubmitting ? "جاري الإرسال..." : "تحميل الدليل"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleConfirmEmail}
+                  disabled={isSubmitting || isConfirmingEmail || !formData.email.trim()}
+                  className="w-full border border-[#1a604f] text-[#1a604f] py-3.5 rounded-xl font-bold hover:bg-[#edf4f1] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
+                >
+                  {isConfirmingEmail ? "جاري إرسال رسالة التأكيد..." : "تأكيد البريد الإلكتروني"}
                 </button>
               </form>
             </motion.div>

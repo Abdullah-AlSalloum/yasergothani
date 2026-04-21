@@ -77,30 +77,7 @@ const IpProtectionRequestModal: React.FC = () => {
     };
   }, []);
 
-  const isSubmitDisabled = useMemo(() => {
-    if (isSubmitting) return true;
-    if (!formData.email.trim()) return true;
-    if (!formData.applicantName.trim()) return true;
-    if (!formData.phone.trim()) return true;
-    if (!formData.socialLinks.trim()) return true;
-    if (!formData.bookTitle.trim()) return true;
-    if (!formData.authorName.trim()) return true;
-    if (!formData.publisherName.trim()) return true;
-    if (!formData.isbn.trim()) return true;
-    if (!formData.publicationYear.trim()) return true;
-    if (!formData.pageCount.trim()) return true;
-    if (!formData.bookDigitalCopyInfo.trim()) return true;
-    if (!formData.copyrightCertificateInfo.trim()) return true;
-    if (!formData.otherSupportingDocsInfo.trim()) return true;
-    if (!formData.foundPiratedCopies) return true;
-    if (formData.foundPiratedCopies === "نعم" && !formData.piratedLinksDetails.trim()) return true;
-    if (!formData.previousRemovalAction) return true;
-    if (formData.previousRemovalAction === "نعم" && !formData.previousRemovalActionDetails.trim()) return true;
-    if (!formData.monitoringPreference.trim()) return true;
-    if (!formData.officialComplaintsPreference) return true;
-    if (!formData.awarenessCampaignPreference) return true;
-    return false;
-  }, [formData, isSubmitting]);
+  const isSubmitDisabled = useMemo(() => isSubmitting, [isSubmitting]);
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -276,11 +253,12 @@ const IpProtectionRequestModal: React.FC = () => {
             </div>
 
             <div className={cardClassName}>
-              <label className="block text-[#113c56] font-bold text-xl mb-2">شهادة تسجيل الملكية الفكرية للكتاب </label>
+              <label className="block text-[#113c56] font-bold text-xl mb-2">شهادة تسجيل الملكية الفكرية للكتاب <span className="text-red-500">*</span></label>
               <textarea
                 name="copyrightCertificateInfo"
                 value={formData.copyrightCertificateInfo}
                 onChange={handleInputChange}
+                required
                 placeholder="أدخل رابط الملف أو وصفًا مختصرًا"
                 className={`${inputClassName} min-h-20`}
               />
@@ -312,11 +290,15 @@ const IpProtectionRequestModal: React.FC = () => {
             {renderYesNoField("foundPiratedCopies", "هل سبق وتم العثور على نسخ مقرصنة؟")}
 
             <div className={cardClassName}>
-              <label className="block text-[#113c56] font-bold text-xl mb-2">إذا نعم، يرجى تزويدنا بروابط المواقع أو المنصات التي تنشر النسخ المقرصنة</label>
+              <label className="block text-[#113c56] font-bold text-xl mb-2">
+                إذا نعم، يرجى تزويدنا بروابط المواقع أو المنصات التي تنشر النسخ المقرصنة
+                {formData.foundPiratedCopies === "نعم" && <span className="text-red-500"> *</span>}
+              </label>
               <textarea
                 name="piratedLinksDetails"
                 value={formData.piratedLinksDetails}
                 onChange={handleInputChange}
+                required={formData.foundPiratedCopies === "نعم"}
                 placeholder="اكتب الروابط أو التفاصيل"
                 className={`${inputClassName} min-h-24`}
               />
@@ -325,11 +307,15 @@ const IpProtectionRequestModal: React.FC = () => {
             {renderYesNoField("previousRemovalAction", "هل تم اتخاذ أي إجراء سابق لإزالة النسخ المقرصنة؟")}
 
             <div className={cardClassName}>
-              <label className="block text-[#113c56] font-bold text-xl mb-2">إذا نعم، يرجى توضيح الإجراءات التي تمت والنتائج التي تحققت.</label>
+              <label className="block text-[#113c56] font-bold text-xl mb-2">
+                إذا نعم، يرجى توضيح الإجراءات التي تمت والنتائج التي تحققت.
+                {formData.previousRemovalAction === "نعم" && <span className="text-red-500"> *</span>}
+              </label>
               <textarea
                 name="previousRemovalActionDetails"
                 value={formData.previousRemovalActionDetails}
                 onChange={handleInputChange}
+                required={formData.previousRemovalAction === "نعم"}
                 placeholder="اكتب التفاصيل"
                 className={`${inputClassName} min-h-24`}
               />

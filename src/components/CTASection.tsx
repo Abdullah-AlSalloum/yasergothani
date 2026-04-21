@@ -105,12 +105,15 @@ const CTASection = ({ modalOnly = false }: { modalOnly?: boolean }) => {
   const isOtherGoalSelected = formData.upcomingGoal === "Other";
 
   useEffect(() => {
+    // Only the global modal instance should react to broadcast open events.
+    if (!modalOnly) return;
+
     const openForm = () => setIsFormOpen(true);
     window.addEventListener(OPEN_CONSULTATION_FORM_EVENT, openForm);
     return () => {
       window.removeEventListener(OPEN_CONSULTATION_FORM_EVENT, openForm);
     };
-  }, []);
+  }, [modalOnly]);
 
   const isSubmitDisabled = useMemo(() => {
     if (isSubmitting) return true;

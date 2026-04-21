@@ -39,7 +39,7 @@ const Footer = () => {
         <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
         <ul className="space-y-2 text-sm">
           <li><Link href="#methodology" className="hover:underline">الخدمات</Link></li>
-          <li><Link href="/ads" className="hover:underline">الإعلانات</Link></li>
+          <li><Link href="/ads" className="hover:underline">إدارة الحملات الإعلانية </Link></li>
           <li><Link href="/mystory" className="hover:underline">قصتي</Link></li>
           <li><Link href="#tools" className="hover:underline">أدوات متطورة</Link></li>
           <li><Link href="/resources" className="hover:underline">مصادر مجانية</Link></li>
@@ -81,7 +81,7 @@ const Footer = () => {
       </div>
     </div>
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2 text-center">
-      <div className="w-full md:w-auto">جميع الحقوق محفوظة &copy; yaser01 2026</div>
+      <div className="w-full md:w-auto">جميع الحقوق محفوظة &copy; YASER GOTHANI</div>
       <div className="flex gap-4 w-full md:w-auto justify-center md:justify-end">
         <Link href="/policies?tab=general" className="hover:underline">سياسة الخصوصية</Link>
         <Link href="/policies?tab=services" className="hover:underline">شروط الخدمة</Link>

@@ -48,14 +48,7 @@ export default function Header() {
         {/* Nav links: left on desktop */}
         <div className="hidden min-[924px]:flex min-[924px]:order-1 flex-1 justify-start">
           <ul className="flex flex-row gap-2 text-white text-lg">
-            <li>
-              <Link
-                href="/ads"
-                className="block px-4 py-2 rounded transition hover:bg-white/20"
-              >
-                الإعلانات
-              </Link>
-            </li>
+           
             <li>
               <Link
                 href="/mystory"
@@ -78,6 +71,14 @@ export default function Header() {
                 className="block px-4 py-2 rounded transition hover:bg-white/20"
               >
                 حماية الملكية الفكرية
+              </Link>
+            </li>
+             <li>
+              <Link
+                href="/ads"
+                className="block px-4 py-2 rounded transition hover:bg-white/20"
+              >
+                إدارة الحملات الإعلانية 
               </Link>
             </li>
             <li>
@@ -158,6 +159,15 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
+                    href="/ads"
+                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    إدارة الحملات الإعلانية 
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/ip-protection"
                     className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
                     onClick={() => setMenuOpen(false)}
@@ -172,15 +182,6 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                   >
                     مصادر مجانية
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/ads"
-                    className="block w-full px-4 py-2 rounded transition hover:bg-white/20"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    الإعلانات
                   </Link>
                 </li>
                 <li>

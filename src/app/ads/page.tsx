@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   motion,
   useInView,
@@ -7,10 +7,7 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
-
-const OPEN_CONSULTATION_FORM_EVENT = "open-consultation-form";
-const openConsultation = () =>
-  window.dispatchEvent(new Event(OPEN_CONSULTATION_FORM_EVENT));
+import AdsCampaignFormModal from "@/components/AdsCampaignFormModal";
 
 const platforms = [
   { name: "فيسبوك", color: "#1877F2" },
@@ -38,7 +35,7 @@ const whatYouGet = [
   "تشغيل الحملات على المنصات العالمية.",
   "استهداف العملاء المناسبين.",
   "تحسين الأداء بشكل مستمر.",
-  "تحويل الإعلانات إلى نتائج قابلة للقياس.",
+  "تحويل الإعلانات إلى مبيعات.",
 ];
 
 const howWeWork = [
@@ -142,6 +139,7 @@ const SectionTitle: React.FC<{ children: React.ReactNode; light?: boolean }> = (
 
 const AdsPage: React.FC = () => {
   const heroRef = useRef(null);
+  const [isAdsFormOpen, setIsAdsFormOpen] = useState(false);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
@@ -156,7 +154,7 @@ const AdsPage: React.FC = () => {
 
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="max-w-4xl mx-auto relative z-10 text-right flex flex-col gap-6 w-full">
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-yellow-400 font-bold text-sm uppercase tracking-widest">
-            خدمة الإعلانات الرقمية
+            إدارة الحملات الإعلانية
           </motion.p>
 
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }} className="text-3xl md:text-5xl font-extrabold leading-tight">
@@ -181,7 +179,14 @@ const AdsPage: React.FC = () => {
             لتحقق أهدافك ولترفع مبيعاتك.
           </motion.p>
 
-          <motion.button initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.96 }} onClick={openConsultation} className="mt-2 w-fit bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#113c56] font-extrabold py-3 px-10 rounded-xl text-lg shadow-xl">
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.3 } }}
+            whileHover={{ scale: 1.07, transition: { duration: 0.12, delay: 0 } }}
+            whileTap={{ scale: 0.96, transition: { duration: 0.08 } }}
+            onClick={() => setIsAdsFormOpen(true)}
+            className="mt-2 w-fit bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#113c56] font-extrabold py-3 px-10 rounded-xl text-lg shadow-xl"
+          >
             ابدأ الآن
           </motion.button>
         </motion.div>
@@ -224,8 +229,7 @@ const AdsPage: React.FC = () => {
                 variants={scaleIn}
                 className="flex h-full min-h-56 flex-col items-center justify-center rounded-3xl border border-[#113c56]/15 bg-[#113c56] p-6 text-center text-white"
               >
-                <h3 className="max-w-md text-2xl font-extrabold leading-snug">إذا هذه النقاط تشبه وضعك الحالي فأنت بالمكان الصحيح</h3>
-                <p className="mt-4 max-w-sm text-sm text-white/80">نبدأ بخطة دقيقة ثم نحول الميزانية إلى نتائج واضحة وقابلة للقياس.</p>
+                <h3 className="max-w-md text-2xl font-extrabold leading-snug">إذا كانت هذه النقاط تشبه وضعك الحالي فأنت بالمكان الصحيح</h3>
               </motion.div>
             </div>
           </motion.div>
@@ -235,7 +239,7 @@ const AdsPage: React.FC = () => {
         <Section>
           <motion.div variants={fadeUp} whileHover={{ scale: 1.01 }} transition={{ type: "spring", stiffness: 200 }} className="bg-[#113c56] rounded-2xl p-6 md:p-8">
             <SectionTitle light>أكبر مشكلة</SectionTitle>
-            <motion.p variants={fadeUp} className="text-white/80 mb-5">معظم المشاريع تواجه نفس المشاكل:</motion.p>
+            <motion.p variants={fadeUp} className="text-white/80 mb-5">الكثير من المشاريع تواجه هذه التحديات:</motion.p>
             <ul className="flex flex-col gap-3 mb-6">
               {problems.map((item, i) => (
                 <motion.li key={i} variants={fadeLeft} custom={i} className="flex items-start gap-3 text-white/90 text-base md:text-lg">
@@ -362,17 +366,41 @@ const AdsPage: React.FC = () => {
 
         {/* 7. إحصائيات */}
         <Section>
-          <motion.div variants={scaleIn} className="bg-[#113c56] rounded-2xl p-6 md:p-10">
-            <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-extrabold text-white text-center mb-8">نتائج حققناها سابقًا</motion.h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <motion.div variants={scaleIn} className="rounded-2xl bg-[#113c56] p-6 md:p-10">
+            <div className="mb-8 text-center">
+              <div className="mx-auto mb-4 h-3 w-16 rounded-full bg-yellow-400" />
+              <motion.h2 variants={fadeUp} className="mb-2 text-2xl font-extrabold text-white md:text-3xl">
+                نتائج حققناها سابقًا
+              </motion.h2>
+              <motion.p variants={fadeUp} className="text-[#f1f5fb]">
+                الأرقام التالية تلخّص أثر الحملات الإعلانية التي تم تنفيذها.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-6">
               {stats.map((s, i) => (
-                <motion.div key={i} variants={scaleIn} custom={i} whileHover={{ scale: 1.1, y: -5 }} className="flex flex-col items-center gap-1 text-center cursor-default">
-                  <motion.span className="text-3xl md:text-4xl font-extrabold text-yellow-400"
+                <motion.div
+                  key={i}
+                  variants={scaleIn}
+                  custom={i}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className="flex cursor-default flex-col items-center rounded-xl bg-gradient-to-br from-pink-200 via-blue-100 to-green-100 px-4 py-6 text-center shadow transition-transform duration-200 hover:shadow-lg"
+                >
+                  <motion.span
+                    className="mb-1 text-3xl font-extrabold text-[#fcd410] md:text-4xl"
                     initial={{ opacity: 0, scale: 0.4 }}
-                    variants={{ visible: { opacity: 1, scale: 1, transition: { delay: 0.2 + i * 0.1, type: "spring", stiffness: 200 } }, hidden: { opacity: 0, scale: 0.4 } }}>
+                    variants={{
+                      visible: {
+                        opacity: 1,
+                        scale: 1,
+                        transition: { delay: 0.2 + i * 0.1, type: "spring", stiffness: 200 },
+                      },
+                      hidden: { opacity: 0, scale: 0.4 },
+                    }}
+                  >
                     {s.value}
                   </motion.span>
-                  <span className="text-white/75 text-sm">{s.label}</span>
+                  <span className="text-sm font-semibold text-gray-700">{s.label}</span>
                 </motion.div>
               ))}
             </div>
@@ -418,13 +446,18 @@ const AdsPage: React.FC = () => {
             <motion.p variants={fadeUp} custom={1} className="text-white/80 text-base md:text-lg max-w-xl relative z-10">
               احجز الآن وابدأ بتنفيذ حملاتك بشكل احترافي
             </motion.p>
-            <motion.button variants={fadeUp} custom={2} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }} onClick={openConsultation} className="relative z-10 bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#113c56] font-extrabold py-3 px-12 rounded-xl text-lg shadow-xl">
+            <motion.button variants={fadeUp} custom={2} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }} onClick={() => setIsAdsFormOpen(true)} className="relative z-10 bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#113c56] font-extrabold py-3 px-12 rounded-xl text-lg shadow-xl">
               ابدأ الآن
             </motion.button>
           </motion.div>
         </Section>
 
       </div>
+
+      <AdsCampaignFormModal
+        isOpen={isAdsFormOpen}
+        onClose={() => setIsAdsFormOpen(false)}
+      />
     </main>
   );
 };
