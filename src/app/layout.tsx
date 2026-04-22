@@ -7,6 +7,9 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Yasir Gothan",
   description: "",
+  icons: {
+    icon: "/logo-light.png",
+  },
 };
 
 export default function RootLayout({

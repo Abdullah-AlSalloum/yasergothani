@@ -1,11 +1,18 @@
 import nodemailer from "nodemailer";
 
+type EmailAttachment = {
+  filename: string;
+  content: Buffer;
+  cid: string;
+};
+
 type SendSmtpEmailOptions = {
   to: string;
   subject: string;
   html: string;
   text: string;
   senderName?: string;
+  attachments?: EmailAttachment[];
 };
 
 const requiredEnv = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "SMTP_FROM"] as const;
@@ -24,6 +31,7 @@ export const sendSmtpEmail = async ({
   html,
   text,
   senderName,
+  attachments,
 }: SendSmtpEmailOptions) => {
   for (const key of requiredEnv) getEnv(key);
 
@@ -52,6 +60,7 @@ export const sendSmtpEmail = async ({
     subject,
     html,
     text,
+    attachments,
   });
 
   const accepted = Array.isArray(info.accepted) ? info.accepted : [];
