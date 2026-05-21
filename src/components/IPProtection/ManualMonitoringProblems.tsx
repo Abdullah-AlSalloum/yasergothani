@@ -16,7 +16,7 @@ const Section4: React.FC = () => (
           >
             لماذا الرصد اليدوي لا يكفي؟
           </motion.h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+          <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-8 w-full px-6">
             {/* Step 1 */}
             <motion.div whileHover={{ scale: 1.06 }} className="flex flex-col items-center group">
               <div className="rounded-full bg-[#FFD600]/20 border-2 border-[#FFD600] w-20 h-20 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">

@@ -8,7 +8,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 const ServicesOverview: React.FC = () => (
    <section className="bg-[#f1f5fb]  shadow p-8 w-full mx-auto">
         <div className="w-full bg-primary rounded-2xl py-6 px-4 flex flex-col items-center justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#437066] text-center">خدماتنا المتكاملة</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#437066] text-center">خدماتنا المتكاملة</h2>
           <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
             <div className="flex flex-col items-center text-center">
               <span className="mb-4"><span className="inline-block bg-primary-light/20 rounded-full p-6"><VisibilityIcon className="text-7xl text-[#437066]" style={{ fontSize: 48 }} /></span></span>
