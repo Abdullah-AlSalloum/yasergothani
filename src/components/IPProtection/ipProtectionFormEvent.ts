@@ -1,0 +1,1 @@
+export const OPEN_IP_PROTECTION_FORM_EVENT = "open-ip-protection-form";

@@ -1,0 +1,150 @@
+"use client";
+import Link from "next/link";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { usePathname } from "next/navigation";
+
+const Footer = () => {
+  const pathname = usePathname();
+  const isIpProtectionRoute = pathname?.startsWith("/ip-protection");
+  const footerBgClass = isIpProtectionRoute
+    ? "bg-gradient-to-tr from-[#0f3b33] via-[#1a604f] to-[#2b7a66]"
+    : "bg-gradient-to-tr from-[#113c56] to-[#4c6d83]";
+
+  return (
+    <footer
+      id="Footer"
+      className={`${footerBgClass} text-white pt-12 pb-4 px-4 md:px-0 sm:items-center`}
+    >
+      <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 border-b border-white/10 pb-8 text-center md:text-right">
+        {/* Logo & About */}
+        <div className="flex flex-col items-center md:items-start">
+          <img src="/logo-light.png" alt="logo" className="h-19 mb-2" />
+          <p className="text-sm mb-4 text-center md:text-right">
+            نحوّل تواجدك الرقمي إلى آلية مبيعات فعّالة من خلال استراتيجيات
+            تسويقية مبتكرة ومهيئة للنجاح.
+          </p>
+          <div className="flex gap-3 mt-2">
+            <a
+              href="https://www.instagram.com/yaser.gothani"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-yellow-400"
+            >
+              <i className="fab fa-instagram text-xl"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/yaser.gothanii"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-yellow-400"
+            >
+              <i className="fab fa-facebook text-xl"></i>
+            </a>
+          </div>
+          <div className="flex justify-center md:justify-start mt-6">
+            <a
+              href={isIpProtectionRoute ? "/#solutions" : "#solutions"}
+              className="group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-6 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+              style={{ boxShadow: "0 4px 24px 0 rgba(252, 212, 16, 0.18)" }}
+            >
+              ابدأ من هنا
+            </a>
+          </div>
+        </div>
+        {/* Quick Links */}
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/resources" className="hover:underline">
+                مصادر مجانية
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="font-bold text-lg mb-4">خدماتنا</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/#solutions" className="hover:underline">
+                نظام النمو الرقمي المستدام{" "}
+              </Link>
+            </li>
+            <li>
+              <Link href="/ads" className="hover:underline">
+                إدارة الحملات الإعلانية{" "}
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/ip-protection" className="hover:underline">
+                وثيق لحماية حقوق النشر{" "}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#solution-web" className="hover:underline">
+                بناء المواقع الإلكترونية
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/* Contact */}
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="font-bold text-lg mb-4">للاستفسارات المهنية</h3>
+          <div className="flex flex-col items-center gap-3 mt-2">
+            <a
+              href="https://wa.me/905418101964"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-400 to-green-500 text-white font-extrabold py-2 px-20 rounded-xl text-center shadow-xl hover:from-green-500 hover:to-green-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
+              style={{ boxShadow: "0 4px 24px 0 rgba(52, 211, 153, 0.18)" }}
+            >
+              <i className="fab fa-whatsapp text-2xl"></i>
+              واتساب
+            </a>
+            <div className="flex gap-8 justify-center">
+              <a
+                href="https://www.facebook.com/yaser.gothanii"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-400 transition-colors duration-200"
+              >
+                <FacebookIcon fontSize="large" />
+              </a>
+              <a
+                href="https://www.instagram.com/yaser.gothani"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-yellow-400 transition-colors duration-200"
+              >
+                <InstagramIcon fontSize="large" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-4 text-xs text-white/70 gap-2 text-center">
+        <div className="w-full md:w-auto">
+          جميع الحقوق محفوظة &copy; YASER GOTHANI
+        </div>
+        <div className="flex gap-4 w-full md:w-auto justify-center md:justify-end">
+          <Link href="/policies?tab=general" className="hover:underline">
+            سياسة الخصوصية
+          </Link>
+          <Link href="/policies?tab=services" className="hover:underline">
+            شروط الخدمة
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
