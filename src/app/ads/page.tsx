@@ -36,6 +36,7 @@ const whatYouGet = [
   "استهداف العملاء المناسبين.",
   "تحسين الأداء بشكل مستمر.",
   "تحويل الإعلانات إلى مبيعات.",
+  "زيادة في عدد العملاء.",
 ];
 
 const howWeWork = [
@@ -48,7 +49,7 @@ const howWeWork = [
 ];
 
 const results = [
-  "زيادة في عدد العملاء.",
+  
   "وضوح في أداء الإعلانات.",
   "تقليل الهدر في الميزانية.",
   "تحسين مستمر في النتائج.",
@@ -58,7 +59,7 @@ const stats = [
   { value: "+200", label: "حملة ناجحة" },
   { value: "آلاف", label: "الطلبات الناجحة" },
   { value: "8.5/10", label: "رضا العملاء" },
-  { value: "+10", label: "سنوات خبرة" },
+  { value: "+9", label: "سنوات خبرة" },
 ];
 
 const expandGoals = [
@@ -147,7 +148,7 @@ const AdsPage: React.FC = () => {
     <main className="w-full min-h-screen overflow-x-hidden bg-gradient-to-b from-[#f8fafc] to-[#e2e8f0]" dir="rtl">
 
       {/* Hero */}
-      <section ref={heroRef} className="relative w-full bg-[#113c56] text-white py-16 px-4 overflow-hidden min-h-[70vh] flex items-center">
+      <section ref={heroRef} className="relative w-full bg-[#113c56] text-white pt-11 pb-16 md:py-16 px-4 overflow-hidden min-h-[70vh] flex items-center">
         <motion.div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(66,86,184,0.35) 0%, transparent 70%)" }} animate={{ scale: [1, 1.15, 1], x: [0, 30, 0], y: [0, -20, 0] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }} />
         <motion.div className="absolute bottom-[-15%] right-[-5%] w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(250,204,21,0.12) 0%, transparent 70%)" }} animate={{ scale: [1, 1.2, 1], x: [0, -20, 0], y: [0, 20, 0] }} transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
 
@@ -157,7 +158,7 @@ const AdsPage: React.FC = () => {
           </motion.p>
 
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1 }} className="text-3xl md:text-5xl font-extrabold leading-tight">
-            حوّل إعلاناتك إلى مصدر عملاء حقيقي…
+            حوّل إعلاناتك إلى مصدر مبيعات حقيقي…
             <br />
             <span className="text-yellow-400">وليس مجرد صرف ميزانية</span>
           </motion.h1>
@@ -323,7 +324,7 @@ const AdsPage: React.FC = () => {
       </div>
 
         {/* 6. النتائج */}
-        <Section>
+        {/* <Section>
           <motion.div
             variants={fadeUp}
             className="relative w-full overflow-hidden bg-gradient-to-b from-[#f5f9fc] to-[#ecf3f8] py-10"
@@ -359,7 +360,7 @@ const AdsPage: React.FC = () => {
               </ul>
             </div>
           </motion.div>
-        </Section>
+        </Section> */}
 
       <div className="max-w-4xl mx-auto px-4 flex flex-col gap-10 pb-14">
 
@@ -383,7 +384,7 @@ const AdsPage: React.FC = () => {
                   variants={scaleIn}
                   custom={i}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className="flex cursor-default flex-col items-center rounded-xl bg-gradient-to-br from-pink-200 via-blue-100 to-green-100 px-4 py-6 text-center shadow transition-transform duration-200 hover:shadow-lg"
+                  className="flex cursor-default flex-col items-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-6 text-center shadow transition-transform duration-200 hover:shadow-lg"
                 >
                   <motion.span
                     className="mb-1 text-3xl font-extrabold text-[#fcd410] md:text-4xl"
@@ -399,7 +400,7 @@ const AdsPage: React.FC = () => {
                   >
                     {s.value}
                   </motion.span>
-                  <span className="text-sm font-semibold text-gray-700">{s.label}</span>
+                  <span className="text-sm font-semibold text-white/70">{s.label}</span>
                 </motion.div>
               ))}
             </div>
