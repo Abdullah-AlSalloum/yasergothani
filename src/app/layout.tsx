@@ -11,6 +11,25 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favico.png",
   },
+  openGraph: {
+    title: "ياسر الغوثاني - Yaser Gothani",
+    description: "",
+    url: "https://www.yasergothani.com",
+    siteName: "ياسر الغوثاني",
+    images: [
+      {
+        url: "https://www.yasergothani.com/yaser-gothani.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ياسر الغوثاني - Yaser Gothani",
+    images: ["https://www.yasergothani.com/yaser-gothani.png"],
+  },
 };
 
 export default function RootLayout({
