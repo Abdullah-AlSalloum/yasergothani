@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-center md:justify-start mt-6">
             <a
-              href="/ads"
+              href="/"
               className="group relative inline-flex items-center justify-center gap-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-primary font-extrabold py-3 px-6 rounded-xl text-center shadow-xl hover:from-yellow-500 hover:to-yellow-400 hover:scale-[1.03] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-300"
               style={{ boxShadow: "0 4px 24px 0 rgba(252, 212, 16, 0.18)" }}
             >
@@ -76,7 +76,7 @@ const Footer = () => {
               </Link>
             </li> */}
             <li>
-              <Link href="/ads" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 إدارة الحملات الإعلانية{" "}
               </Link>
             </li>

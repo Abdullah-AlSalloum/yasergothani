@@ -88,8 +88,8 @@ export default function Header() {
             </li>
              <li>
               <Link
-                href="/ads"
-                className={getLinkClass(pathname === "/ads")}
+                href="/"
+                className={getLinkClass(pathname === "/" || pathname === "/ads")}
               >
                 إدارة الحملات الإعلانية 
               </Link>
@@ -138,8 +138,8 @@ export default function Header() {
               <ul className="flex flex-col gap-2 text-white text-lg">
                 <li>
                   <Link
-                    href="/ads"
-                    className={`block w-full px-4 py-2 rounded transition ${pathname === "/ads" ? activeClass : inactiveClass}`}
+                    href="/"
+                    className={`block w-full px-4 py-2 rounded transition ${pathname === "/" || pathname === "/ads" ? activeClass : inactiveClass}`}
                     onClick={() => setMenuOpen(false)}
                   >
                     إدارة الحملات الإعلانية 
