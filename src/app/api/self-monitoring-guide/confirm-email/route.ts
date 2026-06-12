@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const guideUrl =
       process.env.SELF_MONITORING_GUIDE_FILE_URL ||
       process.env.NEXT_PUBLIC_SELF_MONITORING_GUIDE_FILE_URL ||
-      `${new URL(request.url).origin}/ip-protection/self-monitoring-guide`;
+      `${new URL(request.url).origin}/Copyright-wthiiq/self-monitoring-guide`;
 
     const senderName = process.env.BREVO_SENDER_NAME || DEFAULT_SENDER_NAME;
 

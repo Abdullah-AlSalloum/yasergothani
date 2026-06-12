@@ -9,7 +9,7 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [hash, setHash] = useState("");
   const pathname = usePathname();
-  const isIpProtectionRoute = pathname?.startsWith("/ip-protection");
+  const isIpProtectionRoute = pathname?.startsWith("/Copyright-wthiiq");
   const headerBgClass = isIpProtectionRoute ? "bg-[#1a604f]" : "bg-[#11425C]";
   const isServicesActive = pathname === "/" && hash === "#solutions";
 
@@ -70,18 +70,18 @@ export default function Header() {
         <div className="hidden min-[924px]:flex min-[924px]:order-1 flex-1 justify-start">
           <ul className="flex flex-row gap-2 text-white text-lg">
            
-            <li>
+            {/* <li>
               <Link
                 href="/resources"
                 className={getLinkClass(pathname === "/resources")}
               >
                 مصادر مجانية
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
-                href="/ip-protection"
-                className={getLinkClass(Boolean(pathname?.startsWith("/ip-protection")))}
+                href="/Copyright-wthiiq"
+                className={getLinkClass(Boolean(pathname?.startsWith("/Copyright-wthiiq")))}
               >
                 حماية الملكية الفكرية
               </Link>
@@ -147,14 +147,14 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="/ip-protection"
-                    className={`block w-full px-4 py-2 rounded transition ${pathname?.startsWith("/ip-protection") ? activeClass : inactiveClass}`}
+                    href="/Copyright-wthiiq"
+                    className={`block w-full px-4 py-2 rounded transition ${pathname?.startsWith("/Copyright-wthiiq") ? activeClass : inactiveClass}`}
                     onClick={() => setMenuOpen(false)}
                   >
                     حماية الملكية الفكرية
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/resources"
                     className={`block w-full px-4 py-2 rounded transition ${pathname === "/resources" ? activeClass : inactiveClass}`}
@@ -162,7 +162,7 @@ export default function Header() {
                   >
                     مصادر مجانية
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </motion.div>
           </>

@@ -153,7 +153,7 @@ const SolutionsSection: React.FC = () => {
             const serviceUrl = isGrowthService
               ? "#"
               : isIpProtectionService
-                ? "/ip-protection"
+                ? "/Copyright-wthiiq"
                 : isAdsService
                   ? "/ads"
                   : isWebsitesService

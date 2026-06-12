@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const pathname = usePathname();
-  const isIpProtectionRoute = pathname?.startsWith("/ip-protection");
+  const isIpProtectionRoute = pathname?.startsWith("/Copyright-wthiiq");
   const footerBgClass = isIpProtectionRoute
     ? "bg-gradient-to-tr from-[#0f3b33] via-[#1a604f] to-[#2b7a66]"
     : "bg-gradient-to-tr from-[#113c56] to-[#4c6d83]";
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
         {/* Quick Links */}
-        <div className="flex flex-col items-center md:items-start">
+        {/* <div className="flex flex-col items-center md:items-start">
           <h3 className="font-bold text-lg mb-4">روابط سريعة</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -64,7 +64,7 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Services */}
         <div className="flex flex-col items-center md:items-start">
@@ -82,9 +82,9 @@ const Footer = () => {
             </li>
 
             <li>
-              <Link href="/ip-protection" className="hover:underline">
-                وثيق لحماية حقوق النشر{" "}
-              </Link>
+              <Link href="/Copyright-wthiiq" className="hover:underline">
+                  وثيق لحماية حقوق النشر{" "}
+                </Link>
             </li>
             {/* <li>
               <Link href="/#solution-web" className="hover:underline">

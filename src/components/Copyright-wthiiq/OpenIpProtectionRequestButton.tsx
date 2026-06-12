@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { OPEN_IP_PROTECTION_FORM_EVENT } from "./ipProtectionFormEvent";
+import { OPEN_IP_PROTECTION_FORM_EVENT } from "./copyritghtWthiiqFormEvent";
 
 type OpenIpProtectionRequestButtonProps = {
   label: string;

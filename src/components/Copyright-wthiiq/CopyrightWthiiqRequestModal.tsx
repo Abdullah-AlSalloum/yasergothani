@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ar from "react-phone-input-2/lang/ar.json";
-import { OPEN_IP_PROTECTION_FORM_EVENT } from "./ipProtectionFormEvent";
+import { OPEN_IP_PROTECTION_FORM_EVENT } from "./copyritghtWthiiqFormEvent";
 
 type PhoneCountryData = { countryCode?: string };
 
@@ -150,7 +150,7 @@ const IpProtectionRequestModal: React.FC = () => {
     setSuccessMessage("");
 
     try {
-      const response = await fetch("/api/ip-protection-request", {
+      const response = await fetch("/api/Copyright-wthiiq-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

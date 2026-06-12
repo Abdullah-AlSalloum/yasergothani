@@ -112,7 +112,7 @@ export async function POST(request: Request) {
     const guideUrl =
       process.env.SELF_MONITORING_GUIDE_FILE_URL ||
       process.env.NEXT_PUBLIC_SELF_MONITORING_GUIDE_FILE_URL ||
-      `${requestOrigin}/ip-protection/self-monitoring-guide`;
+      `${requestOrigin}/Copyright-wthiiq/self-monitoring-guide`;
 
     try {
       await sendGuideEmail({
